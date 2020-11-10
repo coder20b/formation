@@ -325,6 +325,14 @@ https://themeforest.net/category/wordpress
 
     wordpress/wp-content/themes/
 
+### PROJET WORDPRESS
+
+    CREER UN SITE E-COMMERCE DE QUELQUES PAGES
+    Accueil
+    Actus
+    Produits
+    Contact
+
 
 
 
