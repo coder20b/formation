@@ -80,7 +80,7 @@ WordPress vise les 80%
 WordPress rassemble un écosystème énorme
 => Communauté bienveillante d'entraide
 
-=> WP permet à une équipe de travailler ensemble avec des cométences différentes
+=> WP permet à une équipe de travailler ensemble avec des compétences différentes
 => WP permet de compléter les compétences manquantes
 
 Meetup.com
