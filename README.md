@@ -239,6 +239,10 @@ OPTIONS                 EXTENSIONS WP
     https://fr.wordpress.org/plugins/caldera-forms/
 
 
+## EXTENSION: FONT AWESOME
+
+    https://wordpress.org/plugins/font-awesome/
+
 
 
 
