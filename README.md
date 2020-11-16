@@ -101,10 +101,37 @@ DU POINT DE VUE D'UN DEV
 
 
     PAUSE ET REPRISE A 11H20...
+
+## démarrer avec Divi
+
+    Tuto en français
+    https://wpformation.com/divi/
+
+    Doc officielle en anglais
+    https://www.elegantthemes.com/documentation/divi/
+
+
+    STRUCTURE DANS DIVI
+
+    SECTIONS
+        LIGNES
+            COLONNES
+                MODULES
+    SECTIONS
+        LIGNES
+            COLONNES
+                MODULES
+    SECTIONS
+        LIGNES
+            COLONNES
+                MODULES
+
+
+## EXERCICE EN AUTONOMIE
+
+    CONSTRUIRE LA STRUCTURE DE LA PAGE D'ACCUEIL POUR AJOUTER LES SECTIONS DE VOTRE CV...
+
     
-
-
-
 
 
 
