@@ -105,7 +105,43 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?6E422A30540182DEB5A12667D
     https://trends.builtwith.com/shop
 
     Pause et reprise à 11H15...
+
+    Comment ajouter une boutique en ligne dans son site WP.
+    => Solution la plus populaire dans le monde
+    => Au mieux si on veut créer une petite boutique
+
+
+## CHOSES INTERESSANTES EN PLUS
+
+
+    CSS
+    AMP => Extension Google
+    https://fr.wordpress.org/plugins/accelerated-mobile-pages/
+    https://ampforwp.com/amp-demo/
+
+    SEO
+    YOAST       => CONNU MAIS LOURD ET BUGUE
+    SEOPRESS    => PLUS LEGER
+    RANKMATH    => FONCTIONNALITES INTERESSANTES
+
+    CUSTOM HEADER ET FOOTER DANS DIVI
+
+
+    PAUSE DEJEUNER ET REPRISE A 13H50...
+
     
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
