@@ -19,4 +19,5 @@
         </nav>
     </header>
     <main>
-        <h1>TITRE DE LA PAGE</h1>
+        <h1><?php echo $titre ?></h1>
+        <p><?php echo $description ?? "TEXTE PAR DEFAUT" ?></p>
