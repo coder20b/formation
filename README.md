@@ -445,7 +445,19 @@ echo $texteSansValeur;
 
     SUR LA PAGE GALERIE, AJOUTER PLUSIEURS IMAGES POUR CREER UNE GALERIE...
 
-    
+
+## EXO PHP: AJOUTER UNE CLASSE DIFFERENTE A LA BALISE body
+
+    COMMENT FAIRE AVEC PHP
+    POUR POUVOIR AJOUTER UNE CLASSE A LA BALISE body
+    ET LA CLASSE VA CHANGER SUIVANT LA PAGE
+
+    EXEMPLE:
+    SUR LA PAGE ACCUEIL     <body class="index">
+    SUR LA PAGE GALERIE     <body class="galerie">
+    SUR LA PAGE CONTACT     <body class="contact">
+
+
 
 
 
