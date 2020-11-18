@@ -16,7 +16,8 @@
         </nav>
     </header>
     <main>
-        <h1>titre de page</h1>
+        <h1>titre de page <?php echo date("H:i:s") ?></h1>
+        <h1>sans balise echo date("H:i:s") </h1>
         <section id="section1">
             <h2>titre section1</h2>
             <article>
