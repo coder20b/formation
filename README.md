@@ -263,7 +263,113 @@ OBJECTIF: 10 DECEMBRE EVALUATION INTERMEDIAIRE BACK (PHP + SQL)
 
 
     PAUSE DEJEUNER ET ON REPREND A 13H45...
+
+
+## RESUME DE LA MATINEE
+
+    POUR DEMARRER AVEC PHP
+    * SERVEUR WEB LAMP => Linux Apache MySQL PHP
+    * CODER DANS LE DOSSIER RACINE DU SERVEUR WEB AVEC XAMPP C:\xampp\htdocs
+    * CREER UN FICHIER .php
+    * DANS LE FICHIER AJOUTER LES BALISES OUVRANTES ET FERMANTES <?php ?>
+    * DANS LES BALISES PHP, ON PEUT AJOUTER DU CODE PHP ;-p
+
+    => IL FAUT TOUT UN ENVIRONNEMENT DE TRAVAIL POUR CODER AVEC PHP
+
+    * ET ENFIN DANS LE NAVIGATEUR, POUR VOIR LES PAGES...
+    http://localhost/...
+
+
+    IMPORTANT DE COMPRENDRE:
+    LE CODE PHP RESTE DU COTE DU SERVEUR WEB
+    LE NAVIGATEUR NE VOIT QUE LE RESULTAT PRODUIT PAR LE CODE PHP
+    (LE NAVIGATEUR NE VOIT JAMAIS LE CODE PHP)
+
+
+## PHP COMME MOTEUR DE TEMPLATES
+
+    DANS PHP, IL Y A DES MILLIERS DE FONCTIONS BIEN PRATIQUES...
+
+    UNE FONCTIONNALITE QUI VA ETRE TRES PRATIQUE: include
+
+    https://www.php.net/manual/fr/function.include.php
+
+    include PERMET DE DECOUPER SON CODE DANS PLUSIEURS FICHIERS
+    ET ENSUITE DE RECOMPOSER LE CODE HTML
+
+    IL Y A DES VARIANTES
+    include
+    include_once
+    require
+    require_once
+
+    https://www.php.net/manual/fr/function.include-once.php
+    https://www.php.net/manual/fr/function.require.php
+    https://www.php.net/manual/fr/function.require-once.php
+
+    EN PRATIQUE, ON UTILISERA LA PLUPART DU TEMPS require_once
+
+    ATTENTION: require_once ASSEMBLE LES FICHIERS DANS L'ORDRE QU'ON LUI DONNE
+    => BIEN RESPECTER LE BON ORDRE
+
+
+## EXERCICE EN AUTONOMIE: PROJET SITE VITRINE
+
+    ON VEUT CREER UN SITE VITRINE EN PHP
+    3 PAGES
+    * Accueil
+    * Galerie
+    * Contact
+
+    CREER UN DOSSIER projet-vitrine 
+    (A COTE DU DOSSIER projet-onepage)
+
+    ETAPE PRELEMINAIRE:
+    PEUT-ETRE CREER index.html...
+
+    ET CREER LES FICHIERS POUR AVOIR UN SITE VITRINE EN PHP
+
+    3 FICHIERS (UN PAR PAGE)
+    index.php       => PAGE ACCUEIL
+    galerie.php     => PAGE GALERIE
+    contact.php     => PAGE CONTACT
+
+    CONSEIL: faire simple et bien comprendre ET ENSUITE aller sur plus compliqué.
+
+    CHECKPOINT A 15H20
+    N'HESITEZ PAS POSER DES QUESTIONS AU FUR ET A MESURE ;-p
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
