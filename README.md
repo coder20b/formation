@@ -554,7 +554,7 @@ foreach ($tableauAssociatif as $cle => $valeur)
     (NE PAS OUBLIER D'AJOUTER LE CSS POUR LA CLASSE .active)
     (par exemple: changer la couleur de fond...)
 
-    
+    PAUSE ET REPRISE A 16H15
 
 
 
