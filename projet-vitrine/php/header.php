@@ -24,11 +24,25 @@ $a = [
 ];
 foreach($a as $cle => $valeur)
 {
-    echo 
-    <<<html
-        <a href="$cle">$valeur</a>
+    // JE TESTE SI $valeur EST EGAL A $titre
+    if ($valeur == $titre) 
+    {
+        echo 
+        <<<html
+            <a class="active" href="$cle">$valeur</a>
 
-    html;
+        html;
+    
+    }
+    else
+    {
+        echo 
+        <<<html
+            <a class="" href="$cle">$valeur</a>
+    
+        html;
+
+    }
 }
 ?>
 <!--

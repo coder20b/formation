@@ -41,6 +41,7 @@ h1 {
     height: 30vh;
 }
 
+/* MENUS */
 nav a {
     text-decoration: none;
     display:inline-block;
@@ -48,5 +49,7 @@ nav a {
 }
 
 nav a.active {
-    background-color: aqua;
+    background-color:#cccccc;
+    border:1px solid #aaaaaa;
+    border-radius:1rem;
 }

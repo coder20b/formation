@@ -1,7 +1,7 @@
 <?php 
 
 // ON EST DANS LA PAGE galerie.php
-$titre = "GALERIE";
+$titre = "Galerie";
 
 // ON RECOMPOSE LE CODE HTML EN ASSEMBLANT LES DIFFERENTS FICHIERS PHP
 require_once "php/header.php"; 

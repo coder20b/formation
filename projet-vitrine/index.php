@@ -1,7 +1,7 @@
 <?php 
 
 // ON EST DANS LA PAGE index.php
-$titre = "ACCUEIL";
+$titre = "Accueil";
 // cette valeur va remplacer le texte par défaut
 $description = "TEXTE POUR LA PAGE D'ACCUEIL";
 
