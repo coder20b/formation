@@ -543,7 +543,19 @@ foreach ($tableauAssociatif as $cle => $valeur)
 ``` 
 
     PAUSE DEJEUNER ET REPRISE A 14H00
+
+## EXERCICE: AJOUTER LA CLASSE .active SUR LE MENU ACTUEL
+
+
+    QUAND ON CLIQUE SUR UN LIEN DU MENU
+    ON ARRIVE SUR LA PAGE CORRESPONDANTE
+    ET ON VEUT QUE LE MENU QUI CORRESPOND A LA PAGE AIT UNE CLASSE active
+
+    (NE PAS OUBLIER D'AJOUTER LE CSS POUR LA CLASSE .active)
+    (par exemple: changer la couleur de fond...)
+
     
+
 
 
 

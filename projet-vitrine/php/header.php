@@ -13,9 +13,29 @@
     <header>
         <img class="header__img" src="./assets/img/logo.jpg" alt="logo">
         <nav>
+            <!-- AJOUTER DU CODE PHP POUR PRODUIRE LE MEME CODE HTML POUR LES BALISES a -->
+<?php
+// tableau associatif
+$a = [
+    // "cle"        => "valeur"
+    "index.php"     => 'Accueil',
+    "galerie.php"   => 'Galerie',
+    "contact.php"   => 'Contactez-Nous',
+];
+foreach($a as $cle => $valeur)
+{
+    echo 
+    <<<html
+        <a href="$cle">$valeur</a>
+
+    html;
+}
+?>
+<!--
             <a href="index.php">Accueil</a>
             <a href="galerie.php">Galerie</a>
             <a href="contact.php">Contactez-Nous</a>
+-->
         </nav>
     </header>
     <main>

@@ -33,8 +33,20 @@ h1 {
 
 .galerie {
     display:flex;
+    flex-wrap: wrap;
 }
 .galerie img {
     width: calc(100% / 3);
     object-fit: cover;
+    height: 30vh;
+}
+
+nav a {
+    text-decoration: none;
+    display:inline-block;
+    padding:1rem;
+}
+
+nav a.active {
+    background-color: aqua;
 }
