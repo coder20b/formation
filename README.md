@@ -254,7 +254,7 @@ $nombre--;              // $nombre = 3
 ?>
 ```
 
-## LES TABLEAUX
+## LES TABLEAUX ORDONNES
 
     https://www.php.net/manual/fr/language.types.array.php
 
@@ -285,9 +285,71 @@ $prenom  = $tableauMelange[1];       // "john"
 // AUTRE ECRITURE EN PHP
 $tableauNombre = array( 3, 6, 22, 10);
 
+// TABLEAU VIDE
+// ON PEUT CREER UN TABLEAU VIDE
+$tableau = [];
+
+// ET AJOUTER DES ELEMENTS PAR LA SUITE
+// RACCOURCI AVEC PHP POUR AJOUTER UN NOUVEL A LA FIN DU TABLEAU
+$tableau[] = "a";   // $tableau = [ "a" ];
+$tableau[] = "b";   // $tableau = [ "a", "b" ];
+$tableau[] = "c";   // $tableau = [ "a", "b", "c" ];
+
+// SI ON VEUT REMPLACER UNE VALEUR DANS LE TABLEAU
+// ON UTILISE [] EN PRECISANT L'INDICE (AVANT LE = )
+$tableau[1] = "d";  // $tableau = [ "a", "d", "c" ];
+
 
 ?>
 ```
+
+## TABLEAUX ASSOCIATIFS
+
+    ON RANGE DES PAIRES (CLE, VALEUR)
+    LES CLES DOIVENT ETRE UNIQUES 
+    
+    (ON NE DOIT PAS AVOIR 2 FOIS LA MEME CLE DANS LE TABLEAU ASSOCIATIF)
+
+```php
+<?php
+
+$tableauAssociatif = [ 
+    "cle1" => "valeur1", 
+    "cle2" => "valeur2",
+    "cle3" => "valeur3" 
+    ];
+
+// SI ON VEUT ACCEDER A UNE VALEUR
+// ON VA UTILISER SA CLE
+
+$element2 = $tableauAssociatif["cle2"];
+
+
+?>
+```
+
+    PAUSE JUSQU'A 11H20...
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
