@@ -30,3 +30,11 @@ header, main, footer {
 h1 {
     color:orange;
 }
+
+.galerie {
+    display:flex;
+}
+.galerie img {
+    width: calc(100% / 3);
+    object-fit: cover;
+}

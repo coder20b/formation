@@ -542,7 +542,8 @@ foreach ($tableauAssociatif as $cle => $valeur)
 ?>
 ``` 
 
-
+    PAUSE DEJEUNER ET REPRISE A 14H00
+    
 
 
 
