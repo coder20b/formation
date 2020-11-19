@@ -76,6 +76,15 @@ nav a.active {
     object-fit: contain;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+input, textarea, button {
+    width:100%;
+    padding:0.5rem;
+    font-family: monospace;
+}
 
 
 

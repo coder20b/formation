@@ -557,12 +557,67 @@ foreach ($tableauAssociatif as $cle => $valeur)
     PAUSE ET REPRISE A 16H15
 
 
+## FORMULAIRE HTML
+
+    L'ATTRIBUT name EST TRES IMPORTANT POUR DISTINGUER LES INFORMATIONS ENVOYEES AU SERVERU WEB (A PHP)
+
+    <input name="nom">
+    <input name="email">
+    <textarea name="message"></textarea>
+
+    SI LA BALISE form A POUR ATTRIBUT method="GET"
+    => LE NAVIGATEUR VA ENVOYER LES INFOS FOURNIES DANS L'URL
 
 
+    http://localhost:8888/formation/projet-vitrine/contact.php?nom=nom1658&email=email%401658&message=message1658
 
 
+    LA PARTIE COMMENCE A PARTIR DU ?
+
+    ?nom=nom1658&email=email%401658&message=message1658
+
+    SI ON DECOMPOSE
+    ?
+    nom=nom1658
+    &
+    email=email%401658
+    &
+    message=message1658
+
+    => DANS LE MONDE PHP
+        QUI CONTIENT PLUSIEURS INFOS PAR PAIRES ?
+        => TABLEAU ASSOCIATIF ;-p
+
+    PHP CREE DES VARIABLES AUTOMATIQUEMENT: $_REQUEST, $_GET, $_POST
+    QUI VONT STOCKER LES INFORMATIONS RECUES PAR LES FORMULAIRES 
+
+    [ 
+        "nom"       => "nom1715", 
+        "email"     => "mail1715@test", 
+        "message"   => "message1715",
+    ]
+
+    MECANISME TRES IMPORTANT: 
+    FONDAMENTAL POUR COMMUNIQUER ENTRE LE NAVIGATEUR ET LE SERVEUR WEB (PHP)
 
 
+## HTML ATTRIBUT pattern
+
+    POUR AJOUTER DES VERIFICATIONS SUPPLEMENTAIRES SUR LE TEXTE ENTRE DANS LES FORMULAIRES
+
+    http://html5pattern.com/
+
+
+## RESSOURCES CC0
+
+    https://allthefreestock.com/
+
+    IMAGES
+
+    https://pexels.com
+    https://unsplash.com
+    https://pixabay.com
+    ...
 
 
 
