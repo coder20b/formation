@@ -310,6 +310,9 @@ $tableau[1] = "d";  // $tableau = [ "a", "d", "c" ];
     
     (ON NE DOIT PAS AVOIR 2 FOIS LA MEME CLE DANS LE TABLEAU ASSOCIATIF)
 
+
+    NOTE: EN JS, ON N'A PAS DE TABLEAU ASSOCIATIF CAR ON PEUT UTILISER LES OBJETS
+
 ```php
 <?php
 
@@ -321,8 +324,20 @@ $tableauAssociatif = [
 
 // SI ON VEUT ACCEDER A UNE VALEUR
 // ON VA UTILISER SA CLE
-
+// LECTURE
 $element2 = $tableauAssociatif["cle2"];
+
+// ECRITURE
+// SI ON VEUT CHANGER LA VALEUR ASSOCIEE A UNE CLE
+$tableauAssociatif["cle3"] = "nouvelle valeur";
+
+// tableaux de tableaux
+$tableauA = [ "c1" => "v1", "c2" => "v2" ];
+$tableau = [
+    "cle1"  => [ "a", "b", "c" ],
+    "cle2"  => [ "cleA" => "a", "cleB" => "b", "cleC" => "c" ]
+    "cle3"  => $tableauA 
+    ];
 
 
 ?>
@@ -330,7 +345,209 @@ $element2 = $tableauAssociatif["cle2"];
 
     PAUSE JUSQU'A 11H20...
 
-    
+
+## STRUCTURES DE CONTROLE: CONDITIONS
+
+    IF... ELSE
+
+    TRES UTILE CAR CA PERMET DE RENDRE LE PROGRAMME INTELLIGENT ;-p
+
+    ON VA FAIRE UN TEST
+    SUIVANT LE RESULTAT DU TEST (true OU false)
+    ON VA EXECUTER UNE BRANCHE DU CODE OU L'AUTRE
+    => PERMET DE FAIRE UN CHOIX
+
+
+```php
+<?php
+
+// SUIVANT LE RESULTAT DU TEST PHP EXECUTE SEULEMENT UN DES 2 SCENARIOS
+if ($test)
+{
+    // SCENARIO $test == true
+    // ...
+}
+else
+{
+    // OPTIONNEL
+    // SCENARIO $test == false
+    // ...
+}
+
+
+if ($test)
+{
+    // SCENARIO $test == true
+    // ...
+}
+
+
+// ON PEUT ENCHAINER PLUSIEURS TEST
+if ($test)
+{
+    // SCENARIO $test == true
+    // ...
+}
+else if ($test2)
+{
+    // SCENARIO $test1 == false ET $test2 == true
+    // ...
+}
+else
+{
+    // OPTIONNEL
+    // SCENARIO PAR DEFAUT
+    // ...
+}
+
+switch ($test)
+{
+    case "a":
+        // SCENARIO $test == "a"
+        break;
+    case "b":
+        // SCENARIO $test == "b"
+        break;
+    case "c":
+        // SCENARIO $test == "c"
+        break;
+    default:
+        // SCENARIO PAR DEFAUT
+}
+
+
+?>
+```    
+
+
+
+
+
+
+## STRUCTURES DE CONTROLE: BOUCLES
+
+    FOR
+    WHILE
+    DO... WHILE
+    FOREACH
+
+
+    TRES UTILE POUR REPETER PLUSIEURS FOIS UN MEME BLOC DE CODE
+    => UTILISE TOUTE LA PUISSANCE DES PROCESSEURS
+
+```php    
+<?php
+
+
+$compteur = 0;              // VALEUR DE DEPART
+while ($compteur < 100)     // TEST D'ARRET
+{
+    // TANT QUE LE TEST $compteur < 100 EST VRAI
+    // REPETER LE BLOC DE CODE
+    // ...
+    // ...
+    echo "<h1>LE COMPTEUR VAUT $compteur</h1>";
+
+    // INCREMENTER LE COMPTEUR
+    // PIEGE: NE PAS OUBLIER SINON BOUCLE INFINIE
+    $compteur++;            // INCREMENTATION
+}
+
+// ECRITURE PLUS COMPACTE
+for ($compteur = 0; $compteur < 100; $compteur++)
+{
+    // TANT QUE LE TEST $compteur < 100 EST VRAI
+    // REPETER LE BLOC DE CODE
+    // ...
+    // ...
+    echo "<h1>LE COMPTEUR VAUT $compteur</h1>";
+}
+
+
+?>
+``` 
+
+
+## TABLEAUX ET BOUCLES
+
+    PHP PROPOSE UNE ECRITURE ENCORE PLUS SIMPLE
+    SI ON VEUT COMBINER UN TABLEAU ET UNE BOUCLE
+
+    ASTUCE: POUR COMPTER LE NOMBRE D'ELEMENTS
+    ON PEUT UTILISER LA FONCTION count
+    https://www.php.net/manual/fr/function.count.php
+
+    SI ON VEUT PARCOURIR TOUS LES ELEMENTS D'UN TABLEAU (DU PREMIER AU DERNIER)
+    PHP PROPOSE foreach QUI EST LE PLUS SIMPLE POUR FAIRE UNE BOUCLE
+
+    https://www.php.net/manual/fr/control-structures.foreach.php
+
+
+```php 
+<?php
+
+$tableau = [ "a", "b", "c" ];
+// TABLEAU ORDONNE A DES INDICES 0, 1, 2
+
+// AVEC UNE BOUCLE, ON PEUT INCREMENTER UN COMPTEUR ET L'UTILISER COMME INDICE
+$compteur = 0;
+while ($compteur < count($tableau))
+{
+    echo "<h1>le compteur vaut $compteur</h1>";     // 0, 1, 2
+    $element = $tableau[$compteur];
+    echo "<h1>la valeur est $element</h1>";
+
+    $compteur++;
+}
+
+echo "<hr>";
+for ($compteur = 0; $compteur < count($tableau); $compteur++)
+{
+    echo "<h1>le compteur vaut $compteur</h1>";     // 0, 1, 2
+    $element = $tableau[$compteur];
+    echo "<h1>la valeur est $element</h1>";
+
+}
+
+echo "<hr>";
+foreach ($tableau as $compteur => $element)
+{
+    echo "<h1>le compteur vaut $compteur</h1>";     // 0, 1, 2
+    echo "<h1>la valeur est $element</h1>";
+
+}
+
+?>
+``` 
+
+
+    COOL. foreach FONCTIONNE AUSSI SUR UN TABLEAU ASSOCIATIF
+
+```php 
+<?php
+
+$tableauAssociatif = [
+    "cle1" => "valeur1",
+    "cle2" => "valeur2",
+    "cle3" => "valeur3",
+];
+
+foreach ($tableauAssociatif as $cle => $valeur)
+{
+    echo "<h1>la clé vaut $cle</h1>";     // "cle1", "cle2", "cle3"
+    echo "<h1>la valeur est $valeur</h1>";
+
+}
+
+?>
+``` 
+
+
+
+
+
+
+
 
 
 
