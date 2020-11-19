@@ -53,3 +53,30 @@ nav a.active {
     border:1px solid #aaaaaa;
     border-radius:1rem;
 }
+
+.lightbox {
+    position:fixed;
+    top:100%;
+    left:0;
+    z-index: 99;
+    width: 100%;
+    height:100%;
+    padding:5rem;
+    background-color:rgba(0,0,0,0.8);
+    transition: all 0.3s ease-in;
+}
+
+.lightbox.active {
+    top:0;
+}
+
+
+
+
+
+
+
+
+
+
+
