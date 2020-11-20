@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="mon site vitrine">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+
     <title>Projet Vitrine</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- COMMENTAIRE HTML -->
@@ -11,7 +14,7 @@
 
 <body>
     <header>
-        <img class="header__img" src="./assets/img/logo.jpg" alt="logo">
+        <img class="header__img" src="./assets/img/logo.svg" alt="logo">
         <nav>
             <!-- AJOUTER DU CODE PHP POUR PRODUIRE LE MEME CODE HTML POUR LES BALISES a -->
 <?php

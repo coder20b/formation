@@ -32,17 +32,21 @@ article p {
     max-width: 800px;
     text-align: justify;
 }
+
+.img__first {
+    height:30vh;
+}
 /* COULEURS */
 
 .header__img {
-    height:120px;
-    width:120px;
+    height:80px;
+    width:80px;
     object-fit: cover;
-    border-radius: 60px;
+    border-radius: 40px;
 }
 
 h1 {
-    color:#ff9800;
+    color:#ff5722;
 }
 
 .galerie {
