@@ -1,0 +1,37 @@
+message reçu sur le site.
+
+nom: nom1130
+email: meail1130@me
+message:
+message1130
+------
+message reçu sur le site.
+
+nom: nom1131
+email: mail1131@me
+message:
+message1131
+------
+message reçu sur le site.
+
+nom: kfjghsdfkj
+email: hdskjhsq@me
+message:
+djshfdqsk
+------
+message reçu sur le site.
+
+nom: fdlhgsdkl
+email: jklsdhkqsdj@mler
+message:
+<script>
+alert('coucou')
+</script>
+------
+message reçu sur le site.
+
+nom: test
+email: test@mail.me
+message:
+kjdfhdsq
+------

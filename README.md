@@ -120,6 +120,41 @@ print_r($_REQUEST);
 
     PAUSE ET REPRISE A 11H05
 
+## ENVOYER UN MAIL EN PHP
+
+    https://www.php.net/manual/fr/function.mail.php
+
+## CREER UN FICHIER
+
+    // https://www.php.net/manual/fr/function.file-put-contents
+    file_put_contents("php/contact.txt", $mail, FILE_APPEND);
+
+## DANGER DES FORMULAIRE
+
+    SE MEFIER DE CE QUE ON RECOIT DE L'EXTERIEUR...
+    => DEBUT DE PARANOIA AVEC PHP...
+    => SE POSER PLEIN DE QUESTIONS DE SECURITE :-/
+
+    SI ON VEUT PROTEGER UN DOSSIER AVEC APACHE
+    https://httpd.apache.org/docs/2.4/fr/howto/access.html
+
+    => AJOUTER UN FICHIER .htaccess
+            ET AJOUTER LA LIGNE
+            Require all denied
+
+```
+# PARAMETRAGE POUR APACHE
+# FICHIER .htaccess
+
+# IL FAUT BLOQUER L'ACCES A CE DOSSIER
+Require all denied
+```
+
+## MISE EN LIGNE SUR IONOS
+
+    AVEC EXTENSION WP FILE MANAGER
+
+    https://long-hai.procoder.fr/projet-vitrine/
 
 
 
@@ -128,7 +163,8 @@ print_r($_REQUEST);
 
 
 
-    
+
+
 
 
 
