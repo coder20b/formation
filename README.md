@@ -157,9 +157,20 @@ Require all denied
     https://long-hai.procoder.fr/projet-vitrine/
 
 
+## TESTER LES PERFORMANCES DES PAGES EN LIGNE
+
+    https://web.dev/measure/
+
+    OBJECTIF: ETRE AU DESSUS DE 90%... 
+
+## EXERCICE EN AUTONOMIE
 
 
+    REVENIR SUR LE PROJET ONE PAGE
+    ET AJOUTER UNE SECTION AVEC UNE GALERIE (PHP ET JS)
+    ET AJOUTER UNE SECTION AVEC UN FORMULAIRE DE CONTACT (PHP)
 
+    
 
 
 
