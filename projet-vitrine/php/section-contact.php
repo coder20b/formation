@@ -3,7 +3,7 @@
     <article>
         <h3>TITRE ARTICLE1</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolor iste illo similique nesciunt sunt aspernatur, excepturi, quos officia, cumque tenetur vel possimus! Dolores, ut placeat! Ab a quisquam quis?</p>
-        <form action="" method="POST">
+        <form action="#form-contact" method="POST">
             <label>
                 <div>votre nom *</div>
                 <input type="text" name="nom" required placeholder="VOTRE NOM">
@@ -17,6 +17,7 @@
                 <textarea name="message" cols="80" rows="10" required placeholder="VOTRE MESSAGE"></textarea>
             </label>
             <button type="submit">ENVOYER VOTRE MESSAGE</button>
+            <div id="form-contact">
 
 <?php
 
@@ -28,8 +29,8 @@
 // echo "<h3>TABLEAU GET</h3>";
 // print_r($_GET);
 
-echo "<h3>TABLEAU POST</h3>";
-print_r($_POST);
+// echo "<h3>TABLEAU POST</h3>";
+// print_r($_POST);
 
 // echo "<h3>TABLEAU REQUEST</h3>";
 // print_r($_REQUEST);
@@ -89,6 +90,7 @@ else
 }
 
 ?>
+            </div>
         </form>
         <img src="./assets/img/article1.jpg" alt="article1">
     </article>

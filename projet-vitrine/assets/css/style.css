@@ -13,29 +13,45 @@ html, body {
 
 img {
     width:100%;
+    max-height:50vh;
+    object-fit: cover;
 }
 
 header, main, footer {
     padding:1rem;
 }
+header, footer {
+    text-align: center;
+    background-color: #dddddd;
+}
+h1, h2, h3, p {
+    text-align: center;
+}
 
+article p {
+    max-width: 800px;
+    text-align: justify;
+}
 /* COULEURS */
 
 .header__img {
-    height:100px;
-    width:160px;
+    height:120px;
+    width:120px;
     object-fit: cover;
+    border-radius: 60px;
 }
 
 h1 {
-    color:orange;
+    color:#ff9800;
 }
 
 .galerie {
     display:flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .galerie img {
+    min-width: 140px;
     width: calc(100% / 3);
     object-fit: cover;
     height: 30vh;
@@ -49,40 +65,49 @@ nav a {
 }
 
 nav a.active {
-    background-color:#cccccc;
-    border:1px solid #aaaaaa;
-    border-radius:1rem;
+    background-color:#eeeeee;
+    border-bottom:1px solid #333333;
 }
 
 .lightbox {
     position:fixed;
-    top:100%;
     left:0;
     z-index: 99;
     width: 100%;
     height:100%;
-    padding:5rem;
+    padding:4rem;
     background-color:rgba(0,0,0,0.8);
     transition: all 0.3s ease-in;
+    opacity:0;
+    top:100%;
 }
 
 .lightbox.active {
+    opacity:1;
     top:0;
+    padding:2rem;
 }
 
 .lightbox img {
     width:100%;
     height:100%;
+    max-height:100%;
     object-fit: contain;
 }
 
+/* FORMULAIRES */
 form {
     display: flex;
     flex-direction: column;
+    max-width:640px;
+}
+form label {
+    padding:0.25rem;
 }
 input, textarea, button {
     width:100%;
     padding:0.5rem;
+    margin:0.5rem;
     font-family: monospace;
 }
 
