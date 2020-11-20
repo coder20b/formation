@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.slide {
+            width:100%;
+            height:30vh;
+            background-size: cover;
+        }     
+    </style>
+</head>
+<body>
+    <section>
+        <h1>CAROUSEL</h1>
+        <div class="slide" style="background-image: url('galerie-1.jpg');"></div>
+        <button class="precedent">PRECEDENT</button>
+        <button class="suivant">SUIVANT</button>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script>
+let images = [
+    'galerie-1.jpg',        // INDICE 0
+    'galerie-2.jpg',        // INDICE 1
+    'galerie-3.jpg'         // INDICE 2
+];
+
+let compteur = 0;
+
+
+jQuery('.suivant').click(function(){
+    // INCREMENTER LE COMPTEUR
+    compteur = (compteur +1) % images.length;   // ASTUCE QUI VA FAIRE BOUCLER A ZERO SI ON DEBORDE
+    srcSuivant = images[compteur];
+    jQuery('.slide').css('background-image', "url('" + srcSuivant + "')");
+});
+
+jQuery('.precedent').click(function(){
+    // DECREMENTER LE COMPTEUR
+    compteur = (compteur -1);   
+    if (compteur < 0) {
+        compteur = images.length -1;  // INDICE DERNIER EST NB ELEMENT -1
+    }
+
+    srcPrecedent = images[compteur];
+    jQuery('.slide').css('background-image', "url('" + srcPrecedent + "')");
+});
+
+setInterval(function() {
+    // ON SIMULE LE CLICK SUR LE BOUTON SUIVANT
+    jQuery('.suivant').click();
+},
+2000);  // 2s
+
+    </script>
+</body>
+</html>

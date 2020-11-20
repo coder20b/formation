@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+img {
+    width:100%;
+    height:30vh;
+    object-fit: cover;
+}   
+div.slide {
+    width:100%;
+    height:30vh;
+    background-size: cover;
+}     
+    </style>
+</head>
+<body>
+    
+    <section>
+        <h1>CAROUSEL</h1>
+        <!-- <img class="slide" src="galerie-1.jpg" alt="galerie-1"> -->
+        <div class="slide" style="background-image: url('galerie-1.jpg');"></div>
+        <button class="precedent">PRECEDENT</button>
+        <button class="suivant">SUIVANT</button>
+        <script>
+let images = [
+    'galerie-1.jpg',        // INDICE 0
+    'galerie-2.jpg',        // INDICE 1
+    'galerie-3.jpg'         // INDICE 2
+];
+
+let compteur = 0;
+
+let precedent = document.querySelector('.precedent');
+let suivant = document.querySelector('.suivant');
+let slide = document.querySelector('.slide');
+
+suivant.addEventListener('click', function () {
+    // INCREMENTER LE COMPTEUR
+    compteur = (compteur +1) % images.length;   // ASTUCE QUI VA FAIRE BOUCLER A ZERO SI ON DEBORDE
+    srcSuivant = images[compteur];
+    // CHANGE L'IMAGE DU SLIDE
+    // slide.src = srcSuivant;
+
+    // CHANGE LA BACKGROUND-IMAGE
+    slide.style.backgroundImage = "url('" + srcSuivant + "')";
+})
+
+precedent.addEventListener('click', function () {
+    // DECREMENTER LE COMPTEUR
+    compteur = (compteur -1);   
+    if (compteur < 0) {
+        compteur = images.length -1;  // INDICE DERNIER EST NB ELEMENT -1
+    }
+
+    srcPrecedent = images[compteur];
+    // CHANGE L'IMAGE DU SLIDE
+    // slide.src = srcPrecedent;
+
+    // CHANGE LA BACKGROUND-IMAGE
+    slide.style.backgroundImage = "url('" + srcPrecedent + "')";
+})
+
+setInterval(function() {
+    // ON SIMULE LE CLICK SUR LE BOUTON SUIVANT
+    suivant.click();
+},
+2000);  // 2s
+
+        </script>
+    </section>
+</body>
+</html>
