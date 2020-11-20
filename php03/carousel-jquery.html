@@ -30,29 +30,36 @@ let images = [
 let compteur = 0;
 
 
-jQuery('.suivant').click(function(){
-    // INCREMENTER LE COMPTEUR
-    compteur = (compteur +1) % images.length;   // ASTUCE QUI VA FAIRE BOUCLER A ZERO SI ON DEBORDE
-    srcSuivant = images[compteur];
-    jQuery('.slide').css('background-image', "url('" + srcSuivant + "')");
+jQuery(function(){
+    // ON ATTEND QUE LE HTML SOIT PRET
+    // AVANT DE LANCER NOTRE CODE JS DESSUS
+    
+    jQuery('.suivant').click(function(){
+        // INCREMENTER LE COMPTEUR
+        compteur = (compteur +1) % images.length;   // ASTUCE QUI VA FAIRE BOUCLER A ZERO SI ON DEBORDE
+        srcSuivant = images[compteur];
+        jQuery('.slide').css('background-image', "url('" + srcSuivant + "')");
+    });
+
+    jQuery('.precedent').click(function(){
+        // DECREMENTER LE COMPTEUR
+        compteur = (compteur -1);   
+        if (compteur < 0) {
+            compteur = images.length -1;  // INDICE DERNIER EST NB ELEMENT -1
+        }
+
+        srcPrecedent = images[compteur];
+        jQuery('.slide').css('background-image', "url('" + srcPrecedent + "')");
+    });
+
+    setInterval(function() {
+        // ON SIMULE LE CLICK SUR LE BOUTON SUIVANT
+        jQuery('.suivant').click();
+    },
+    2000);  // 2s
+
 });
 
-jQuery('.precedent').click(function(){
-    // DECREMENTER LE COMPTEUR
-    compteur = (compteur -1);   
-    if (compteur < 0) {
-        compteur = images.length -1;  // INDICE DERNIER EST NB ELEMENT -1
-    }
-
-    srcPrecedent = images[compteur];
-    jQuery('.slide').css('background-image', "url('" + srcPrecedent + "')");
-});
-
-setInterval(function() {
-    // ON SIMULE LE CLICK SUR LE BOUTON SUIVANT
-    jQuery('.suivant').click();
-},
-2000);  // 2s
 
     </script>
 </body>
