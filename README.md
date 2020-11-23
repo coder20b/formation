@@ -610,13 +610,14 @@ MaClasse::afficherTitre("bonjour");
         └── section-contact.php
 
 
-    ENSUITE, POUR COMPRENDRE L'EVOLUTION
+    ENSUITE, POUR MIEUX COMPRENDRE L'EVOLUTION EN MVC
     AJOUTER SUR LA PAGE D'ACCUEIL UN FORMULAIRE D'INSCRIPTION A UNE NEWSLETTER
 
         nom
         email
         bouton  'inscrivez-moi'
 
+    ET AJOUTER LE CODE PHP POUR TRAITER LE FORMULAIRE DE NEWSLETTER
     ET ON ENREGISTRERA CES INFORMATIONS DANS UN FICHIER 
         newsletter.txt
 
@@ -633,7 +634,7 @@ MaClasse::afficherTitre("bonjour");
 
     * AVANCER SUR LES EXERCICES DES FONCTIONS
 
-    
+
 
 
 
