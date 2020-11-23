@@ -515,9 +515,32 @@ MaClasse::afficherTitre("bonjour");
         model/
         view/
         controller/
-        
-                                      
 
+
+## EXERCICE EN AUTONOMIE
+
+    RECONSTRUIRE LE PROJET VITRINE DANS LE PROJET BLOG
+    EN ADAPTANT LE CODE POUR GERER LES SOUS-DOSSIERS
+        php/
+            model/
+            view/
+            controller/
+
+
+    ENSUITE, POUR COMPRENDRE L'EVOLUTION
+    AJOUTER SUR LA PAGE D'ACCUEIL UN FORMULAIRE D'INSCRIPTION A UNE NEWSLETTER
+
+        nom
+        email
+        bouton  'incrivez-moi'
+
+    ET ON ENREGISTRER CES INFORMATIONS DANS UN FICHIER 
+        newsletter.txt
+
+
+    CHECKPOINT A 15H20...
+
+    
 
 
 
