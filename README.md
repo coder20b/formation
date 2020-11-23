@@ -401,6 +401,9 @@ MaClasse::afficherTitre("bonjour");
     https://informationisbeautiful.net/visualizations/million-lines-of-code/
 
 
+    PAUSE DEJEUNER ET REPRISE A 13H45...
+
+    
 
 
 
