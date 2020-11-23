@@ -284,6 +284,10 @@ MaClasse::afficherTitre("bonjour");
     $hauteur  = 2
     // RESULTAT ATTENDU: 24m3
 
+    EXTRA:
+    * CREER LE CODE EN PROGRAMMATION PAR CLASSE
+    * CREER LE CODE EN JS
+    
 ## EXO2
 
     CREER UN FICHIER PAR EXERCICE
@@ -306,6 +310,9 @@ MaClasse::afficherTitre("bonjour");
 
     SURFACE_4_MURS = 2 * ( GRAND_MUR + PETIT_MUR ) 
 
+    EXTRA:
+    * CREER LE CODE EN PROGRAMMATION PAR CLASSE
+    * CREER LE CODE EN JS
 
 ## EXO3
 
@@ -321,6 +328,10 @@ MaClasse::afficherTitre("bonjour");
     $nombre1 = 10
     $nombre2 = 20
     // RESULTAT ATTENDU 10
+
+    EXTRA:
+    * CREER LE CODE EN PROGRAMMATION PAR CLASSE
+    * CREER LE CODE EN JS
 
 ## EXO4
 
@@ -351,6 +362,10 @@ MaClasse::afficherTitre("bonjour");
     $nombre3 = 9
     // RESULTAT ATTENDU 9
 
+    EXTRA:
+    * CREER LE CODE EN PROGRAMMATION PAR CLASSE
+    * CREER LE CODE EN JS
+
 ## EXO5
 
     CREER UN FICHIER PAR EXERCICE
@@ -364,6 +379,10 @@ MaClasse::afficherTitre("bonjour");
     $tabNombre = [ 12, 3, 45, 1, 100, 35 ];
     // RESULTAT ATTENDU 1
 
+    EXTRA:
+    * CREER LE CODE EN PROGRAMMATION PAR CLASSE
+    * CREER LE CODE EN JS
+
 ## EXO6
 
     CREER UN FICHIER PAR EXERCICE
@@ -376,6 +395,10 @@ MaClasse::afficherTitre("bonjour");
     ET ON TESTERA AVEC 
     $tabNombre = [ 12, 3, 45, 1, 100, 35 ];
     // RESULTAT ATTENDU 196
+
+    EXTRA:
+    * CREER LE CODE EN PROGRAMMATION PAR CLASSE
+    * CREER LE CODE EN JS
 
 ## EXO7
 
@@ -393,6 +416,9 @@ MaClasse::afficherTitre("bonjour");
     // RESULTAT ATTENDU "a,b,c,d"
     // ATTENTION: PAS DE VIRGULE AU DEBUT OU A LA FIN
 
+    EXTRA:
+    * CREER LE CODE EN PROGRAMMATION PAR CLASSE
+    * CREER LE CODE EN JS
 
 ## EXO8
 
@@ -411,6 +437,10 @@ MaClasse::afficherTitre("bonjour");
     <img src="assets/img/photo2.jpg">
     <img src="assets/img/photo3.jpg">
 
+    EXTRA:
+    * CREER LE CODE EN PROGRAMMATION PAR CLASSE
+    * CREER LE CODE EN JS
+
 ## EXO9
 
     CREER UN FICHIER PAR EXERCICE
@@ -425,7 +455,7 @@ MaClasse::afficherTitre("bonjour");
         "galerie" => "galerie.php", 
         "contact" => "contact.php" 
         ]);
-        
+
     ET QUI PRODUIRA LE CODE HTML
     <nav>
         <a href="index.php">accueil</a>
