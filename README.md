@@ -635,7 +635,8 @@ MaClasse::afficherTitre("bonjour");
 
     * AVANCER SUR LES EXERCICES DES FONCTIONS
 
-
+    FIN DE JOURNEE ;-p
+    
 
 
 
