@@ -390,6 +390,10 @@ MaClasse::afficherTitre("bonjour");
 
 
 
+## MILLIONS DE LIGNES DE CODE
+
+    COMPARAISON DES ORDRES DE GRANDEUR SUR LES VOLUMES DE CODE...
+    https://informationisbeautiful.net/visualizations/million-lines-of-code/
 
 
 
