@@ -394,6 +394,45 @@ MaClasse::afficherTitre("bonjour");
     // ATTENTION: PAS DE VIRGULE AU DEBUT OU A LA FIN
 
 
+## EXO8
+
+    CREER UN FICHIER PAR EXERCICE
+    exo08.php
+
+    CREER UNE FONCTION QUI PREND EN PARAMETRE UN TABLEAU ORDONNE
+    DE CHEMINS D'IMAGE $tabImage
+    ET QUI AFFICHE UNE LISTE D'IMAGES EN HTML
+
+    EXEMPLE:
+    creerGalerie([ "assets/img/photo1.jpg", "assets/img/photo2.jpg", "assets/img/photo3.jpg" ]);
+
+    ET QUI PRODUIRA LE CODE HTML
+    <img src="assets/img/photo1.jpg">
+    <img src="assets/img/photo2.jpg">
+    <img src="assets/img/photo3.jpg">
+
+## EXO9
+
+    CREER UN FICHIER PAR EXERCICE
+    exo09.php
+
+    CREER UNE FONCTION QUI PREND EN PARAMETRE UN TABLEAU ASSOCIATIF
+    ET QUI AFFICHE UN MENU EN HTML
+
+    EXEMPLE:
+    creerMenu([ 
+        "accueil" => "index.php", 
+        "galerie" => "galerie.php", 
+        "contact" => "contact.php" 
+        ]);
+        
+    ET QUI PRODUIRA LE CODE HTML
+    <nav>
+        <a href="index.php">accueil</a>
+        <a href="galerie.php">galerie</a>
+        <a href="contact.php">contact</a>
+    </nav>
+
 
 ## MILLIONS DE LIGNES DE CODE
 
