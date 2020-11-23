@@ -403,7 +403,135 @@ MaClasse::afficherTitre("bonjour");
 
     PAUSE DEJEUNER ET REPRISE A 13H45...
 
-    
+
+## PROJET BLOG
+
+    100 PAGES POUR UN PROJET WEB
+
+    SITE OU UN AUTEUR PEUT PUBLIER REGULIEREMENT DES ARTICLES
+    IL Y A UNE PAGE QUI AFFICHE LA LISTE DES ARTICLES
+    ET CHAQUE ARTICLE A AUSSI SA PROPRE PAGE
+    DANS LA PAGE QUI AFFICHE LA LISTE DES ARTICLES, IL Y AURA DES HYPERLIENS
+    QUI PERMETTENT D'ALLER VERS LA PAGE D'UN SEUL ARTICLE
+
+
+    PAGES:
+    Accueil
+    Blog/News/Actus     => LISTE DES ARTICLES
+    Article(S)          => CHAQUE ARTICLE A SA PROPRE PAGE *
+                            => VA CREER DES PAGES EN PLUS PAR RAPPORT AU SITE VITRINE
+    Galerie
+    Contact
+
+    COTE DEV:
+    ON VA SE PREPARER A CODER PLUS DE PHP
+    => ON VA AVOIR PLUS DE FICHIERS
+    => ON VA AVOIR AUSSI PLUS DE DOSSIERS POUR LES ORGANISER
+
+        Model
+        View
+        Controller
+
+    L'ORGANISATION MVC FAIT PARTIE DES DESIGN PATTERNS
+    DESIGN PATTERNS     => SCHEMA DE CONCEPTION
+    traduction perso    => RECETTE DE FABRICATION 
+
+    DESIGN PATTERNS PROVIENNENT DE RETOURS D'EXPERIENCE
+    (BEST PRACTICES EN ANGLAIS...)
+
+    MVC EST UN DES DESIGN PATTERNS (10-20 DESIGN PATTERNS...)
+
+## Model View Controller
+
+    DANS UN PROJET, IL PEUT Y AVOIR PLUSIEURS MVC...
+
+    COTE BACK: 
+    ON VA ORGANISER NOTRE CODE PHP EN 3 PARTIES
+    * Model
+    * View
+    * Controller
+
+    COTE FRONT: HTML, CSS, JS
+    HTML        DOCUMENT CONTENU DE LA PAGE
+    CSS         MISE EN FORME
+    JS          INTERACTION ANIMATION
+    ?
+    * Model             HTML
+    * View              CSS
+    * Controller        JS
+
+    Model 
+    => Modelisation 
+    => TRAVAIL DE DEFINIR LES INFORMATIONS DU MONDE REEL QUI NOUS INTERESSENT DANS NOTRE PROJET WEB
+
+    Exemple: Boutique en ligne pour vendre des fleurs
+        Clients qui vont acheter des bouquets
+        => ON A BESOIN DE STOCKER DES INFOS SUR LES CLIENTS
+        => On va modéliser un client
+                date anniversaire
+                age
+                email
+                nom
+                numero carte bleu
+                adresse
+                code postal
+                couleur cheveux ???
+                couleur favorite    => couleur fleur
+                ...
+
+    ATTENTION: LA LOI RGPD VOUS CONSTRAINT A POUVOIR JUSTIFIER LES INFOS UTILES
+        CERTAINS INFOS NE PEUVENT PAS ETRE OBLIGATOIRES
+
+
+    CHAQUE PROJET DEMANDE UNE MODELISATION SPECIFIQUE
+
+
+    View
+    => Afficher
+    => Tout ce qui est visuel, présentation
+
+    Controller
+    => Controleur
+    => Code qui gère les interactions avec l'utilisateur
+    => Principe général: Paranoia NE JAMAIS FAIRE CONFIANCE AUX INCONNUS
+    => SECURITE: VERIFIER TOUTES LES ACTIONS DES UTILISATEURS
+
+## MVC COTE BACK
+
+    NAVIGATEUR                  SERVEUR WEB
+
+    PAGE WEB        <====       TEMPLATE        + INFOS      
+                                VIEW            + MODEL
+
+    FORMULAIRE      ====>       TRAITER LES INFOS DU FORMULAIRE
+                                => SECURITE POUR VERIFIER QUE LES INFOS SONT VALIDES
+                                => CONTROLLER
+
+    EN PRATIQUE:
+    ON VA AJOUTER DES SOUs-DOSSIERS DANS LE DOSSIER php
+
+
+    php/
+        model/
+        view/
+        controller/
+        
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
