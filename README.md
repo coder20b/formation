@@ -267,12 +267,126 @@ MaClasse::afficherTitre("bonjour");
 
     PAUSE ET ON REPREND A 11H15
 
+## EXO1
+
+    CREER UN FICHIER PAR EXERCICE
+    exo01.php
+
+    CREER UNE FONCTION QUI CALCULE LE VOLUME D'UNE PIECE
+    EN PARAMETRE ON FOURNIRA LES 3 DIMENSIONS
+    $longueur
+    $largeur 
+    $hauteur
+
+    ET ON TESTERA AVEC 
+    $longueur = 4
+    $largeur  = 3
+    $hauteur  = 2
+    // RESULTAT ATTENDU: 24m3
+
+## EXO2
+
+    CREER UN FICHIER PAR EXERCICE
+    exo02.php
     
+    CREER UNE FONCTION QUI CALCULE LA SURFACE DES 4 MURS
+    EN PARAMETRE ON FOURNIRA LES 3 DIMENSIONS
+    $longueur
+    $largeur 
+    $hauteur
+
+    ET ON TESTERA AVEC 
+    $longueur = 4
+    $largeur  = 3
+    $hauteur  = 2
+    // RESULTAT ATTENDU: 28m2
 
 
+## EXO3
 
+    CREER UN FICHIER PAR EXERCICE
+    exo03.php
 
+    CREER UNE FONCTION QUI CALCULE LE PLUS PETIT (OU EGAL) ENTRE 2 NOMBRES
+    EN PARAMETRE, ON FOURNIRA LES 2 NOMBRES
+    $nombre1
+    $nombre2
 
+    ET ON TESTERA AVEC 
+    $nombre1 = 10
+    $nombre2 = 20
+    // RESULTAT ATTENDU 10
+
+## EXO4
+
+    CREER UN FICHIER PAR EXERCICE
+    exo04.php
+    
+    CREER UNE FONCTION QUI CALCULE LE PLUS PETIT ENTRE 3 NOMBRES
+    EN PARAMETRE, ON FOURNIRA LES 3 NOMBRES
+    $nombre1
+    $nombre2
+    $nombre3
+
+    ET ON TESTERA AVEC 
+    $nombre1 = 10
+    $nombre2 = 2
+    $nombre3 = 7
+    // RESULTAT ATTENDU 2
+
+    ET ON TESTERA AVEC 
+    $nombre1 = 1
+    $nombre2 = 7
+    $nombre3 = 19
+    // RESULTAT ATTENDU 1
+
+    ET ON TESTERA AVEC 
+    $nombre1 = 12
+    $nombre2 = 71
+    $nombre3 = 9
+    // RESULTAT ATTENDU 9
+
+## EXO5
+
+    CREER UN FICHIER PAR EXERCICE
+    exo05.php
+    
+    CREER UNE FONCTION QUI TROUVE LA PLUS PETITE VALEUR DANS UN TABLEAU DE NOMBRES
+    EN PARAMETRE, ON FOURNIRA UN TABLEAU DE NOMBRES
+    $tabNombre
+
+    ET ON TESTERA AVEC 
+    $tabNombre = [ 12, 3, 45, 1, 100, 35 ];
+    // RESULTAT ATTENDU 1
+
+## EXO6
+
+    CREER UN FICHIER PAR EXERCICE
+    exo06.php
+    
+    CREER UNE FONCTION QUI CALCULE LA SOMME DES VALEURS DANS UN TABLEAU DE NOMBRES
+    EN PARAMETRE, ON FOURNIRA UN TABLEAU DE NOMBRES
+    $tabNombre
+
+    ET ON TESTERA AVEC 
+    $tabNombre = [ 12, 3, 45, 1, 100, 35 ];
+    // RESULTAT ATTENDU 196
+
+## EXO7
+
+    CREER UN FICHIER PAR EXERCICE
+    exo07.php
+
+    CREER UNE FONCTION QUI RENVOIE 
+    UN TEXTE CONCATENANT LES VALEURS D'UN TABLEAU DE LETTRES
+    EN SEPARANT CHAQUE LETTRE AVEC UNE VIRGULE
+    EN PARAMETRE, ON FOURNIRA UN TABLEAU DE LETTRES
+    $tabLettre
+
+    ET ON TESTERA AVEC 
+    $tabLettre = [ "a", "b", "c", "d" ];
+    // RESULTAT ATTENDU "a,b,c,d"
+    // ATTENTION: PAS DE VIRGULE AU DEBUT OU A LA FIN
 
 
 
