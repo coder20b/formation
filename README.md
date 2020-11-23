@@ -596,6 +596,20 @@ MaClasse::afficherTitre("bonjour");
             controller/
 
 
+    ON VEUT OBTENIR L'ORGANISATION SUIVANTE...
+
+    contact.php
+    php
+    ├── controller
+    │   └── traitement-contact.php
+    ├── model
+    │   └── contact.txt
+    └── view
+        ├── footer.php
+        ├── header.php
+        └── section-contact.php
+
+
     ENSUITE, POUR COMPRENDRE L'EVOLUTION
     AJOUTER SUR LA PAGE D'ACCUEIL UN FORMULAIRE D'INSCRIPTION A UNE NEWSLETTER
 
