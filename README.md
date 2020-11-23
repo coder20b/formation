@@ -508,7 +508,7 @@ MaClasse::afficherTitre("bonjour");
                                 => CONTROLLER
 
     EN PRATIQUE:
-    ON VA AJOUTER DES SOUs-DOSSIERS DANS LE DOSSIER php
+    ON VA AJOUTER DES SOUS-DOSSIERS DANS LE DOSSIER php
 
 
     php/
@@ -532,15 +532,15 @@ MaClasse::afficherTitre("bonjour");
 
         nom
         email
-        bouton  'incrivez-moi'
+        bouton  'inscrivez-moi'
 
-    ET ON ENREGISTRER CES INFORMATIONS DANS UN FICHIER 
+    ET ON ENREGISTRERA CES INFORMATIONS DANS UN FICHIER 
         newsletter.txt
 
 
     CHECKPOINT A 15H20...
 
-    
+    PAUSE ET REPRISE A 16H15
 
 
 
