@@ -304,9 +304,9 @@ MaClasse::afficherTitre("bonjour");
     GRAND MUR = $longueur * $hauteur 
     PETIT MUR = $largeur * $hauteur
 
-    SURFACE_4_MURS= 2 * ( GRAND_MUR + PETIT_MUR ) 
+    SURFACE_4_MURS = 2 * ( GRAND_MUR + PETIT_MUR ) 
 
-    
+
 ## EXO3
 
     CREER UN FICHIER PAR EXERCICE
