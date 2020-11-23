@@ -301,7 +301,12 @@ MaClasse::afficherTitre("bonjour");
     $hauteur  = 2
     // RESULTAT ATTENDU: 28m2
 
+    GRAND MUR = $longueur * $hauteur 
+    PETIT MUR = $largeur * $hauteur
 
+    SURFACE_4_MURS= 2 * ( GRAND_MUR + PETIT_MUR ) 
+
+    
 ## EXO3
 
     CREER UN FICHIER PAR EXERCICE
