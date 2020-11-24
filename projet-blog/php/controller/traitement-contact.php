@@ -31,40 +31,50 @@ else
     // IL FAUT TRAITER LES INFOS DU FORMULAIRE
     // ENVOYER LES INFOS PAR MAIL
     // https://www.php.net/manual/fr/function.mail.php
+    require_once "php/controller/fonctions.php";
 
-    $nom        = $_POST["nom"];
-    $email      = $_POST["email"];
-    $message    = $_POST["message"];
+    $nom        = filtrer("nom");
+    $email      = filtrer("email");
+    $message    = filtrer("message");
 
-    $mail = 
-    <<<texte
-    message reçu sur le site.
+    if ( ($nom != "") && ($email != "") && ($message != "") )
+    {
+        $mail = 
+        <<<texte
+        message reçu sur le site.
+        
+        nom: $nom
+        email: $email
+        message:
+        $message
+        ------
     
-    nom: $nom
-    email: $email
-    message:
-    $message
-    ------
+        texte;
+    
+        $headers =  'From: contact@monsite.fr' . "\r\n" .
+                    'Reply-To: no-reply@monsite.fr' . "\r\n" .
+                    'X-Mailer: PHP/' . phpversion();
+    
+        @mail("test@applh.com", "nouveau message", $mail, $headers);
+    
+        // EN localhost ERREUR CAR PAS DE SERVEUR EMAIL
+        // Warning : mail(): Failed to connect to mailserver at "localhost" port 25, verify your "SMTP" and "smtp_port"
+    
+        // STOCKER LES INFOS DANS UN FICHIER
+        // PEUT ETRE UNE SECURITE SI LE MAIL S'EST PERDU...
+        // ON VA UTILISER UN FICHIER php/contact.txt
+        // https://www.php.net/manual/fr/function.file-put-contents
+        file_put_contents("php/model/contact.txt", $mail, FILE_APPEND);
+    
+        // AFFICHER UN MESSAGE DE CONFIRMATION
+        echo "<h4>Nous avons bien reçu votre message. Nous vous répondrons dans les meilleurs délais</h4>";
+    
+    }
+    else
+    {
+        echo "<h1>merci de ne pas hacker mon site</h1>";
+    }
 
-    texte;
-
-    $headers =  'From: contact@monsite.fr' . "\r\n" .
-                'Reply-To: no-reply@monsite.fr' . "\r\n" .
-                'X-Mailer: PHP/' . phpversion();
-
-    @mail("test@applh.com", "nouveau message", $mail, $headers);
-
-    // EN localhost ERREUR CAR PAS DE SERVEUR EMAIL
-    // Warning : mail(): Failed to connect to mailserver at "localhost" port 25, verify your "SMTP" and "smtp_port"
-
-    // STOCKER LES INFOS DANS UN FICHIER
-    // PEUT ETRE UNE SECURITE SI LE MAIL S'EST PERDU...
-    // ON VA UTILISER UN FICHIER php/contact.txt
-    // https://www.php.net/manual/fr/function.file-put-contents
-    file_put_contents("php/model/contact.txt", $mail, FILE_APPEND);
-
-    // AFFICHER UN MESSAGE DE CONFIRMATION
-    echo "<h4>Nous avons bien reçu votre message. Nous vous répondrons dans les meilleurs délais</h4>";
 
 }
 

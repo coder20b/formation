@@ -10,36 +10,50 @@ if (count($_POST) == 0)
 else
 {
     // SCENARIO 2
-    echo "<p>nous vous envoyons un mail de newsletter rapidement.</p>";
     // AJOUTER LE CODE POUR ENREGISTRER LES INFOS
     // => ENREGISTRER LES INFOS DANS UN FICHIER newsletter.txt
 
+    require_once "php/controller/fonctions.php";
+
+    // CREER UNE FONCTION POUR FILTRER LES INFOS DE FORMULAIRES
     // RECUPERER LES INFOS
     // <input name="email">
-    $email  = $_POST["email"];
+    $email  = filtrer("email");    
     // <input name="nom">
-    $nom    = $_POST["nom"];
+    $nom    = filtrer("nom");
 
-    // COMPLETER LES INFOS
-    // https://www.php.net/manual/fr/function.date.php
-    $date = date("Y-m-d H:i:s");    // 2020-11-24 14:34:12
+    // ON NE FAIT LE RESTE DU CODE QUE SI LES INFOS NE SONT PAS VIDES
+    if (($email != "") && ($nom != ""))
+    {
+        // COMPLETER LES INFOS
+        // https://www.php.net/manual/fr/function.date.php
+        $date = date("Y-m-d H:i:s");    // 2020-11-24 14:34:12
 
-    $message =
-    <<<x
-    nom: $nom
-    email: $email
-    date: $date
-    --------
+        $message =
+        <<<x
+        nom: $nom
+        email: $email
+        date: $date
+        --------
 
-    x;
+        x;
 
-    file_put_contents("php/model/newsletter.txt", $message, FILE_APPEND);
+        file_put_contents("php/model/newsletter.txt", $message, FILE_APPEND);
 
-    $headers =  'From: contact@monsite.fr' . "\r\n" .
-    'Reply-To: no-reply@monsite.fr' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+        $headers =  'From: contact@monsite.fr' . "\r\n" .
+        'Reply-To: no-reply@monsite.fr' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
 
-    @mail("test@applh.com", "nouveau inscrit", $message, $headers);
+        @mail("test@applh.com", "nouveau inscrit", $message, $headers);
+
+        echo "<p>nous vous envoyons un mail de newsletter rapidement.</p>";
+
+    }
+    else 
+    {
+        // SCENARIO HACK
+        echo "<h1>MERCI DE NE PAS HACKER MON SITE</h1>";
+    }
 
 }
 

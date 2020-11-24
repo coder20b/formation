@@ -1,7 +1,7 @@
 message reçu sur le site.
 
-nom: nom1451
-email: mail1451@me
+nom: test1542
+email: mail1542@me
 message:
-message1451
+message 1542
 ------
