@@ -384,6 +384,22 @@ afficherTexte();        // texte local 2
     => LE PLUS SIMPLE UTILISER UNE PROPRIETE static DE CLASSE
 
 
+## BATTLEDEV
+
+    https://battledev.blogdumoderateur.com/
+
+    CORRIGES DES ANCIENS BATTLEDEV...
+    https://www.isograd.com/FR/solutionconcours.php?contest_id=63&que_str_id=&reg_typ_id=2
+
+
+
+
+
+
+
+
+
+
 
 
 
