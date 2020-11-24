@@ -464,6 +464,85 @@ MaClasse::afficherTitre("bonjour");
     </nav>
 
 
+## EXO10
+
+    (UN PEU PLUS COMPLIQUE...)
+    CREER UN FICHIER PAR EXERCICE
+    exo10.php
+
+    CREER UN DAMIER
+    CREER UNE FONCTION QUI AFFICHE UN DAMIER CARRE
+
+    EN PARAMETRE ON DONNE LE NOMBRE DE CASES PAR COTE
+    ET ON DOIT AFFICHER UN DAMIER
+
+    EXEMPLE:
+    creerDamier(3);
+
+    XOX
+    OXO
+    XOX
+
+    creerDamier(4);
+
+    XOXO
+    OXOX
+    XOXO
+    OXOX
+
+    creerDamier(5);
+
+    XOXOX
+    OXOXO
+    XOXOX
+    OXOXO
+    XOXOX
+
+## EXO 11
+
+    (UN PEU PLUS COMPLIQUE...)
+    CREER UN FICHIER PAR EXERCICE
+    exo11.php
+
+    CREER UN DISTRIBUTEUR DE BILLETS
+
+    CREER UNE FONCTION QUI PREND EN PARAMETRE UN MONTANT DEMANDE
+    $montantDemande
+    ET QUI RENVERRA UN TABLEAU ASSOCIATIF DE BILLETS
+
+    IL Y A DES FONCTIONS PHP POUR ARRONDIR
+    https://www.php.net/manual/fr/function.floor.php
+    https://www.php.net/manual/fr/function.ceil.php
+    https://www.php.net/manual/fr/function.round.php
+
+    ET AUSSI ASTUCE: UTILISER LE MODULO %...
+
+
+    EXEMPLE:
+    distribuerBillet(345);
+
+
+    ON OBTIENDRA COMME RESULTAT UN TABLEAU ASSOCIATIF
+
+    $tabResultat =
+    [
+        "500"   => 0,
+        "200"   => 1,
+        "100"   => 1,
+        "50"    => 0,
+        "20"    => 2,
+        "10"    => 0,
+        "5"     => 1,
+    ];
+
+    BONUS:
+    CREER UNE PAGE AVEC UN FORMULAIRE QUI DEMANDE LE MONTANT
+    ET AFFICHER LES BILLETS CORRESPONDANTS...
+
+    LES IMAGES DES BILLETS PEUVENT ETRE TROUVEES SUR INTERNET...
+    https://fr.wikipedia.org/wiki/Billets_de_banque_en_euros
+
+
 ## MILLIONS DE LIGNES DE CODE
 
     COMPARAISON DES ORDRES DE GRANDEUR SUR LES VOLUMES DE CODE...

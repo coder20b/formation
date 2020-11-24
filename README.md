@@ -310,14 +310,14 @@ function calculer ()
 ## PROGRAMMATION PAR CLASSE ET PROPRIETES static
 
 
-```
+```php
 <?php
 
 $texteGlobal = "MON TEXTE GLOBAL";              // VARIABLE GLOBALE
 
 class MaConfig
 {
-    static $titreSite = "titre du site";
+    static $titreSite = "titre du site";        // PROPRIETE STATIC DE CLASSE
 }
 
 class MaClasse
@@ -349,7 +349,7 @@ echo MaClasse::$texte;
 
     ON A DES VARIABLES static DE FONCTION
     ENTRE UNE VARIABLE LOCALE ET UNE VARIABLE GLOBALE
-    
+
 ```php
 <?php
 
@@ -373,6 +373,16 @@ afficherTexte();        // texte local 2
 ```
 
     PAUSE ET REPRISE A 11H20...
+
+
+## EN PRATIQUE: ON PEUT FAIRE SIMPLE
+
+    UTILISER DES VARIABLES LOCALES DANS UNE FONCTION
+    => LA PLUPART DES SCENARIOS
+
+    SI ON A BESOIN DE MEMORISER UNE INFO AU DELA DE L'APPEL D'UNE FONCTION
+    => LE PLUS SIMPLE UTILISER UNE PROPRIETE static DE CLASSE
+
 
 
 
