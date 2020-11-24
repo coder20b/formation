@@ -1,5 +1,6 @@
 <?php 
 
+// VARIABLES GLOBALES
 // ON EST DANS LA PAGE index.php
 $titre = "Accueil";
 // cette valeur va remplacer le texte par défaut
