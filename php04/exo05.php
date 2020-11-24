@@ -25,7 +25,7 @@ function minimum ($tab)
     $min = $tab[0];                 // ASTUCE: INITIALISER LA VALEUR AU PREMIER ELEMENT
     foreach($tab as $current) 
     {
-        if ($min > $current) {
+        if ($current < $min) {
             $min = $current;        // ON MET A JOUR LA VALEUR MINIMALE
         }
     }

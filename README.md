@@ -392,6 +392,9 @@ afficherTexte();        // texte local 2
     https://www.isograd.com/FR/solutionconcours.php?contest_id=63&que_str_id=&reg_typ_id=2
 
 
+    PAUSE DEJEUNER A 12H45 
+    ET REPRISE A 13H45...
+
 
 
 
