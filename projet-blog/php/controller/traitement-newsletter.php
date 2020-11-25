@@ -31,14 +31,11 @@ else
 
         $message =
         <<<x
-        nom: $nom
-        email: $email
-        date: $date
-        --------
+        $nom,$email,$date
 
         x;
 
-        file_put_contents("php/model/newsletter.txt", $message, FILE_APPEND);
+        file_put_contents("php/model/newsletter.csv", $message, FILE_APPEND);
 
         $headers =  'From: contact@monsite.fr' . "\r\n" .
         'Reply-To: no-reply@monsite.fr' . "\r\n" .
