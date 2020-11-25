@@ -264,7 +264,169 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?8DEC9477D2D60B83198E19BE9
 
 
     PAUSE DEJEUNER ET REPRISE 13H45...
+
+
+## CRUD SUR LES TABLES SQL
+
+
+    Create
+    Read
+    Update
+    Delete
+
+    CYCLE DE VIE DES INFORMATIONS
+    * CREATE    CREATION DE L'INFORMATION
+    * READ      AFFICHAGE DE L'INFORMATION
+    * UPDATE    MODIFICATION DE L'INFORMATION
+    * DELETE    SUPPRESSION DE L'INFORMATION
+
+    => SCENARIOS CLASSIQUES POUR LE DEVELOPPEUR
+    => UN CRUD POUR CHAQUE TABLE
+
+    INSCRIPTION A LA NEWSLETTER
+    * Create sur la table SQL newsletter
+    PLUS COMPLIQUE: SI JE VEUX VERIFIER QU'IL N'Y A PAS DE DOUBLON
+    * Read AVANT LE Create
+
+    FORMULAIRE DE CONTACT
+    * Create sur la table SQL contact
+
+    CREATION DE COMPTE
+    * Create sur la table SQL user
+
+    MODIFICATION DE MOT DE PASSE
+    * Update sur la table SQL user
+
+    FORMULAIRE DE LOGIN
+    * Read sur la table SQL user
+
+
+## Create
+
+    DOCUMENTATION
+    https://sql.sh/cours/insert-into
+
+```sql
+
+INSERT INTO `newsletter` 
+(`id`, `nom`, `email`, `dateInscription`) 
+VALUES 
+(NULL, 'test1415', 'test1415@me', '2020-11-25 14:15:27');
+
+## SIMPLIFICATIONS
+## OPTION1: NE PAS UTILISER BACKTICK SI ON A DES NOMS EN CAMELCASE
+## OPTION2: NE PAS AJOUTER LA COLONNE id
+
+INSERT INTO newsletter 
+(nom, email, dateInscription) 
+VALUES 
+('test1423', 'test1423@me', '2020-11-25 14:23:27');
+
+```
+
+## Read
+
+    DOCUMENTATION
+    https://sql.sh/cours/select
+
+    REQUETE FILTREE AVEC UNE CLAUSE WHERE
+    => SELECTEUR POUR FILTRER LES LIGNES QUI NOUS INTERESSENT
+    => RICHESSE DE POSSIBILITES
+    => BEAUCOUP DE TESTS PUISSANTS ET INTERESSANTS
+    => PUISSANCE DES BASES DE DONNEES
+
+    https://sql.sh/cours/where
+
+```sql
+
+SELECT * FROM `newsletter`
+WHERE 
+id = '5';
+
+## SIMPLIFICATION 
+
+SELECT * FROM newsletter
+WHERE 
+id = '5';
+
+```
+
+
+## Update
+
+    DOCUMENTATION 
+    https://sql.sh/cours/update
+
+    TRES IMPORTANT DE BIEN PRECISER LA BONNE CLAUSE WHERE
+    => POUR SELECTIONNER UNE LIGNE PRECISE
+
+    SINON PAR DEFAUT SQL SELECTIONNE TOUTES LES LIGNES !!!
+    => EXTREMEMENT DANGEREUX
+        (PAS D'ANNULATION OU DE CORBEILLE...)
+
+```sql
+UPDATE `newsletter` 
+SET 
+`nom`   = 'modif1440',
+`email` = 'modif1415@me'
+WHERE 
+`newsletter`.`id` = 5;
+
+## SIMPLIFICATION 
+
+UPDATE newsletter 
+SET 
+nom     = 'modif1440',
+email   = 'modif1440@me'
+WHERE 
+id = 5;
+
+
+```
+
+## Delete
+
+    DOCUMENTATION
+    https://sql.sh/cours/delete
+
+    TRES IMPORTANT DE BIEN PRECISER LA BONNE CLAUSE WHERE
+    => POUR SELECTIONNER UNE LIGNE PRECISE
+
+    SINON PAR DEFAUT SQL SELECTIONNE TOUTES LES LIGNES !!!
+    => EXTREMEMENT DANGEREUX
+        (PAS D'ANNULATION OU DE CORBEILLE...)
+
+```sql
+
+DELETE FROM `newsletter` 
+WHERE 
+`newsletter`.`id` = 4
+
+## SIMPLIFICATION 
+
+DELETE FROM newsletter 
+WHERE 
+id = 4
+
+
+```
+
+    PAUSE ET REPRISE A 16H00
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
