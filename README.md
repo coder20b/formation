@@ -253,6 +253,38 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?8DEC9477D2D60B83198E19BE9
     CREER AVEC PHPMYADMIN LA TABLE contact 
     (DANS LA MEME BDD blog...)
 
+    ET TESTER EN INSERANT QUELQUES LIGNES...
+
+## SQL COMME LANGAGE DE REQUETES
+
+    DOCUMENTATION BIEN ECRITE
+    ET EN FRANCAIS
+
+    https://sql.sh/
+
+
+    PAUSE DEJEUNER ET REPRISE 13H45...
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
