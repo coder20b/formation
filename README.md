@@ -170,7 +170,104 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?8DEC9477D2D60B83198E19BE9
 
     PAUSE ET REPRISE A 11H15...
 
-    
+    UNE TABLE SQL PERMET DE SEPARER LE STOCKAGE DES INFORMATIONS
+    => ORGANISATION POUR MIEUX S'Y RETROUVER
+    EXEMPLE: ON POURRA CREER UNE TABLE contact
+    => POUR STOCKER LES INFOS DU FORMULAIRE DE CONTACT 
+    ET UNE AUTRE TABLE newsletter
+    => POUR STOCKER LES INFOS DU FORMULAIRE DE NEWSLETTER
+
+    QUAND ON VEUT CREER UNE TABLE, ON PEUT CHOISIR LE NOMBRE DE COLONNES
+    => 3 NIVEAU DE CONTAINER
+
+    DANS UNE TABLE, ON VA PARLER DE COLONNES ET DE LIGNES
+
+
+    COLONNE1    COLONNE2            COLONNE3
+    NOM         EMAIL               DATE
+
+    nom0950,    test0950@me,        2020-11-25 09:50:19     => UNE LIGNE POUR UN JEU DE DONNEES
+    nom0951,    test0951@me,        2020-11-25 09:50:53
+
+
+    EN PRATIQUE, ON VA POUR CHAQUE TABLE AJOUTER UNE COLONNE TECHNIQUE id
+    id      nom     email   dateInscription
+    => 4 COLONNES
+
+    => POUR SAVOIR LE NOMBRE DE COLONNES
+    => ETAPE DE MODELISATION DU PROJET (MODEL...)
+
+    COMME DANS UNE TABLE ON PEUT AVOIR PLUSIEURS COLONNES
+    => POUR DISTINGUER CHAQUE COLONNE, ON VA DONNER UN NOM DIFFERENT A CHAQUE COLONNE
+
+    ON VA CREER LA COLONNE id EN PREMIER
+    id                  INT         INDEX=PRIMARY   A_I (AUTO_INCREMENT)
+    nom                 VARCHAR(160)
+    email               VARCHAR(160)
+    dateInscription     DATETIME
+
+    INSERT INTO `newsletter` (`id`, `nom`, `email`, `dateInscription`) VALUES (NULL, 'test1146', 'test1146@me', '2020-11-25 11:46:07');
+    INSERT INTO `newsletter` (`id`, `nom`, `email`, `dateInscription`) VALUES (NULL, 'test1148', 'test1148@me', '2020-11-25 11:48:47');
+
+
+    RESUME DE LA STRUCTURE
+    BASE DE DONNEES
+        TABLE1
+            id  COLONNE2    COLONNE3    COLONNE4  
+        TABLE2
+            id  COLONNE2    COLONNE3
+        newsletter
+            id  nom         email       dateInscription
+            1   test1156    test1156@me 2020-25-11 11:56:12
+            2   test1157    test1157@me 2020-25-11 11:52:12
+
+    SQL STOCKE LES INFOS AILLEURS QUE DANS NOTRE DOSSIER DE PROJET...
+
+    POUR VOTRE CULTURE:
+    AVEC MySQL/MariaDB, UNE BDD EST UN DOSSIER DANS C:\xampp\mysql\data\
+    Exemple: la BDD blog EST DANS LE DOSSIER C:\xampp\mysql\data\blog\
+    ET UNE TABLE SQL EST STOCKEE DANS 2 FICHIERS
+    Exemple: LA TABLE newsletter EST DANS LES FICHIERS 
+        C:\xampp\mysql\data\blog\newsletter.frm
+        C:\xampp\mysql\data\blog\newsletter.ibd
+        ...
+
+    NOTE: MySQL ET LES HEBERGEURS MUTUALISES SUFFISENT POUR DES PROJETS 
+            AVEC DES MILLIONS DE LIGNES
+            SI ON A UN PROJET AVEC DES MILLIARDS DE LIGNES, 
+            SE POSER LA QUESTION DES LIMITES DE QUOTA...
+
+
+## EXERCICE: CREER UNE 2 TABLE contact
+
+
+    TABLE SQL contact
+    AVEC COMME COLONNES
+        id              INT             INDEX=PRIMARY       A_I     (AUTO_INCREMENT)
+        nom             VARCHAR(160)
+        email           VARCHAR(160)
+        message         TEXT
+        dateMessage     DATETIME
+
+    EN AUTONOMIE: 
+    CREER AVEC PHPMYADMIN LA TABLE contact 
+    (DANS LA MEME BDD blog...)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
