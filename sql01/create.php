@@ -5,10 +5,11 @@
 // ON PEUT CREER UNE VARIABLE ET STOCKER DU CODE SQL COMME UN TEXTE
 
 
-$nom                = "test1518";
-$email              = "test1518@me";
-$dateInscription    = "2020-11-25 15:18:27";
+$nom                = "test1518";               // FOURNI PAR LE FORMULAIRE
+$email              = "test1518@me";            // FOURNI PAR LE FORMULAIRE
+$dateInscription    = "2020-11-25 15:18:27";    // PHP QUI VA LE FOURNIR
 
+// CREATE: AJOUTER UNE NOUVELLE LIGNE
 $requeteSQL = 
 <<<x
 
@@ -20,6 +21,7 @@ VALUES
 x;
 
 // ENVOYER AU SERVEUR SQL MySQL/MariaDB
+
 // PDO
 // Php Data Object
 // https://www.php.net/manual/fr/book.pdo.php
