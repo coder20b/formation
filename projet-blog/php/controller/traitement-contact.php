@@ -1,7 +1,6 @@
 <?php
 
 // 2 SCENARIOS
-require_once "php/controller/fonctions.php";
 $formIndentifiant = filtrer("formIdentifiant");
 
 // ON N'ACTIVE LE CODE DU TRAITEMENT QUE SI L'IDENTIFIANT DU FORMULAIRE EST "contact"
@@ -23,7 +22,6 @@ if ($formIndentifiant == "contact")
 
     if ( ($nom != "") && ($email != "") && ($message != "") )
     {
-        require_once "php/model/fonctions-sql.php";
         $tabAsso = [
             "nom"               => $nom,
             "email"             => $email,

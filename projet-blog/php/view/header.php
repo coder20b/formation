@@ -1,3 +1,12 @@
+<?php
+// ON VA CHARGER LE CODE DES FONCTIONS DANS LES 3 FICHIERS
+// COMME CA LES FONCTIONS SONT DEFINIES 
+// MEME SI ON NE LES APPELLE PAS
+require_once "php/model/fonctions-sql.php";
+require_once "php/view/fonctions-affichage.php";
+require_once "php/controller/fonctions.php";
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 

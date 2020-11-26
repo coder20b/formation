@@ -3,7 +3,6 @@
 // SCENARIO 1: LE VISITEUR VIENT D'ARRIVER
 // SCENARIO 2: LE VISITEUR VIENT DE REMPLIR LE FORMULAIRE
 // <input type="hidden" name="formIdentifiant">
-require_once "php/controller/fonctions.php";
 $formIndentifiant = filtrer("formIdentifiant");
 
 // ON N'ACTIVE LE CODE DU TRAITEMENT QUE SI L'IDENTIFIANT DU FORMULAIRE EST "newsletter"
@@ -30,8 +29,6 @@ if ($formIndentifiant == "newsletter")
         // COMPLETER LES INFOS
         // https://www.php.net/manual/fr/function.date.php
         $date = date("Y-m-d H:i:s");    // 2020-11-24 14:34:12
-
-        require_once "php/model/fonctions-sql.php";
 
         $tabAsso = [
             "nom"               => $nom,
