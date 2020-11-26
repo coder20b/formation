@@ -1,19 +1,5 @@
 <?php
 
-// DEBUG
-// print_r VA AFFICHER LE CONTENU D'UN TABLEAU
-// $_GET $_POST $_REQUEST SONT DES TABLEAUX ASSOCIATIFS QUI SONT CREES PAR PHP
-// ET QUI SONT REMPLIS PAR PHP AUSSI
-
-// echo "<h3>TABLEAU GET</h3>";
-// print_r($_GET);
-
-// echo "<h3>TABLEAU POST</h3>";
-// print_r($_POST);
-
-// echo "<h3>TABLEAU REQUEST</h3>";
-// print_r($_REQUEST);
-
 // 2 SCENARIOS
 if (count($_POST) == 0) // 0 ELEMENT => TABLEAU VIDE
 {
@@ -41,8 +27,6 @@ else
     if ( ($nom != "") && ($email != "") && ($message != "") )
     {
         require_once "php/model/fonctions-sql.php";
-        // PROTECTION CONTRE LES INJECTIONS SQL
-        // => MISE EN QUARANTAINE DES INFOS EXTERIEURES DANS UN TABLEAU ASSOCIATIF
         $tabAsso = [
             "nom"               => $nom,
             "email"             => $email,

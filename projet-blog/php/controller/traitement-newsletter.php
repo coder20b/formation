@@ -12,7 +12,6 @@ else
     // SCENARIO 2
     // AJOUTER LE CODE POUR ENREGISTRER LES INFOS
     // => ENREGISTRER LES INFOS DANS UN FICHIER newsletter.txt
-
     require_once "php/controller/fonctions.php";
 
     // CREER UNE FONCTION POUR FILTRER LES INFOS DE FORMULAIRES
@@ -33,11 +32,7 @@ else
         // https://www.php.net/manual/fr/function.date.php
         $date = date("Y-m-d H:i:s");    // 2020-11-24 14:34:12
 
-        // ----------- NOUVEAU CODE AVEC SQL ---------
-        // PROTECTION CONTRE LES INJECTIONS SQL
-        // => MISE EN QUARANTAINE DES INFOS EXTERIEURES DANS UN TABLEAU ASSOCIATIF
-        require_once "php/model/fonctions-sql.php";
-
+       require_once "php/model/fonctions-sql.php";
 
         $tabAsso = [
             "nom"               => $nom,
@@ -46,7 +41,6 @@ else
         ];
         insererLigne("newsletter", $tabAsso);
        
-        // ----------- ANCIEN CODE -----------
         $message =
         <<<x
         $nom,$email,$date
