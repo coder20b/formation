@@ -1,7 +1,0 @@
-message reçu sur le site.
-
-nom: test1542
-email: mail1542@me
-message:
-message 1542
-------

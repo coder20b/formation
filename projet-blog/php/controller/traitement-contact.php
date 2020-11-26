@@ -33,12 +33,36 @@ else
     // https://www.php.net/manual/fr/function.mail.php
     require_once "php/controller/fonctions.php";
 
-    $nom        = filtrer("nom");
-    $email      = filtrer("email");
-    $message    = filtrer("message");
+    $nom         = filtrer("nom");
+    $email       = filtrer("email");
+    $message     = filtrer("message");
+    $dateMessage = date("Y-m-d H:i:s"); // FORMAT DATETIME POUR SQL
 
     if ( ($nom != "") && ($email != "") && ($message != "") )
     {
+        // PROTECTION CONTRE LES INJECTIONS SQL
+        // => MISE EN QUARANTAINE DES INFOS EXTERIEURES DANS UN TABLEAU ASSOCIATIF
+        $tabAsso = [
+            "nom"               => $nom,
+            "email"             => $email,
+            "message"           => $message,
+            "dateMessage"       => $dateMessage,
+        ];
+        
+        $requeteSQL = 
+        <<<x
+        
+        INSERT INTO contact 
+        (nom, email, message, dateMessage) 
+        VALUES 
+        (:nom, :email, :message, :dateMessage);
+        
+        x;
+        
+        require_once "php/model/fonctions-sql.php";
+        // ETAPE 2: APPEL DE LA FONCTION
+        envoyerRequeteSql($requeteSQL, $tabAsso);
+
         $mail = 
         <<<texte
         message reçu sur le site.
@@ -59,13 +83,7 @@ else
     
         // EN localhost ERREUR CAR PAS DE SERVEUR EMAIL
         // Warning : mail(): Failed to connect to mailserver at "localhost" port 25, verify your "SMTP" and "smtp_port"
-    
-        // STOCKER LES INFOS DANS UN FICHIER
-        // PEUT ETRE UNE SECURITE SI LE MAIL S'EST PERDU...
-        // ON VA UTILISER UN FICHIER php/contact.txt
-        // https://www.php.net/manual/fr/function.file-put-contents
-        file_put_contents("php/model/contact.txt", $mail, FILE_APPEND);
-    
+        
         // AFFICHER UN MESSAGE DE CONFIRMATION
         echo "<h4>Nous avons bien reçu votre message. Nous vous répondrons dans les meilleurs délais</h4>";
     

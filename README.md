@@ -98,15 +98,18 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?50B58DC1A581D0F7F48F99268
     ET REFLECHIR A UNE FONCTION POUR CENTRALISER LE CODE...
 
 
-
-
-
-
-
-
-
+    PAUSE ET REPRISE A 11H15...
 
     
+
+
+
+
+
+
+
+
+
 
 
 

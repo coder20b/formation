@@ -34,6 +34,8 @@ else
         $date = date("Y-m-d H:i:s");    // 2020-11-24 14:34:12
 
         // ----------- NOUVEAU CODE AVEC SQL ---------
+        // PROTECTION CONTRE LES INJECTIONS SQL
+        // => MISE EN QUARANTAINE DES INFOS EXTERIEURES DANS UN TABLEAU ASSOCIATIF
         $tabAsso = [
             "nom"               => $nom,
             "email"             => $email,
@@ -49,23 +51,10 @@ else
         
         x;
         
-        // CONNEXION AVEC LA DATABASE MySQL
-        $user       = 'root';
-        $password   = '';           // SUR XAMPP
-        $hostSQL    = 'localhost';  // 127.0.0.1
-        $portSQL    = '3306';
-        $database   = 'blog';       // LE SEUL A CHANGER EN LOCAL A CHAQUE PROJET
-        
-        $mysql        = "mysql:host=$hostSQL;port=$portSQL;dbname=$database;charset=utf8";
-        
-        try {
-            $dbh = new PDO($mysql, $user, $password);   // CONNEXION ENTRE PHP ET MySQL
-            $sth = $dbh->prepare($requeteSQL);          // ON FOURNIT NOTRE REQUETE SQL PREPAREE (AVEC LES TOKENS)
-            $sth->execute($tabAsso);                    // ON EXECUTE NOTRE REQUETE SQL (AVEC LE TABLEAU ASSO ET LES VALEURS)
-        
-        } catch (PDOException $e) {
-            echo 'Connexion échouée : ' . $e->getMessage();
-        }
+        require_once "php/model/fonctions-sql.php";
+
+        // ETAPE 2: APPEL DE LA FONCTION
+        envoyerRequeteSql($requeteSQL, $tabAsso);
         
         // ----------- ANCIEN CODE -----------
         $message =
@@ -73,8 +62,6 @@ else
         $nom,$email,$date
 
         x;
-
-        file_put_contents("php/model/newsletter.csv", $message, FILE_APPEND);
 
         $headers =  'From: contact@monsite.fr' . "\r\n" .
         'Reply-To: no-reply@monsite.fr' . "\r\n" .
