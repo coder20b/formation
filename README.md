@@ -147,7 +147,7 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?50B58DC1A581D0F7F48F99268
 ## MySQL AVEC WORDPRESS ET IONOS
 
     ON VA UTILISER UN OUTIL ALTERNATIF A PHPMYADMIN POUR GERER LA DATABASE IONOS...
-    ALLER SUR LA PAGE
+    ALLER SUR MA PAGE (PAS VOTRE SITE...)
 
     https://long-hai.procoder.fr/adminer.php
 
