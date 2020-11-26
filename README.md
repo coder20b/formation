@@ -128,7 +128,22 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?50B58DC1A581D0F7F48F99268
     
     ON VA AJOUTER UN CHAMP A CHAQUE FORMULAIRE POUR DONNER UN IDENTIFIANT DIFFERENT.
 
-    
+## ACTIVITE EN AUTONOMIE
+
+    * METTRE LE CODE DU PROJET BLOG A NIVEAU AVEC LES FONCTIONS
+    * AJOUTER LA PAGE blog.php ET CONSTRUIRE LE HTML
+    * AJOUT UNE PAGE DE CREATION DE COMPTE ET ENREGISTREMENT DANS UNE TABLE SQL user
+
+        TABLE SQL user
+            id                  INT             INDEX=PRIMARY   A_I
+            pseudo              VARCHAR(160)
+            email               VARCHAR(160)
+            motDePasse          VARCHAR(160)
+            dateCreation        DATETIME
+
+
+
+
 
 
 
