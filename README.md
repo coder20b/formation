@@ -143,15 +143,280 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?50B58DC1A581D0F7F48F99268
 
     * EXO DISTRIBUTEUR DE BILLETS AVEC JS ET RETRAIT ARGENT QUI AFFICHE BILLETS
 
-    
 
+## MySQL AVEC WORDPRESS ET IONOS
 
+    ON VA UTILISER UN OUTIL ALTERNATIF A PHPMYADMIN POUR GERER LA DATABASE IONOS...
+    ALLER SUR LA PAGE
 
+    https://long-hai.procoder.fr/adminer.php
 
+    ET ENTREZ LES IDENTIFIANTS POUR SE CONNECTER A LA DATABASE MySQL
+    (LE MOT DE PASSE SERA SUR DISCORD... NE PAS LE PUBLIER...)
 
+    -----------------------------
+    Base de données : dbs1054940
+    Description
+    abdallah
 
+    Nom d'hôte
+    db5001233231.hosting-data.io
 
+    Port
+    3306
+    Nom d'utilisateur
+    dbu835626
 
+    -----------------------------
+    Base de données : dbs1054948
+
+    Description
+    alexandre
+
+    Nom d'hôte
+    db5001233239.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu683957
+
+    -----------------------------
+    Base de données : dbs1054960
+
+    Description
+    arsenio
+
+    Nom d'hôte
+    db5001233255.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu486272
+
+    -----------------------------
+    Base de données : dbs1054964
+
+    Description
+    benjamin
+
+    Nom d'hôte
+    db5001233259.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu831989
+
+    -----------------------------
+    Base de données : dbs1054967
+
+    Description
+    bilel
+
+    Nom d'hôte
+    db5001233262.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu831718
+
+    -----------------------------
+    Base de données : dbs1054974
+
+    Description
+    celine
+
+    Nom d'hôte
+    db5001233269.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu833786
+
+    -----------------------------
+    Base de données : dbs1054994
+
+    Description
+    christel
+
+    Nom d'hôte
+    db5001233282.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu836262
+
+    -----------------------------
+    Base de données : dbs1055038
+
+    Description
+    elphege
+
+    Nom d'hôte
+    db5001233305.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu828286
+
+    -----------------------------
+    Base de données : dbs1055051
+
+    Description
+    flora
+
+    Nom d'hôte
+    db5001233311.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu1470964
+
+    -----------------------------
+    Base de données : dbs1055062
+    Description
+    joseph
+
+    Nom d'hôte
+    db5001233314.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu1470989
+
+    -----------------------------
+    Base de données : dbs1055093
+    Description
+    kevin
+
+    Nom d'hôte
+    db5001233340.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu1471090
+
+    -----------------------------
+    Base de données : dbs1055100
+    Description
+    maeva
+
+    Nom d'hôte
+    db5001233346.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu488836
+
+    -----------------------------
+    Base de données : dbs1055103
+
+    Description
+    marc
+
+    Nom d'hôte
+    db5001233348.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu1471304
+
+    -----------------------------
+    Base de données : dbs1055107
+
+    Description
+    maxime
+
+    Nom d'hôte
+    db5001233351.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu1471375
+
+    -----------------------------
+    Base de données : dbs1055113
+
+    Description
+    mehdi
+
+    Nom d'hôte
+    db5001233355.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu1471395
+
+    -----------------------------
+    Base de données : dbs1055122
+
+    Description
+    olivier
+
+    Nom d'hôte
+    db5001233365.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu830080
+
+    -----------------------------
+    Base de données : dbs1055139
+
+    Description
+    quentin
+
+    Nom d'hôte
+    db5001233369.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu834805
+
+    -----------------------------
+    Base de données : dbs1055152
+
+    Description
+    stephanie
+
+    Nom d'hôte
+    db5001233374.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu1471447
+
+    -----------------------------
+    Base de données : dbs1055153
+
+    Description
+    tony
+
+    Nom d'hôte
+    db5001233375.hosting-data.io
+
+    Port
+    3306
+    Nom d'utilisateur
+    dbu831417
+
+    -----------------------------
 
 
 
