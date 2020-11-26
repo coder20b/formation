@@ -40,6 +40,7 @@ else
 
     if ( ($nom != "") && ($email != "") && ($message != "") )
     {
+        require_once "php/model/fonctions-sql.php";
         // PROTECTION CONTRE LES INJECTIONS SQL
         // => MISE EN QUARANTAINE DES INFOS EXTERIEURES DANS UN TABLEAU ASSOCIATIF
         $tabAsso = [
@@ -48,20 +49,7 @@ else
             "message"           => $message,
             "dateMessage"       => $dateMessage,
         ];
-        
-        $requeteSQL = 
-        <<<x
-        
-        INSERT INTO contact 
-        (nom, email, message, dateMessage) 
-        VALUES 
-        (:nom, :email, :message, :dateMessage);
-        
-        x;
-        
-        require_once "php/model/fonctions-sql.php";
-        // ETAPE 2: APPEL DE LA FONCTION
-        envoyerRequeteSql($requeteSQL, $tabAsso);
+        insererLigne("contact", $tabAsso);        
 
         $mail = 
         <<<texte
@@ -75,15 +63,8 @@ else
     
         texte;
     
-        $headers =  'From: contact@monsite.fr' . "\r\n" .
-                    'Reply-To: no-reply@monsite.fr' . "\r\n" .
-                    'X-Mailer: PHP/' . phpversion();
-    
-        @mail("test@applh.com", "nouveau message", $mail, $headers);
-    
-        // EN localhost ERREUR CAR PAS DE SERVEUR EMAIL
-        // Warning : mail(): Failed to connect to mailserver at "localhost" port 25, verify your "SMTP" and "smtp_port"
-        
+        envoyerEmail("test@applh.com", "nouveau message", $mail);
+            
         // AFFICHER UN MESSAGE DE CONFIRMATION
         echo "<h4>Nous avons bien reçu votre message. Nous vous répondrons dans les meilleurs délais</h4>";
     

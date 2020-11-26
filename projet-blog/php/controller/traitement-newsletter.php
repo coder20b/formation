@@ -36,26 +36,16 @@ else
         // ----------- NOUVEAU CODE AVEC SQL ---------
         // PROTECTION CONTRE LES INJECTIONS SQL
         // => MISE EN QUARANTAINE DES INFOS EXTERIEURES DANS UN TABLEAU ASSOCIATIF
+        require_once "php/model/fonctions-sql.php";
+
+
         $tabAsso = [
             "nom"               => $nom,
             "email"             => $email,
             "dateInscription"   => $dateInscription,
         ];
-        $requeteSQL = 
-        <<<x
-        
-        INSERT INTO newsletter 
-        (nom, email, dateInscription) 
-        VALUES 
-        (:nom, :email, :dateInscription);
-        
-        x;
-        
-        require_once "php/model/fonctions-sql.php";
-
-        // ETAPE 2: APPEL DE LA FONCTION
-        envoyerRequeteSql($requeteSQL, $tabAsso);
-        
+        insererLigne("newsletter", $tabAsso);
+       
         // ----------- ANCIEN CODE -----------
         $message =
         <<<x
@@ -63,11 +53,7 @@ else
 
         x;
 
-        $headers =  'From: contact@monsite.fr' . "\r\n" .
-        'Reply-To: no-reply@monsite.fr' . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-
-        @mail("test@applh.com", "nouveau inscrit", $message, $headers);
+        envoyerEmail("test@applh.com", "nouveau inscrit", $message);
 
         echo "<p>nous vous envoyons un mail de newsletter rapidement.</p>";
 

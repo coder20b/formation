@@ -16,3 +16,15 @@ function filtrer ($name)
     return $resultat;
 }
 
+function envoyerEmail ($destinataire, $titre, $message)
+{
+    $headers =  'From: contact@monsite.fr' . "\r\n" .
+    'Reply-To: no-reply@monsite.fr' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+    @mail($destinataire, $titre, $message, $headers);
+    // EN localhost ERREUR CAR PAS DE SERVEUR EMAIL
+    // Warning : mail(): Failed to connect to mailserver at "localhost" port 25, verify your "SMTP" and "smtp_port"
+
+}
+
