@@ -17,6 +17,8 @@
                 <textarea name="message" cols="80" rows="10" required placeholder="VOTRE MESSAGE"></textarea>
             </label>
             <button type="submit">ENVOYER VOTRE MESSAGE</button>
+            <!-- CE CHAMP RESTE CACHE AU VISITEUR -->
+            <input type="hidden" name="formIdentifiant" value="contact">
             <div id="form-contact">
                 <?php require_once "php/controller/traitement-contact.php" ?>
             </div>

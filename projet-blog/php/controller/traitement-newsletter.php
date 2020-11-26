@@ -2,17 +2,16 @@
 // 2 SCENARIOS
 // SCENARIO 1: LE VISITEUR VIENT D'ARRIVER
 // SCENARIO 2: LE VISITEUR VIENT DE REMPLIR LE FORMULAIRE
-if (count($_POST) == 0)
-{
-    // SCENARIO 1
-    echo "<p>merci de remplir le formulaire.</p>";
-}
-else
+// <input type="hidden" name="formIdentifiant">
+require_once "php/controller/fonctions.php";
+$formIndentifiant = filtrer("formIdentifiant");
+
+// ON N'ACTIVE LE CODE DU TRAITEMENT QUE SI L'IDENTIFIANT DU FORMULAIRE EST "newsletter"
+if ($formIndentifiant == "newsletter")
 {
     // SCENARIO 2
     // AJOUTER LE CODE POUR ENREGISTRER LES INFOS
     // => ENREGISTRER LES INFOS DANS UN FICHIER newsletter.txt
-    require_once "php/controller/fonctions.php";
 
     // CREER UNE FONCTION POUR FILTRER LES INFOS DE FORMULAIRES
     // RECUPERER LES INFOS
@@ -32,7 +31,7 @@ else
         // https://www.php.net/manual/fr/function.date.php
         $date = date("Y-m-d H:i:s");    // 2020-11-24 14:34:12
 
-       require_once "php/model/fonctions-sql.php";
+        require_once "php/model/fonctions-sql.php";
 
         $tabAsso = [
             "nom"               => $nom,

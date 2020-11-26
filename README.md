@@ -112,7 +112,30 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?50B58DC1A581D0F7F48F99268
 
 
     PAUSE DEJEUNER ET REPRISE A 13H50...
+
+## CODE HTML input type="hidden"
+
+
+    ON PEUT AJOUTER DANS UNE BALISE form
+    DES CHAMPS input AVEC type="hidden"
+    POUR AJOUTER DES INFOS TECHNIQUES PRE-REMPLIS
+    ET LE VISITEUR NE VERRA CES CHAMPS
+    MAIS QUAND IL VA ENVOYER LE FORMULAIRE
+    LES INFOS SERONT TOUTES ENVOYEES
+
+    exemple:
+            <input type="hidden" name="formIdentifiant" value="newsletter">
     
+    ON VA AJOUTER UN CHAMP A CHAQUE FORMULAIRE POUR DONNER UN IDENTIFIANT DIFFERENT.
+
+    
+
+
+
+
+
+
+
 
 
 

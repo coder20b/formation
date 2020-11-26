@@ -12,6 +12,8 @@
             <input type="text" name="nom" required placeholder="votre nom">
         </label>
         <button type="submit">INSCRIVEZ MOI</button>
+        <!-- CE CHAMP RESTE CACHE AU VISITEUR -->
+        <input type="hidden" name="formIdentifiant" value="newsletter">
         <div>
             <?php require_once "php/controller/traitement-newsletter.php" ?>
         </div>

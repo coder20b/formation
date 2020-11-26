@@ -1,13 +1,11 @@
 <?php
 
 // 2 SCENARIOS
-if (count($_POST) == 0) // 0 ELEMENT => TABLEAU VIDE
-{
-    // SCENARIO 1: J'ARRIVE SUR LA PAGE
-    // DEBUG
-    echo "<h4>merci de remplir le formulaire</h4>";
-}
-else
+require_once "php/controller/fonctions.php";
+$formIndentifiant = filtrer("formIdentifiant");
+
+// ON N'ACTIVE LE CODE DU TRAITEMENT QUE SI L'IDENTIFIANT DU FORMULAIRE EST "contact"
+if ($formIndentifiant == "contact")
 {
     // SCENARIO 2: 
     // LE VISITEUR A REMPLI LE FORMULAIRE 
@@ -17,7 +15,6 @@ else
     // IL FAUT TRAITER LES INFOS DU FORMULAIRE
     // ENVOYER LES INFOS PAR MAIL
     // https://www.php.net/manual/fr/function.mail.php
-    require_once "php/controller/fonctions.php";
 
     $nom         = filtrer("nom");
     $email       = filtrer("email");
