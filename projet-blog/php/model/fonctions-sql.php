@@ -62,6 +62,23 @@ function insererLigne ($table, $tabAsso)
 
 }
 
+// SELECT * FROM `article` WHERE id = 4
+function lireLigne ($table, $colonne, $valeurFiltre)
+{
+    $requeteSQL =
+    <<<x
+    
+    SELECT * FROM $table
+    WHERE $colonne = '$valeurFiltre'
+
+    x;
+
+    $resultat = envoyerRequeteSql($requeteSQL, []);
+    $tabLigne = $resultat->fetchAll(PDO::FETCH_ASSOC);  // ON VA OBTENIR UN TABLEAU DE TABLEAUX ASSOCIATIFS
+
+    return $tabLigne;       // RESULTAT ON RENVOIE LE TABLEAU DE LIGNES SELECTIONNEES
+
+}
 
 function lireTable ($table, $tri)
 {

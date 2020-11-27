@@ -35,7 +35,34 @@ function afficherGalerie ($chemin)
 }
 
 // DEFINITION 
+function afficherArticle ()
+{
+    // article.php?id=3
+    $id = $_GET["id"] ?? 0; // ON RECUPERE id PAR LE PARAMETRE GET
+    // SECURITE: ON CONVERTIT EN ENTIER
+    // https://www.php.net/manual/fr/function.intval.php
+    $id = intval($id);
 
+    $tabLigne = lireLigne("article", "id", $id);
+
+    foreach($tabLigne as $ligneAsso)
+    {
+        extract($ligneAsso);
+
+        echo
+        <<<codehtml
+        
+        <article>
+            <h3><a href="article.php?id=$id">$titre</a></h3>
+            <img src="$image" alt="article1">
+            <p>$contenu</p>
+            <p>publié le $datePublication</p>
+        </article>
+
+        codehtml;
+    }
+
+}
 
 function afficherArticles() 
 {
@@ -78,7 +105,7 @@ function afficherArticles()
         <<<codehtml
         
         <article>
-            <h3><a href="article.php">$titre</a></h3>
+            <h3><a href="article.php?id=$id">$titre</a></h3>
             <img src="$image" alt="article1">
             <p>$contenu</p>
             <p>publié le $datePublication</p>
