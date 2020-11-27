@@ -17,6 +17,11 @@ function envoyerRequeteSql ($requeteSQL, $tabAsso)
         $sth = $dbh->prepare($requeteSQL);          // ON FOURNIT NOTRE REQUETE SQL PREPAREE (AVEC LES TOKENS)
         $sth->execute($tabAsso);                    // ON EXECUTE NOTRE REQUETE SQL (AVEC LE TABLEAU ASSO ET LES VALEURS)
     
+        // POUR LA LECTURE: ON A BESOIN D'ETAPES SUPPLEMENTAIRES
+        // QUI VONT CONTINUER A UTILISER $sth 
+        // => ON FAIT UN return EN SORTIE
+        return $sth;
+
     } catch (PDOException $e) {
         echo 'Connexion échouée : ' . $e->getMessage();
     }
@@ -57,5 +62,10 @@ function insererLigne ($table, $tabAsso)
 
 }
 
+
+function lireTable ($table)
+{
+
+}
 
 // OPTIONNELLE: ON PEUT NE PAS AJOUTER LA BALISE FERMANTE PHP
