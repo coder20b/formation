@@ -39,6 +39,14 @@ function afficherArticle ()
 {
     // article.php?id=3
     $id = $_GET["id"] ?? 0; // ON RECUPERE id PAR LE PARAMETRE GET
+    /*
+    // AVEC isset
+    if (isset($_GET["id"])) // SI DANS LE TABLEAU $_GET IL Y A UNE CLE "id" AVEC UNE VALEUR
+        $id = $_GET["id"]
+    else
+        $id = 0;
+    */
+    
     // SECURITE: ON CONVERTIT EN ENTIER
     // https://www.php.net/manual/fr/function.intval.php
     $id = intval($id);
