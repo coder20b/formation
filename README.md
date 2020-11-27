@@ -78,6 +78,7 @@ function afficherArticles()
     <<<x
     SELECT * FROM article
     x;
+    
     // COOL JE VAIS REUTILISER MA FONCTION envoyerRequeteSql
     $resultat = envoyerRequeteSql($requeteSQL, []);
     // https://www.php.net/manual/fr/pdostatement.fetchall.php
@@ -154,13 +155,18 @@ afficherArticles();
 
 ## EXERCICE: CREER LA PAGE admin.php
 
+    * SCENARIO READ SUR LA TABLE SQL article
+    AJOUTER L'AFFICHAGE DES ARTICLES SUR LA PAGE blog.php
+
+    * SCENARIO CREATE SUR TABLE SQL article
+
     CREER UNE PAGE admin.php
     QUI VA PROPOSER LE FORMULAIRE 
     POUR AJOUTER UN NOUVEL ARTICLE DANS LA TABLE article
 
     PAUSE ET REPRISE A 11H15...
 
-    
+
 
 
 

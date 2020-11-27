@@ -63,9 +63,59 @@ function insererLigne ($table, $tabAsso)
 }
 
 
-function lireTable ($table)
+function lireTable ($table, $tri)
 {
+    $requeteSQL =
+    <<<x
+    SELECT * FROM $table
+    ORDER BY $tri
 
+    x;
+    // COOL JE VAIS REUTILISER MA FONCTION envoyerRequeteSql
+    $resultat = envoyerRequeteSql($requeteSQL, []);
+    // https://www.php.net/manual/fr/pdostatement.fetchall.php
+    // EN JS    objet.methode()
+    // EN PHP   $objet->methode()
+    $tabLigne = $resultat->fetchAll(PDO::FETCH_ASSOC);  // ON VA OBTENIR UN TABLEAU DE TABLEAUX ASSOCIATIFS
+    return $tabLigne;       // RESULTAT ON RENVOIE LE TABLEAU DE LIGNES SELECTIONNEES
 }
 
-// OPTIONNELLE: ON PEUT NE PAS AJOUTER LA BALISE FERMANTE PHP
+    // DEBUG
+    // echo "<pre>";
+    // print_r($tabLigne);
+    // echo "</pre>";
+    /*
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [titre] => article 1
+            [image] => assets/img/article1.jpg
+            [contenu] => contenu article 1
+            [datePublication] => 2020-11-27 10:19:28
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [titre] => article 2
+            [image] => assets/img/article2.jpg
+            [contenu] => contenu article 2
+            [datePublication] => 2020-11-27 10:20:17
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [titre] => article 3
+            [image] => assets/img/article3.jpg
+            [contenu] => contenu article 3
+            [datePublication] => 2020-11-27 10:20:48
+        )
+
+)
+    */
+
+
+// OPTIONNEL: ON PEUT NE PAS AJOUTER LA BALISE FERMANTE PHP
