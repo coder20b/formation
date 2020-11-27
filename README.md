@@ -197,7 +197,9 @@ id = '4'
 ## EXERCICES FONCTIONS PHP ET SQL
 
     * DELETE
-    CREER UNE FONCTION supprimerLigne
+    https://sql.sh/cours/delete
+
+    CREER UNE FONCTION PHP supprimerLigne
     QUI PREND EN PARAMETRES 
     LE NOM DE LA TABLE
     ET id DE LA LIGNE A SUPPRIMER
@@ -207,7 +209,9 @@ id = '4'
     supprimerLigne("newsletter", "2");
 
     * UPDATE
-    CREER UNE FONCTION modifierLigne
+    https://sql.sh/cours/update
+
+    CREER UNE FONCTION PHP modifierLigne
     QUI PREND EN PARAMETRES
     LE NOM DE LA TABLE
     ET id DE LA LIGNE A MODIFIER
@@ -219,7 +223,13 @@ id = '4'
     modifierLigne("newsletter", "1", [ "nom" => "john"]);
     modifierLigne("article", "2", [ "titre" => "nouveau titre", "image" => "nouvelle url" ]);
 
+## EXO JS: TROUVER LA LIGNE DE CODE POUR DEFLOUTER LE CONTENU DU parisien.fr
 
+    EN UNE SEULE LIGNE DANS LA CONSOLE...
+
+    PAUSE ET REPRISE A 13H45...
+
+    
 
 
 
