@@ -160,7 +160,7 @@ afficherArticles();
     ON PEUT AJOUTER UNE CLAUSE WHERE
     POUR AJOUTER DES FILTRES
     => OUTIL TRES PUISSANT DE SQL
-    
+
     https://sql.sh/cours/where
 
     exemple:
@@ -175,10 +175,15 @@ id = '4'
 
 ## EXERCICE: CREER LA PAGE admin.php
 
-    * SCENARIO READ SUR LA TABLE SQL article
+    * SCENARIOS READ SUR LA TABLE SQL article
     AJOUTER L'AFFICHAGE DES ARTICLES SUR LA PAGE blog.php
+        Sur chaque article, creer un hyperlien 
+        qui permet de naviguer vers la page d'un seul article
+        Astuce: transmettre l'id de la ligne en paramètre GET
+
     AJOUTER L'AFFICHAGE D'UN ARTICLE SUR LA PAGE article.php
-    
+        Astuce: recevoir l'id de la ligne en paramètre GET
+
     * SCENARIO CREATE SUR TABLE SQL article
 
     CREER UNE PAGE admin.php
@@ -207,8 +212,8 @@ id = '4'
     LE NOM DE LA TABLE
     ET id DE LA LIGNE A MODIFIER
     ET UN TABLEAU ASSOCIATIF 
-        "CLE" => "VALEUR"
-        "COLONNE" => "NOUVELLE VALEUR"
+        "CLE"       => "VALEUR"
+        "COLONNE"   => "NOUVELLE VALEUR"
 
     exemple:
     modifierLigne("newsletter", "1", [ "nom" => "john"]);
