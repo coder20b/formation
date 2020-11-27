@@ -115,6 +115,38 @@ input, textarea, button {
     font-family: monospace;
 }
 
+h2 {
+    width:100%;
+}
+section.blog {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+section.blog article {
+    width: calc(100% / 3);
+    padding: 1rem;
+}
+
+section.blog article img {
+    height:30vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

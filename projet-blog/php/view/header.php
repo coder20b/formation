@@ -31,6 +31,7 @@ require_once "php/controller/fonctions.php";
 $a = [
     // "cle"        => "valeur"
     "index.php"     => 'Accueil',
+    "blog.php"      => 'Blog',
     "galerie.php"   => 'Galerie',
     "contact.php"   => 'Contactez-Nous',
 ];
