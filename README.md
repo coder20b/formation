@@ -154,6 +154,24 @@ afficherArticles();
 
     PAUSE ET REPRISE A 11H15...
 
+## SQL CLAUSE WHERE
+
+    POUR NE PAS SELECTIONNER TOUTES LES LIGNES D'UNE TABLE SQL
+    ON PEUT AJOUTER UNE CLAUSE WHERE
+    POUR AJOUTER DES FILTRES
+    => OUTIL TRES PUISSANT DE SQL
+    
+    https://sql.sh/cours/where
+
+    exemple:
+
+```sql
+
+SELECT * FROM article
+WHERE 
+id = '4'
+
+```
 
 ## EXERCICE: CREER LA PAGE admin.php
 
