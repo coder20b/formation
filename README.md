@@ -152,6 +152,8 @@ afficherArticles();
 ?>
 ```
 
+    PAUSE ET REPRISE A 11H15...
+
 
 ## EXERCICE: CREER LA PAGE admin.php
 
@@ -164,8 +166,41 @@ afficherArticles();
     CREER UNE PAGE admin.php
     QUI VA PROPOSER LE FORMULAIRE 
     POUR AJOUTER UN NOUVEL ARTICLE DANS LA TABLE article
+    (note: IL FAUDRA PROTEGER CETTE PAGE ENSUITE...)
 
-    PAUSE ET REPRISE A 11H15...
+    * ASTUCE: POUR AFFCIHER SEULEMENT LE DEBUT D'UN TEXTE (EXTRAIT...)
+    https://www.php.net/manual/fr/function.substr
+
+## EXERCICES FONCTIONS PHP ET SQL
+
+    * DELETE
+    CREER UNE FONCTION supprimerLigne
+    QUI PREND EN PARAMETRES 
+    LE NOM DE LA TABLE
+    ET id DE LA LIGNE A SUPPRIMER
+
+    exemple:
+    supprimerLigne("article", "1");
+    supprimerLigne("newsletter", "2");
+
+    * UPDATE
+    CREER UNE FONCTION modifierLigne
+    QUI PREND EN PARAMETRES
+    LE NOM DE LA TABLE
+    ET id DE LA LIGNE A MODIFIER
+    ET UN TABLEAU ASSOCIATIF 
+        "CLE" => "VALEUR"
+        "COLONNE" => "NOUVELLE VALEUR"
+
+    exemple:
+    modifierLigne("newsletter", "1", [ "nom" => "john"]);
+    modifierLigne("article", "2", [ "titre" => "nouveau titre", "image" => "nouvelle url" ]);
+
+
+
+
+
+
 
 
 
