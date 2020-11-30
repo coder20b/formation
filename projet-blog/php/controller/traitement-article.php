@@ -17,22 +17,21 @@ if ($formIdentifiant == "article")
 {
     // <input name="titre">
     // filtrer => SECURITE POUR ENLEVER LE CODE DANGEREUX
-    $titre      = filtrer("titre");
-    $image      = filtrer("image");
-    $contenu    = filtrer("contenu");
+    // ...on peut creer une fonction de confort creerDatetime()
+    $tabAsso = [
+        "titre"             => filtrer("titre"),
+        "image"             => filtrer("image"),
+        "contenu"           => filtrer("contenu"),
+        "datePublication"   => date("Y-m-d H:i:s"),
+    ];
+    // ASTUCE: ON VA CREER LES VARIABLES A PARTIR DES CLES 
+    extract($tabAsso);
+    // extract CREE POUR MOI LES VARIABLES $titre, $image, $contenu, $datePublication
+    // https://www.php.net/manual/fr/function.extract.php
 
     // VALIDATION MINIMALISTE... A COMPLETER
-    if ( ($titre != "") && ($image != "") && ($contenu != ""))
+    if ( ($titre != "") && ($image != "") && ($contenu != "") )
     {
-        $datePublication = date("Y-m-d H:i:s");     // FORMAT DATETIME SQL 
-        // ...on peut creer une fonction de confort creerDatetime()
-
-        $tabAsso = [
-            "titre"             => $titre,
-            "image"             => $image,
-            "contenu"           => $contenu,
-            "datePublication"   => $datePublication,
-        ];
         insererLigne("article", $tabAsso);
 
         // message de confirmation

@@ -68,7 +68,8 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?4F1A8154FBD84AA3E1FC367B1
 
 ## ADMIN: CRUD SUR LA TABLE SQL article
 
-
+    PAUSE ET REPRISE A 11H15
+    
 
 
 
