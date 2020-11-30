@@ -127,7 +127,9 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?4F1A8154FBD84AA3E1FC367B1
     PAUSE ET REPRISE A 16H...
 
 
+    FIN DE JOURNEE ;-p
 
+    
 
 
 
