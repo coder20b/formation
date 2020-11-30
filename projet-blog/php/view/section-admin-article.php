@@ -44,7 +44,7 @@
     </form>
 </section>
 
-<section>
+<section class="cache">
     <h3>UPDATE article</h3>
     <!-- POUR UPLOAD IL FAUDRA AJOUTER UN ATTRIBUT SUPPLEMENTAIRE... -->
         <form method="POST" action="#form-update" id="form-update">
