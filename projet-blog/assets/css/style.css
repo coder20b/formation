@@ -138,7 +138,9 @@ td {
     padding:0.5rem;
 }
 
-
+.cache {
+    display:none;
+}
 
 
 

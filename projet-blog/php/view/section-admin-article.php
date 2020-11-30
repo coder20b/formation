@@ -28,7 +28,7 @@
     </form>
 </section>
 
-<section>
+<section class="cache">
     <h3>DELETE article</h3>
     <form method="POST" action="#form-delete" id="form-delete">
         <label>
@@ -47,23 +47,23 @@
 <section>
     <h3>UPDATE article</h3>
     <!-- POUR UPLOAD IL FAUDRA AJOUTER UN ATTRIBUT SUPPLEMENTAIRE... -->
-    <form method="POST" action="#form-update" id="form-update">
-        <label>
-            <span>titre</span>
-            <input type="text" name="titre" required placeholder="titre" maxlength="160">
-        </label>
-        <label>
-            <span>image</span>
-            <input type="text" name="image" required placeholder="url de l'image" maxlength="160">
-        </label>
-        <label>
-            <span>contenu</span>
-            <textarea name="contenu" cols="80" rows="10" required placeholder="contenu"></textarea>
-        </label>
-        <label>
-            <span>id</span>
-            <input type="number" name="id" required placeholder="id" maxlength="160">
-        </label>
+        <form method="POST" action="#form-update" id="form-update">
+            <label>
+                <span>titre</span>
+                <input type="text" name="titre" required placeholder="titre" maxlength="160">
+            </label>
+            <label>
+                <span>image</span>
+                <input type="text" name="image" required placeholder="url de l'image" maxlength="160">
+            </label>
+            <label>
+                <span>contenu</span>
+                <textarea name="contenu" cols="80" rows="10" required placeholder="contenu"></textarea>
+            </label>
+            <label>
+                <span>id</span>
+                <input type="number" name="id" required placeholder="id" maxlength="160">
+            </label>
         <button type="submit">PUBLIER VOTRE ARTICLE</button>
         <!-- PARTIE TECHNIQUE -->
         <input type="hidden" name="formIdentifiant" value="article-update">
@@ -101,8 +101,47 @@ function afficherTable ($table, $tri)
         echo "<tr>";
         foreach($ligneAsso as $colonne => $valeur)
         {
-            echo "<td>$valeur</td>";
-        }        
+            echo 
+            <<<x
+            <td class="$colonne">$valeur</td>
+            x;
+        }  
+        // AJOUTER UNE COLONNE AVEC SUPPRIMER
+        // $id = $ligneAsso["id"];
+        extract($ligneAsso);    // CREE MES VARIABLES
+        echo 
+        <<<x
+        <td>
+            <button class="action-update" data-id="$id">modifier $id</button>
+            <form method="POST" action="#form-update" class="cache form-update-$id">
+                <label>
+                    <span>titre</span>
+                    <input type="text" name="titre" required placeholder="titre" maxlength="160" value="$titre">
+                </label>
+                <label>
+                    <span>image</span>
+                    <input type="text" name="image" required placeholder="url de l'image" maxlength="160" value="$image">
+                </label>
+                <label>
+                    <span>contenu</span>
+                    <textarea name="contenu" cols="80" rows="10" required placeholder="contenu">$contenu</textarea>
+                </label>
+                <label>
+                    <span>id</span>
+                    <input type="number" name="id" required placeholder="id" maxlength="160" value="$id">
+                </label>
+            <button type="submit">PUBLIER VOTRE ARTICLE</button>
+            <!-- PARTIE TECHNIQUE -->
+            <input type="hidden" name="formIdentifiant" value="article-update">
+            <div>
+            </div>
+        </form>
+            
+        </td>
+        <td>
+            <button class="action-delete" data-id="$id" onclick="onDeleteLine(event)">supprimer $id</button>
+        </td>
+        x;      
         echo "</tr>";
     }
 
@@ -113,6 +152,47 @@ afficherTable("article", "datePublication DESC");
 ?>
         </tbody>
     </table>
+    <script>
+function onDeleteLine(event) 
+{
+    // J'AI BESOIN DE RECUPERER LE BOUTON QUI A ETE CLIQUE
+    // console.log(event.target);
+    let boutonClique = event.target;
+    // MAINTENANT JE VEUX RECUPERER L'ATTRIBUT data-id
+    let id = boutonClique.getAttribute('data-id');
+    console.log(id);
 
+    // IL FAUT COPIER CET id DANS LE CHAMP DU FORMULAIRE DE ID #form-delete
+    let champId = document.querySelector('form#form-delete input[name=id]');
+    console.log(champId);
+    champId.value = id; // COPIER COLLER DE id DANS LE CHAMP DU FORMULAIRE
+
+    // ENFIN ON VA AUSSI DECLENCHER LE CLICK POUR ACTIVER LE FORMULAIRE
+    let boutonSupprimer = document.querySelector('form#form-delete button[type=submit]');
+    boutonSupprimer.click();
+}       
+
+
+// SEPARATION MVC
+// ON FAIT UNE BOUCLE
+let boutons = document.querySelectorAll('button.action-update');
+for(bouton of boutons)
+{
+    bouton.addEventListener('click', function(event) {
+        let boutonClique = event.target;
+        console.log(boutonClique);
+        // ON MONTRE LE FORMULAIRE CORRESPONDANT
+        let id = boutonClique.getAttribute('data-id');
+        let formUpdateAssocie = document.querySelector('.form-update-' + id);
+        formUpdateAssocie.classList.toggle('cache');
+    });
+}
+
+// AUTRE POSSIBILITE...
+// EN PHP, ON VA CREER DU JS
+/*
+let articles = <?php echo json_encode(lireTable("article", "datePublication DESC"),JSON_PRETTY_PRINT)?>;
+*/
+    </script>
 </section>
 
