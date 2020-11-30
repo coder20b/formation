@@ -10,5 +10,3 @@ $titre = "Admin Article";
 require_once "php/view/header.php"; 
 require_once "php/view/section-admin-article.php";
 require_once "php/view/footer.php";
-
-?>

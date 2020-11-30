@@ -64,7 +64,7 @@
                 <span>id</span>
                 <input type="number" name="id" required placeholder="id" maxlength="160">
             </label>
-        <button type="submit">PUBLIER VOTRE ARTICLE</button>
+        <button type="submit">MODIFIER VOTRE ARTICLE</button>
         <!-- PARTIE TECHNIQUE -->
         <input type="hidden" name="formIdentifiant" value="article-update">
         <div>
@@ -112,7 +112,8 @@ function afficherTable ($table, $tri)
         echo 
         <<<x
         <td>
-            <button class="action-update" data-id="$id">modifier $id</button>
+            <button class="action-update" data-id="$id">formulaire modification $id</button>
+            <!-- ON CREE UN FORMULAIRE PREREMPLI POUR CHAQUE LIGNE A MODIFIER -->
             <form method="POST" action="#form-update" class="cache form-update-$id">
                 <label>
                     <span>titre</span>
@@ -130,7 +131,7 @@ function afficherTable ($table, $tri)
                     <span>id</span>
                     <input type="number" name="id" required placeholder="id" maxlength="160" value="$id">
                 </label>
-                <button type="submit">PUBLIER VOTRE ARTICLE</button>
+                <button type="submit">ENREGISTRER VOS MODIFICATIONS</button>
                 <!-- PARTIE TECHNIQUE -->
                 <input type="hidden" name="formIdentifiant" value="article-update">
                 <div>
