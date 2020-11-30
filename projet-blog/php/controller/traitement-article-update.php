@@ -38,7 +38,7 @@ if ($formIdentifiant == "article-update")
         modifierLigne("article", $id, $tabAsso);
 
         // message de confirmation
-        echo "votre article est publié";
+        echo "votre article est modifié";
     }
     else
     {

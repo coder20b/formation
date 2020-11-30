@@ -157,6 +157,15 @@ function modifierLigne ($table, $id, $tabAsso)
 {
     $id = intval($id);  // SECURITE
 
+    $listeColonne = "";
+    foreach($tabAsso as $colonne => $valeur)
+    {
+        $listeColonne .= ", $colonne = :$colonne";
+    }    
+    // on a une virgule en trop
+    // https://www.php.net/manual/fr/function.trim.php
+    $listeColonne = trim($listeColonne, ",");   // on enleve la virgule en trop
+
     // CREER LA REQUETE SQL
     // https://sql.sh/cours/update
     // ATTENTION: NE PAS OUBLIER LA CLAUSE WHERE 
@@ -166,10 +175,7 @@ function modifierLigne ($table, $id, $tabAsso)
     
     UPDATE $table
     SET
-        titre = :titre,
-        image = :image,
-        contenu = :contenu,
-        datePublication = :datePublication
+        $listeColonne
     WHERE
         id = $id    
     x;
