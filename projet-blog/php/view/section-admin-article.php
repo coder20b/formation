@@ -130,12 +130,12 @@ function afficherTable ($table, $tri)
                     <span>id</span>
                     <input type="number" name="id" required placeholder="id" maxlength="160" value="$id">
                 </label>
-            <button type="submit">PUBLIER VOTRE ARTICLE</button>
-            <!-- PARTIE TECHNIQUE -->
-            <input type="hidden" name="formIdentifiant" value="article-update">
-            <div>
-            </div>
-        </form>
+                <button type="submit">PUBLIER VOTRE ARTICLE</button>
+                <!-- PARTIE TECHNIQUE -->
+                <input type="hidden" name="formIdentifiant" value="article-update">
+                <div>
+                </div>
+            </form>
             
         </td>
         <td>
