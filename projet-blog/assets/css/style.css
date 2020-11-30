@@ -104,6 +104,7 @@ form {
     display: flex;
     flex-direction: column;
     max-width:640px;
+    margin: 0 auto; /* centrer au milieu */
 }
 form label {
     padding:0.25rem;
@@ -115,7 +116,7 @@ input, textarea, button {
     font-family: monospace;
 }
 
-h2 {
+h2, h3, table {
     width:100%;
 }
 section.blog {
@@ -130,6 +131,11 @@ section.blog article {
 
 section.blog article img {
     height:30vh;
+}
+
+td {
+    border:1px solid #aaaaaa;
+    padding:0.5rem;
 }
 
 

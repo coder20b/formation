@@ -135,4 +135,48 @@ Array
     */
 
 
+function supprimerLigne($table, $id)
+{
+    // CREER LA REQUETE SQL
+    // https://sql.sh/cours/delete
+    // ATTENTION: NE PAS OUBLIER LA CLAUSE WHERE 
+    // POUR SELECTIONNER SEULEMENT LA LIGNE A SUPPRIMER
+    $requeteSQL =
+    <<<x
+    DELETE FROM $table
+    WHERE id = :id
+    x;
+
+    // ENVOYER LA REQUETE SQL
+    envoyerRequeteSql($requeteSQL, [ "id" => $id ]);
+
+}
+
+
+function modifierLigne ($table, $id, $tabAsso)
+{
+    $id = intval($id);  // SECURITE
+
+    // CREER LA REQUETE SQL
+    // https://sql.sh/cours/update
+    // ATTENTION: NE PAS OUBLIER LA CLAUSE WHERE 
+    // POUR SELECTIONNER SEULEMENT LA LIGNE A MODIFIER
+    $requeteSQL =
+    <<<x
+    
+    UPDATE $table
+    SET
+        titre = :titre,
+        image = :image,
+        contenu = :contenu,
+        datePublication = :datePublication
+    WHERE
+        id = $id    
+    x;
+
+    // ENVOYER LA REQUETE
+    envoyerRequeteSql($requeteSQL, $tabAsso);
+}
+
+
 // OPTIONNEL: ON PEUT NE PAS AJOUTER LA BALISE FERMANTE PHP
