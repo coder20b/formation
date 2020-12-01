@@ -323,7 +323,7 @@ OFFSET 5
 
     * EXERCICE EN JS ?
     AFFICHER LES IMAGES DANS LES BALISES td QUI AFFICHENT POUR LE MOMENT LE CHEMIN
-    
+
     PREQREQUIS: AVOIR UNE CLASSE image SUR LES BALISES td
     <td class="image">assets/img/galerie-1.jpg</td>
 
@@ -331,7 +331,9 @@ OFFSET 5
     <td class="image"><img src="assets/img/galerie-1.jpg"></td>
 
 
-
+    PAUSE ET REPRISE A 16H...
+    AUTONOMIE POUR LE RESTE DE LA JOURNEE
+    
 
 
 
