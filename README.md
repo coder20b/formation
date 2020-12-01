@@ -274,10 +274,10 @@ LIMIT 5
 OFFSET 10
 ;
 
--- page N   offset (N-1)*LIMIT
--- page 1   offset (1-1)*5 = 0
--- page 2   offset (2-1)*5 = 5
--- page 3   offset (3-1)*5 = 10
+-- page N   offset (N-1) * LIMIT
+-- page 1   offset (1-1) * 5 = 0
+-- page 2   offset (2-1) * 5 = 5
+-- page 3   offset (3-1) * 5 = 10
 -- => C'EST PHP QUI FAIT CE CALCUL POUR PRODUIRE LE CODE SQL
 
 
@@ -299,6 +299,22 @@ OFFSET 5
 
     PAUSE ET REPRISE A 14H00
 
+
+## ACTIVITES APRES-MIDI
+
+    * EXERCICES EN AUTONOMIE
+        crud article
+        crud newsletter
+        crud contact
+    
+    * NE PAS HESITER A POSER DES QUESTIONS...
+
+    * ECHEANCE SEMAINE PROCHAINE: EXAMEN PHP+SQL
+
+    * CREER UNE DATABASE AVEC PHPMYADMIN
+    * CREER UNE TABLE SQL AVEC PHPMYADMIN
+    * CODER UNE PAGE CRUD SUR CETTE TABLE SQL
+    * GERER UPLOAD DE FICHIER => A FAIRE CETTE SEMAINE
 
 
 
