@@ -165,6 +165,9 @@ ORDER BY email DESC, id DESC;
 
     https://sql.sh/cours/where/like
 
+    ET TOUT SE COMBINE...
+    https://sql.sh/cours/where/and-or
+
     COMME DES TESTS OU CONDITIONS EN JS ET PHP
     * OPERATEURS DE COMPARAISON
     =       (PIEGE CLASSIQUE EN SQL UN SEUL =)
@@ -187,8 +190,8 @@ ORDER BY email DESC, id DESC;
 
 ```sql
 SELECT * FROM `newsletter` 
-WHERE id 
-IN (10, 15, 20)
+WHERE 
+    id IN (10, 15, 20)
 
 SELECT * FROM newsletter 
 WHERE 
@@ -203,15 +206,95 @@ WHERE
 dateInscription BETWEEN '2020-11-26 00:00:00' AND '2020-11-30 00:00:00'
 ORDER BY email DESC, id DESC;
 
+-- recherche par mot clé
+-- les emails qui contiennent '5'
+-- et les noms qui commencent par 'nom'
 SELECT * FROM `newsletter` 
 WHERE `email` LIKE '%5%'
 AND nom LIKE 'nom%'
 
+-- tout se combine avec des OR ou des AND
+SELECT * FROM `newsletter` 
+WHERE 
+    ( `email` LIKE '%5%' AND nom LIKE 'nom%' )
+    OR 
+    dateInscription BETWEEN '2020-11-26 00:00:00' AND '2020-11-30 00:00:00'
+    OR 
+    id IN (10, 15, 20)
+ORDER BY 
+    email DESC, id DESC;
+
 ```
 
     PAUSE ET REPRISE A 11H15...
-    
 
+## PAGINATION DES REPONSES AVEC SQL
+
+    OFFSET ET LIMIT
+    => POUR PAGINER LES REPONSES
+
+
+```sql
+
+-- seulement les 5 premieres réponses
+SELECT * FROM newsletter 
+WHERE 
+dateInscription BETWEEN '2020-11-26 00:00:00' AND '2020-11-30 00:00:00'
+ORDER BY email DESC, id DESC
+LIMIT 5
+;
+
+-- on affiche 5 éléments par page   (limit 5)
+-- et on affiche la première page   (offset 0)
+SELECT * FROM newsletter 
+WHERE 
+dateInscription BETWEEN '2020-11-26 00:00:00' AND '2020-11-30 00:00:00'
+ORDER BY email DESC, id DESC
+LIMIT 5
+OFFSET 0
+;
+
+-- on affiche 5 éléments par page   (limit 5)
+-- et on affiche la 2è page         (offset 5)
+SELECT * FROM newsletter 
+WHERE 
+dateInscription BETWEEN '2020-11-26 00:00:00' AND '2020-11-30 00:00:00'
+ORDER BY email DESC, id DESC
+LIMIT 5
+OFFSET 5
+;
+
+-- on affiche 5 éléments par page   (limit 5)
+-- et on affiche la 3è page         (offset 10)
+SELECT * FROM newsletter 
+WHERE 
+dateInscription BETWEEN '2020-11-26 00:00:00' AND '2020-11-30 00:00:00'
+ORDER BY email DESC, id DESC
+LIMIT 5
+OFFSET 10
+;
+
+-- page N   offset (N-1)*LIMIT
+-- page 1   offset (1-1)*5 = 0
+-- page 2   offset (2-1)*5 = 5
+-- page 3   offset (3-1)*5 = 10
+-- => C'EST PHP QUI FAIT CE CALCUL POUR PRODUIRE LE CODE SQL
+
+
+-- tout se combine avec des OR ou des AND
+SELECT * FROM `newsletter` 
+WHERE 
+    ( `email` LIKE '%5%' AND nom LIKE 'nom%' )
+    OR 
+    dateInscription BETWEEN '2020-11-26 00:00:00' AND '2020-11-30 00:00:00'
+    OR 
+    id IN (10, 15, 20)
+ORDER BY 
+    email DESC, id DESC
+LIMIT 5
+OFFSET 5
+;
+```
 
 
 
