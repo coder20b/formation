@@ -75,6 +75,7 @@
 
 <section class="blog">
     <h3>READ article</h3>
+    <h3>IL Y A <?php echo Model::compterLigne("article") ?> ARTICLES EN TOUT</h3>
     <p>ON GARDE L'AFFICHAGE A LA FIN POUR AFFICHER LA LISTE A JOUR</p>
     <table>
         <tbody>

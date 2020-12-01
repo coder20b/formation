@@ -1,5 +1,41 @@
 <?php
 
+// ON VA CREER UNE CLASSE
+class Model
+{
+    // PROPRIETES DE CLASSE (static)
+    // UNE PROPRIETE EST UNE VARIABLE RANGEE DANS UNE CLASSE
+
+    static $dbh = null;
+
+    // METHODES DE CLASSE (static)
+    // UNE METHODE EST UNE FONCTION RANGEE DANS UNE CLASSE
+
+    static function compterLigne($table)
+    {
+        // https://sql.sh/fonctions/agregation/count
+        // PRATIQUE SI ON VEUT JUSTE COMPTER LE NOMBRE DE LIGNE
+        $requeteSQL = 
+        <<<x
+        SELECT count(*) FROM $table;
+        x;
+
+        $resultat = envoyerRequeteSql($requeteSQL, []);
+        // RACCOURCI: POUR OBTENIR LE RESULTAT DIRECTEMENT
+        // https://www.php.net/manual/fr/pdostatement.fetchcolumn.php
+        $nbLigne = $resultat->fetchColumn();
+        return $nbLigne;
+    }
+
+    // PERMET DE RETROUVER L'id QUE SQL VIENT DE CREER POUR LA NOUVELLE LIGNE
+    static function lireNouvelId ()
+    {
+        // https://www.php.net/manual/fr/pdo.lastinsertid.php
+        $nouvelId = Model::$dbh->lastInsertId();
+        return $nouvelId;
+    }
+} 
+
 // ETAPE 1: DEFINITION
 function envoyerRequeteSql ($requeteSQL, $tabAsso)
 {
@@ -13,10 +49,27 @@ function envoyerRequeteSql ($requeteSQL, $tabAsso)
     $mysql        = "mysql:host=$hostSQL;port=$portSQL;dbname=$database;charset=utf8";
     
     try {
-        $dbh = new PDO($mysql, $user, $password);   // CONNEXION ENTRE PHP ET MySQL
-        $sth = $dbh->prepare($requeteSQL);          // ON FOURNIT NOTRE REQUETE SQL PREPAREE (AVEC LES TOKENS)
+        // ON VA SEULEMENT GARDER UNE SEULE CONNEXION AVEC MySQL
+        // POUR LE MOMENT $dbh EST UNE VARIABLE LOCALE
+        // => CREE ET DETRUITE A CHAQUE APPEL DE LA FONCTION
+        // => ON VA UTILISER UNE PROPRIETE DE CLASSE
+        if (Model::$dbh == null) {
+            // ON N'A PAS ENCORE OUVERT DE CONNEXION
+            // ON VA CREER UNE CONNEXION
+            Model::$dbh = new PDO($mysql, $user, $password);   // CONNEXION ENTRE PHP ET MySQL
+            // MAINTENANT QU'ON A UNE CONNEXION Model::$dbh != null
+        }
+
+        $sth = Model::$dbh->prepare($requeteSQL);          // ON FOURNIT NOTRE REQUETE SQL PREPAREE (AVEC LES TOKENS)
         $sth->execute($tabAsso);                    // ON EXECUTE NOTRE REQUETE SQL (AVEC LE TABLEAU ASSO ET LES VALEURS)
     
+
+        // DEBUG
+        // https://www.php.net/manual/fr/pdostatement.debugdumpparams.php
+        // echo "<pre>";
+        // $sth->debugDumpParams();
+        // echo "</pre>";
+
         // POUR LA LECTURE: ON A BESOIN D'ETAPES SUPPLEMENTAIRES
         // QUI VONT CONTINUER A UTILISER $sth 
         // => ON FAIT UN return EN SORTIE
@@ -58,8 +111,8 @@ function insererLigne ($table, $tabAsso)
     x;
         
     // ETAPE 2: APPEL DE LA FONCTION
-    envoyerRequeteSql($requeteSQL, $tabAsso);
-
+    $resultat = envoyerRequeteSql($requeteSQL, $tabAsso);
+    return $resultat;
 }
 
 // SELECT * FROM `article` WHERE id = 4
@@ -148,8 +201,8 @@ function supprimerLigne($table, $id)
     x;
 
     // ENVOYER LA REQUETE SQL
-    envoyerRequeteSql($requeteSQL, [ "id" => $id ]);
-
+    $resultat = envoyerRequeteSql($requeteSQL, [ "id" => $id ]);
+    return $resultat;
 }
 
 
@@ -181,8 +234,10 @@ function modifierLigne ($table, $id, $tabAsso)
     x;
 
     // ENVOYER LA REQUETE
-    envoyerRequeteSql($requeteSQL, $tabAsso);
+    $resultat = envoyerRequeteSql($requeteSQL, $tabAsso);
+    return $resultat;
 }
+
 
 
 // OPTIONNEL: ON PEUT NE PAS AJOUTER LA BALISE FERMANTE PHP

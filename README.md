@@ -297,6 +297,8 @@ OFFSET 5
 ```
 
 
+    PAUSE ET REPRISE A 14H00
+
 
 
 

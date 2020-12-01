@@ -32,10 +32,17 @@ if ($formIdentifiant == "article")
     // VALIDATION MINIMALISTE... A COMPLETER
     if ( ($titre != "") && ($image != "") && ($contenu != "") )
     {
-        insererLigne("article", $tabAsso);
+        insererLigne("article", $tabAsso);  // SQL VA CREER UN NOUVEL id POUR LA LIGNE
+
+        // JE PEUX RECUPERER L'id DE LA LIGNE QUI VIENT D'ETRE CREEE
+        $id = Model::lireNouvelId();
 
         // message de confirmation
-        echo "votre article est publié";
+        echo
+        <<<x
+        votre article est publié. 
+        <a href="article.php?id=$id">cliquer ici pour aller sur la page de l'article</a>
+        x;
     }
     else
     {
