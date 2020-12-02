@@ -92,6 +92,7 @@ foreach($tabLigne as $ligneAsso)
     $id = $ligneAsso["id"];
     echo 
     <<<x
+        <td><button data-id="$id" onclick="modifierLigne(event)">modifier $id</button></td>
         <td><button data-id="$id" onclick="supprimerLigne(event)">supprimer $id</button></td>
     </tr>
     x;
@@ -103,7 +104,97 @@ foreach($tabLigne as $ligneAsso)
         </tbody>
     </table>  
     
+    <!-- ICI ON VA RASSEMBLER TOUS LES FORMULAIRES D'UPDATE -->
+    <div>
+<?php        
+foreach($tabLigne as $ligneAsso)
+{
+    extract($ligneAsso);
+    // => ASTUCE QUI CREE LES VARIABLES A PARTIR DES NOMS DE COLONNE
+    // => CREE LA VARIABLE $id, $email, $nom
+
+    // ICI ON VA CREER LE CODE HTML POUR LE FORMULAIRE D'UPDATE DE CHAQUE LIGNE
+    echo
+    <<<x
+    
+    <template class="template-update-$id">
+        <h4>FORMULAIRE POUR LIGNE $id</h4>
+        <form action="#form-update" id="form-update" method="POST">
+            <label>
+                <span>email</span>
+                <input name="email" type="email" required placeholder="votre email" value="$email">
+            </label>    
+            <label>
+                <span>nom</span>
+                <input name="nom" type="text" required placeholder="votre nom" value="$nom">
+            </label> 
+            <label>
+                <span>id</span>
+                <input type="number" name="id" required placeholder="id" maxlength="160" value="$id">
+            </label>
+            <button type="submit">modifier la ligne</button>   
+            <!-- PARTIE TECHNIQUE -->
+            <input type="hidden" name="formIdentifiant" value="newsletter-update">
+            <div>
+            </div>
+        </form>
+    </template>
+
+    x;
+}
+?>
+    </div>
+
+
+    <div id="boxUpdate">
+        <button onclick="fermerBox(event)">CLIQUER ICI POUR FERMER LA LIGHTBOX</button>
+        <!-- container dans lequel on va insérer le formulaire d'update -->
+        <div id="boxFormUpdate"></div>
+    </div>
+    <style>
+#boxUpdate {
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:100%;
+    background-color: rgba(0,0,0,0.8);
+    transition: all 0.5s linear;
+}  
+#boxUpdate.active {
+    left:0%;
+
+}      
+    </style>
+
     <script>
+function fermerBox (event)
+{
+    // POUR CACHER LA BOX, ON ENLEVE LA CLASSE active
+    boxUpdate.classList.remove('active');
+}
+
+function modifierLigne(event)
+{
+    // MONTRER UNE LIGHTBOX AU DESSUS DE LA PAGE
+    // DANS LA LIGHTBOX, ON VA INSERER LE FORMULAIRE D'UPDATE DE LA LIGNE
+
+    // DEBUG
+    console.log(event.target);
+    let id = event.target.getAttribute('data-id');
+
+    // AVEC id ON VA SELECTIONNER LA BALISE template QUI CONTIENT LE CODE DU FORMULAIRE
+    // ET ON VA LE COPIER DANS LA BALISE #boxFormUpdate
+    let selecteurTemplate = '.template-update-' + id;
+    let baliseTemplate = document.querySelector(selecteurTemplate);
+    boxFormUpdate.innerHTML = baliseTemplate.innerHTML;
+
+    // ajouter la classe active sur #boxUpdate
+    boxUpdate.classList.add('active');
+
+
+}
+
 function supprimerLigne(event) 
 {   
     // DEBUG
