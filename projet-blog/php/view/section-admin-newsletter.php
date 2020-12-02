@@ -122,10 +122,11 @@ foreach($tabLigne as $ligneAsso)
     // => CREE LA VARIABLE $id, $email, $nom
 
     // ICI ON VA CREER LE CODE HTML POUR LE FORMULAIRE D'UPDATE DE CHAQUE LIGNE
+    // ET ON LE PRE-REMPLIT AVEC LES VALEURS ACTUELLES
     echo
     <<<x
     <template class="template-update-$id">
-        <h3>FORMULAIRE POUR LIGNE $id</h3>
+        <h3>FORMULAIRE UPDATE POUR LIGNE $id</h3>
         <form action="#form-update" id="form-update" method="POST">
             <label>
                 <span>email</span>
