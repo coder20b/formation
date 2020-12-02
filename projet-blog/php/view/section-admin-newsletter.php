@@ -14,7 +14,6 @@
         <!-- PARTIE TECHNIQUE -->
         <input type="hidden" name="formIdentifiant" value="newsletter">
         <div>
-<?php require_once "php/controller/traitement-newsletter.php" ?>            
         </div>
     </form>
 </section>
@@ -38,7 +37,6 @@
         <!-- PARTIE TECHNIQUE -->
         <input type="hidden" name="formIdentifiant" value="delete">
         <div>
-            <?php require_once "php/controller/traitement-delete.php" ?>
         </div>
     </form>
 </section>
@@ -62,13 +60,17 @@
         <!-- PARTIE TECHNIQUE -->
         <input type="hidden" name="formIdentifiant" value="newsletter-update">
         <div>
-<?php require_once "php/controller/traitement-newsletter-update.php" ?>            
         </div>
     </form>
 </section>
 
 <section>
-    <h3>READ (etape 2)</h3>
+    <h3>TRAITEMENT CREATE/DELETE/UPDATE</h3>
+    <?php require_once "php/controller/traitement-newsletter.php" ?>            
+</section>
+
+<section>
+    <h3>READ A LA FIN (etape 2)</h3>
     <table>
         <tbody>
 <?php
