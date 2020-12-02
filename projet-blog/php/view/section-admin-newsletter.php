@@ -123,7 +123,7 @@ foreach($tabLigne as $ligneAsso)
     echo
     <<<x
     <template class="template-update-$id">
-        <h4>FORMULAIRE POUR LIGNE $id</h4>
+        <h3>FORMULAIRE POUR LIGNE $id</h3>
         <form action="#form-update" id="form-update" method="POST">
             <label>
                 <span>email</span>
@@ -166,6 +166,7 @@ foreach($tabLigne as $ligneAsso)
     z-index:999;
     transition: all 0.5s linear;
     left:100%;
+    color:#ffffff;
 }  
 #boxUpdate.active {
     left:0%;
