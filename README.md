@@ -59,7 +59,7 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?D18E612B18F432AA7656F5F7C
     MAIS CRYPTIQUE A LIRE...
 
     UTILE POUR FILTRER DU TEXTE ET ENLEVER LES CARACTERES INTERDITS...
-    
+
 ```php
 function filtrerCamelCase ($name)
 {
@@ -74,6 +74,8 @@ function filtrerCamelCase ($name)
 
 ```
 
+    PAUSE ET REPRISE A 11H15
+    
 
 
 
