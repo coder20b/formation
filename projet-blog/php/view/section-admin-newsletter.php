@@ -41,7 +41,7 @@
     </form>
 </section>
 
-<section>
+<section class="cache">
     <h3>UPDATE (etape 4)</h3>
     <form action="#form-update" id="form-update" method="POST">
         <label>
@@ -116,7 +116,6 @@ foreach($tabLigne as $ligneAsso)
     // ICI ON VA CREER LE CODE HTML POUR LE FORMULAIRE D'UPDATE DE CHAQUE LIGNE
     echo
     <<<x
-    
     <template class="template-update-$id">
         <h4>FORMULAIRE POUR LIGNE $id</h4>
         <form action="#form-update" id="form-update" method="POST">
