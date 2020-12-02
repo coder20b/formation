@@ -73,6 +73,7 @@
 
 <section>
     <h3>READ A LA FIN (etape 2)</h3>
+    <h3>Il y a <?php echo Model::compterLigne("newsletter") ?> lignes dans la table</h3>
     <table>
         <tbody>
 <?php
@@ -123,6 +124,7 @@ foreach($tabLigne as $ligneAsso)
 
     // ICI ON VA CREER LE CODE HTML POUR LE FORMULAIRE D'UPDATE DE CHAQUE LIGNE
     // ET ON LE PRE-REMPLIT AVEC LES VALEURS ACTUELLES
+    // https://developer.mozilla.org/fr/docs/Web/HTML/Element/template
     echo
     <<<x
     <template class="template-update-$id">
