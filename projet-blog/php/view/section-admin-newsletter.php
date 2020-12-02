@@ -66,7 +66,9 @@
 
 <section>
     <h3>TRAITEMENT CREATE/DELETE/UPDATE</h3>
-    <?php require_once "php/controller/traitement-newsletter.php" ?>            
+    <div class="feedback">
+<?php require_once "php/controller/traitement-newsletter.php" ?>    
+    </div>
 </section>
 
 <section>
