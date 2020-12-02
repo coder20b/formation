@@ -84,6 +84,15 @@ function filtrerCamelCase ($name)
 
     DEJEUNER ET REPRISE A 14H
 
+    * AUTONOMIE CRUD AVEC NOUVELLE VERSION 
+        (MOINS DE FICHIERS PHP + DE CODE JS)
+        SUR TABLES SQL
+        newsletter
+        contact
+        article
+        
+    * SI VOUS AVEZ DES QUESTIONS N'HESITEZ PAS A LES POSER...
+
 
 
 
