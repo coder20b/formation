@@ -166,7 +166,7 @@ foreach($tabLigne as $ligneAsso)
     top:0;
     background-color: rgba(0,0,0,0.9);
     z-index:999;
-    transition: all 0.5s linear;
+    transition: all 0.3s ease-in-out;
     left:100%;
     color:#ffffff;
 }  
