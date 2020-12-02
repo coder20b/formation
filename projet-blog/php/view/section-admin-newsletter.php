@@ -18,7 +18,7 @@
     </form>
 </section>
 
-<section>
+<section class="cache">
     <h3>DELETE GENERAL (etape 3)</h3>
     <!-- ATTENTION IL FAUT PROTEGER CETTE PARTIE -->
     <!-- ON PEUT SUPPRIMER N'IMPORTE QUELLE LIGNE DANS N'IMPORTE QUELLE TABLE -->
@@ -88,12 +88,42 @@ foreach($tabLigne as $ligneAsso)
             <td class="$colonne">$valeur</td>
         x;
     }
-    echo "</tr>";
+    // ON RAJOUTE UNE COLONNE POUR LE BOUTON DELETE
+    $id = $ligneAsso["id"];
+    echo 
+    <<<x
+        <td><button data-id="$id" onclick="supprimerLigne(event)">supprimer $id</button></td>
+    </tr>
+    x;
 
 }
 
 
 ?>
         </tbody>
-    </table>    
+    </table>  
+    
+    <script>
+function supprimerLigne(event) 
+{   
+    // DEBUG
+    // console.log(event.target);
+    // RECUPERER id DANS L'ATTRIBUT data-id
+    // COPIER id DANS LE CHAMP DU FORMULAIRE
+    // SIMULER LE CLICK SUR LE BOUTON submit DU FORMULAIRE
+
+    // https://developer.mozilla.org/fr/docs/Web/API/Element/getAttribute
+    let id = event.target.getAttribute('data-id');
+    // console.log(id);
+
+    let champId = document.querySelector('#form-delete input[name=id]');
+    // console.log(champId);
+    champId.value = id;
+
+    let boutonSubmit = document.querySelector('#form-delete button[type=submit]');
+    // console.log(boutonSubmit);
+    // https://developer.mozilla.org/fr/docs/Web/API/HTMLElement/click
+    boutonSubmit.click();
+}        
+    </script>
 </section>
