@@ -28,18 +28,24 @@
     </form>
 </section>
 
-<section class="cache">
-    <h3>DELETE article</h3>
+<section class="">
+    <!-- ATTENTION IL FAUT PROTEGER CETTE PARTIE -->
+    <!-- ON PEUT SUPPRIMER N'IMPORTE QUELLE LIGNE DANS N'IMPORTE QUELLE TABLE -->
+    <h3>DELETE GENERAL</h3>
     <form method="POST" action="#form-delete" id="form-delete">
+        <label>
+            <span>table</span>
+            <input type="text" name="table" required placeholder="table" maxlength="160" value="article">
+        </label>
         <label>
             <span>id</span>
             <input type="number" name="id" required placeholder="id" maxlength="160">
         </label>
-        <button type="submit">SUPPRIMER VOTRE ARTICLE</button>
+        <button type="submit">SUPPRIMER VOTRE LIGNE</button>
         <!-- PARTIE TECHNIQUE -->
-        <input type="hidden" name="formIdentifiant" value="article-delete">
+        <input type="hidden" name="formIdentifiant" value="delete">
         <div>
-            <?php require_once "php/controller/traitement-article-delete.php" ?>
+            <?php require_once "php/controller/traitement-delete.php" ?>
         </div>
     </form>
 </section>

@@ -10,11 +10,12 @@
 
 $formIdentifiant = filtrer("formIdentifiant");
 // <input type="hidden" name="formIdentifiant" value="article">
-if ($formIdentifiant == "article-delete")
+if ($formIdentifiant == "delete")
 {
     // <input name="id">
     // filtrer => SECURITE POUR ENLEVER LE CODE DANGEREUX
     $tabAsso = [
+        "table"          => filtrerCamelCase("table"), // UN NOM DE TABLE SERA EN camelCase (lettres ou chiffres)
         "id"             => filtrer("id"),
     ];
     // ASTUCE: ON VA CREER LES VARIABLES A PARTIR DES CLES 
@@ -25,10 +26,10 @@ if ($formIdentifiant == "article-delete")
     // VALIDATION MINIMALISTE... A COMPLETER
     if ($id != "")
     {
-        supprimerLigne("article", $id);
+        supprimerLigne($table, $id);
 
         // message de confirmation
-        echo "votre article est supprimé";
+        echo "votre ligne est supprimé";
     }
     else
     {

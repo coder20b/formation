@@ -16,6 +16,18 @@ function filtrer ($name)
     return $resultat;
 }
 
+function filtrerCamelCase ($name)
+{
+    $nom = filtrer($name);
+    // EN PLUS ON RAJOUTE UN FILTRE SUPPLEMENTAIRE
+    // POUR NE GARDER QUE LES LETTRES (minuscules ou MAJUSCULES) ET LES CHIFFRES
+    // https://www.php.net/manual/fr/function.preg-replace.php
+    // https://regex101.com/
+    // astuce: supprimer c'est comme remplacer par du texte vide
+    $nom = preg_replace("/[^a-zA-Z0-9]/", "", $nom);
+    return $nom;
+}
+
 function envoyerEmail ($destinataire, $titre, $message)
 {
     $headers =  'From: contact@monsite.fr' . "\r\n" .

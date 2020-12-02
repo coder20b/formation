@@ -1,5 +1,8 @@
 <?php
 
+// NOTRE CODE POUR DBAL
+// DEVRAIT FOURNI DE BASE AU DEVELOPPEUR
+
 // ON VA CREER UNE CLASSE
 class Model
 {
@@ -196,7 +199,7 @@ function supprimerLigne($table, $id)
     // POUR SELECTIONNER SEULEMENT LA LIGNE A SUPPRIMER
     $requeteSQL =
     <<<x
-    DELETE FROM $table
+    DELETE FROM `$table`
     WHERE id = :id
     x;
 
