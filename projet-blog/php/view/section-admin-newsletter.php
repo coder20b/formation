@@ -76,28 +76,34 @@
 <?php
 // ON VA CREER LES LIGNES tr ET LES COLONNES td EN PHP
 $tabLigne = lireTable("newsletter", "dateInscription DESC");
-// $tabLigne EST UN TABLEAU ORDONNE
-// QUI CONTIENT DES TABLEAUX ASSOCIATIFS
-foreach($tabLigne as $ligneAsso)
+
+function afficherTableSql($tabLigne)
 {
-    echo "<tr>";
-    foreach($ligneAsso as $colonne => $valeur)
+    // $tabLigne EST UN TABLEAU ORDONNE
+    // QUI CONTIENT DES TABLEAUX ASSOCIATIFS
+    foreach($tabLigne as $ligneAsso)
     {
-        echo
+        echo "<tr>";
+        foreach($ligneAsso as $colonne => $valeur)
+        {
+            echo
+            <<<x
+                <td class="$colonne">$valeur</td>
+            x;
+        }
+        // ON RAJOUTE UNE COLONNE POUR LE BOUTON DELETE
+        $id = $ligneAsso["id"];
+        echo 
         <<<x
-            <td class="$colonne">$valeur</td>
+            <td><button data-id="$id" onclick="modifierLigne(event)">modifier $id</button></td>
+            <td><button data-id="$id" onclick="supprimerLigne(event)">supprimer $id</button></td>
+        </tr>
         x;
+
     }
-    // ON RAJOUTE UNE COLONNE POUR LE BOUTON DELETE
-    $id = $ligneAsso["id"];
-    echo 
-    <<<x
-        <td><button data-id="$id" onclick="modifierLigne(event)">modifier $id</button></td>
-        <td><button data-id="$id" onclick="supprimerLigne(event)">supprimer $id</button></td>
-    </tr>
-    x;
 
 }
+afficherTableSql($tabLigne);
 
 
 ?>
@@ -156,9 +162,10 @@ foreach($tabLigne as $ligneAsso)
     height:100%;
     position:fixed;
     top:0;
-    left:100%;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.9);
+    z-index:999;
     transition: all 0.5s linear;
+    left:100%;
 }  
 #boxUpdate.active {
     left:0%;
