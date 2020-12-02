@@ -98,7 +98,11 @@ function filtrerCamelCase ($name)
 
     * SI VOUS AVEZ DES QUESTIONS N'HESITEZ PAS A LES POSER...
 
+    EXO SUR LE CRUD...
+    ET LA PAGINATION ?
+    SI ON NE VEUT AFFICHER QUE 10 LIGNES A LA FOIS ?
 
+    
 
 
 
