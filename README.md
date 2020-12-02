@@ -90,10 +90,12 @@ function filtrerCamelCase ($name)
         newsletter
         contact
         article
-        
+
     * SI VOUS AVEZ DES QUESTIONS N'HESITEZ PAS A LES POSER...
 
+    PAUSE A 15H45 ET REPRISE A 16H.
 
+    
 
 
 
