@@ -41,11 +41,11 @@ form label span {
                 <label>
                     <span>year of prod</span>
                     <select name="year_of_prod" required>
-                        <option value="2020">années 2020</option>
-                        <option value="2010">années 2010</option>
-                        <option value="2000">années 2000</option>
-                        <option value="1990">années 1990</option>
-                        <option value="1980">années 1980</option>
+                        <option value="2020">years 2020</option>
+                        <option value="2010">years 2010</option>
+                        <option value="2000">years 2000</option>
+                        <option value="1990">years 1990</option>
+                        <option value="1980">years 1980</option>
                     </select>
                 </label>
                 <label>
