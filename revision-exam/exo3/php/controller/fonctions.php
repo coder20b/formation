@@ -3,6 +3,8 @@
 function filtrer ($name)
 {
     // Notice: Undefined index: email
+    // https://www.php.net/manual/fr/migration70.new-features.php
+    // opérateur null coalescent ??
     $resultat = $_POST[$name] ?? ""; // TEXTE VIDE PAR DEFAUT CONTRE HACK
 
     // strip_tags ENLEVER LES BALISES HTML ET PHP
