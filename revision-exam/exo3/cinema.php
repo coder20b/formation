@@ -66,7 +66,7 @@ form label span {
                 </label>
                 <label>
                     <span>storyline</span>
-                    <textarea name="storyline" required placeholder="storyline" cols="80" line="5" minlength="5"></textarea>
+                    <textarea name="storyline" required placeholder="storyline" cols="80" rows="5" minlength="5"></textarea>
                 </label>
                 <label>
                     <span>video</span>
