@@ -10,9 +10,49 @@ class Model
     // UNE PROPRIETE EST UNE VARIABLE RANGEE DANS UNE CLASSE
 
     static $dbh = null;
+    static $tabRequete = [];
 
     // METHODES DE CLASSE (static)
     // UNE METHODE EST UNE FONCTION RANGEE DANS UNE CLASSE
+    static function stockerRequete ($sth)
+    {
+        // MAL FAIT: AFFICHE DIRECTEMENT AU LIEU DE PRODUIRE UN TEXTE
+        // https://www.php.net/manual/fr/pdostatement.debugdumpparams.php
+        // ASTUCE: ON VA DETOURNER L'AFFICHAGE POUR LE RECUPERER DANS UNE VARIABLE
+        // https://www.php.net/manual/fr/function.ob-start.php
+        ob_start();                 // COMMENCE A DETOURNER L'AFFICHAGE
+        $sth->debugDumpParams();    // AFFICHAGE DETOURNE
+        $texte = ob_get_clean();    // FIN DU DETOURNEMENT
+
+        // ON VA MEMORISER LE TEXTE POUR L'AFFICHER PLUS TARD
+        Model::$tabRequete[] = $texte;
+    }
+
+    // NOTE: NORMALEMENT CETTE METHODE DEVRAIT ETRE DANS LA PARTIE VIEW...
+    static function afficherDebug ()
+    {
+        // DEBUG DES INFOS RECUES PAR LES FORMULAIRES
+        $nbInfo = count($_REQUEST);
+        echo "$nbInfo INFOS RECUES PAR LES FORMULAIRES\n";
+        print_r($_REQUEST);
+        echo "\n";
+
+        // ON PEUT RECUPERER LES TEXTES STOCKES DANS LE TABLEAU
+        // ON VA AFFICHER CHAQUE TEXTE STOCKE DANS LE TABLEAU
+        // => BOUCLE AVEC foreach
+        $nbRequete = count(Model::$tabRequete);
+        echo "IL Y A EU $nbRequete REQUETES SQL POUR CETTE PAGE\n";
+        foreach(Model::$tabRequete as $indice => $requete)
+        {
+            echo 
+            <<<x
+            ------- requete SQL $indice -------
+            $requete
+
+            x;
+
+        }        
+    }
 
     static function compterLigne($table)
     {
@@ -68,10 +108,7 @@ function envoyerRequeteSql ($requeteSQL, $tabAsso)
     
 
         // DEBUG
-        // https://www.php.net/manual/fr/pdostatement.debugdumpparams.php
-        // echo "<pre>";
-        // $sth->debugDumpParams();
-        // echo "</pre>";
+        Model::stockerRequete($sth);
 
         // POUR LA LECTURE: ON A BESOIN D'ETAPES SUPPLEMENTAIRES
         // QUI VONT CONTINUER A UTILISER $sth 

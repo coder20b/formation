@@ -19,3 +19,38 @@ https://github.com/coder20b/formation
     jeudi 03/12
     
 https://prod.liveshare.vsengsaas.visualstudio.com/join?05B43252275E91BECD60CC3425CB84676917
+
+## Questions ?
+
+## RESUME EPISODE PRECEDENT
+
+    C
+    R
+    D
+    U
+
+    * Reduction du nombre fichier traitement
+        Pour chaque table sql 
+        => 1 fichier php/controller/traitement pour Create et Update
+        => 1 fichier php/view/admin pour Read
+        On a un Delete général (commun et réutilisable)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
