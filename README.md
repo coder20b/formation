@@ -35,7 +35,11 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?05B43252275E91BECD60CC342
         => 1 fichier php/view/admin pour Read
         On a un Delete général (commun et réutilisable)
 
+## EXERCICES 
 
+    PAUSE ET REPRISE A 11H15...
+
+    
 
 
 
