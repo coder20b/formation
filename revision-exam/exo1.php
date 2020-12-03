@@ -40,4 +40,12 @@ foreach($tabAsso as $cle => $valeur) {
 }
 echo "</ul>";
 
+echo "<h1>objet</h1>";
+// https://www.php.net/manual/fr/datetime.createfromformat.php
+$date = DateTime::createFromFormat('Y-m-d', '1952-02-19');
+echo $date->format('d-m-Y');
 
+
+echo "<h1>fonctionnel</h1>";
+$date = date_create_from_format('Y-m-d', '1952-02-19');
+echo date_format($date, 'd-m-Y');
