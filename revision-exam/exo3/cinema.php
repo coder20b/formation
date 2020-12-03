@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-form {
-    display: flex;
-    flex-direction: column;
-}  
-form label span {
-    display: block;
-}      
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label span {
+            display: block;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <h1>EXO3 MOVIES</h1>
@@ -73,11 +76,27 @@ form label span {
                     <input type="url" name="video" required placeholder="video">
                 </label>
                 <button type="submit">Add a new movie</button>
+                <!-- CHAMP TECHNIQUE POUR DIFFERENCIER LES FORMULAIRES -->
+                <input type="hidden" name="formIdentifiant" value="movies">
+
             </form>
+        </section>
+
+        <section>
+            <h3>TRAITEMENT DU FORMULAIRE CREATE</h3>
+<?php 
+require_once "php/controller/fonctions.php"; 
+// ATTENTION: NE PAS OUBLIER DE CHANGER LES INFOS DE CONNEXION A MySQL
+require_once "php/model/fonctions-sql.php"; 
+
+require_once "php/controller/traitement-movies.php"; 
+
+?>
         </section>
     </main>
     <footer>
         <p>tous droits réservés</p>
     </footer>
 </body>
+
 </html>
