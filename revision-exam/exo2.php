@@ -28,7 +28,7 @@ function convertir ($montantEntree, $devise)
     else {
         // SCENARIO 2: DOLLAR VERS EURO
         // 1 dollar = 0.95746 euros
-        $resultatSortie = 0.95746 * $montantEntree;
+        $resultatSortie = $montantEntree / 1.085965;
     }
     return $resultatSortie;
 }
