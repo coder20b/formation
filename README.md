@@ -39,8 +39,12 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?05B43252275E91BECD60CC342
 
     PAUSE ET REPRISE A 11H15...
 
-    
+    REFAIRE EXO 1 JUSTE AVEC L'ENONCE 
+    ET CODER CHAQUE ETAPE 
+    ET DETECTER SI IL Y A DES BLOCAGES
+    => AUTONOMIE JUSQU'A 11H30...
 
+    
 
 
 

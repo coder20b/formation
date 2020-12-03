@@ -11,9 +11,10 @@
     <script src="./assets/js/script.js"></script>
 
     <!-- DEBUG -->
-    <template id="debugServeur">
+    <!-- une balise script garde le texte tel quel alors que la balise template transforme le texte html -->
+    <script type="debug" id="debugServeur">
 <?php Model::afficherDebug() ?>
-    </template>
+    </script>
     <script>
         // ASTUCE: SI ON A UNE BALISE HTML AVEC UN id (EN CAMELCASE...)
         // EN JS, ON PEUT UTILISER DIRECTEMENT UNE VARIABLE AVEC COMME CELUI DE id
