@@ -17,16 +17,16 @@ if ($formIndentifiant == "newsletter")
     // CREER UNE FONCTION POUR FILTRER LES INFOS DE FORMULAIRES
     // RECUPERER LES INFOS
     // <input name="email">
-    $email  = filtrer("email");    
+    $email  = Form::filtrerEmail("email");    
     // <input name="nom">
-    $nom    = filtrer("nom");
+    $nom    = Form::filtrerTexte("nom");
 
     // https://www.php.net/manual/fr/function.date-default-timezone-set.php
     date_default_timezone_set('Europe/Paris');
     $dateInscription = date("Y-m-d H:i:s"); // FORMAT DATETIME POUR SQL
 
     // ON NE FAIT LE RESTE DU CODE QUE SI LES INFOS NE SONT PAS VIDES
-    if (($email != "") && ($nom != ""))
+    if (Form::estOK())
     {
         // COMPLETER LES INFOS
         // https://www.php.net/manual/fr/function.date.php

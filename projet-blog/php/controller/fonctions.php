@@ -22,6 +22,33 @@ class Form
         return $resultat;
     }
 
+    static function filtrerEmail ($name)
+    {
+        $resultat = filtrer($name);
+        if ($resultat == "")
+        {
+            Form::$tabErreur[] = "$name EST OBLIGATOIRE";
+        }
+        else if (false === filter_var($resultat, FILTER_VALIDATE_EMAIL))
+        {
+            // https://www.php.net/manual/fr/function.filter-var
+            Form::$tabErreur[] = "$name EST UN EMAIL INCORRECT";
+        }
+        
+        return $resultat;
+    }
+
+    static function filtrerEntier ($name)
+    {
+        $resultat = filtrer($name);
+        if ($resultat == "")
+        {
+            Form::$tabErreur[] = "$name EST OBLIGATOIRE";
+        }
+        $resultat = intval($resultat);  // CONVERTIR EN ENTIER
+        return $resultat;
+    }
+
     static function filtrerTexte ($name)
     {
         $resultat = filtrer($name);
