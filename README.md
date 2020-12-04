@@ -161,6 +161,44 @@ if ($_FILES["image"] ?? false)
 
 
     PAUSE ET REPRISE A 11H15...
-    
+
+## CONFIG php.ini POUR UPLOAD
+
+    OUVRIR LE FICHIER php.ini DE SON SERVEUR WEB...
+    ET CHERCHER LES LIGNES SUIVANTES
+
+```
+; Maximum size of POST data that PHP will accept.
+; Its value may be 0 to disable the limit. It is ignored if POST data reading
+; is disabled through enable_post_data_reading.
+; http://php.net/post-max-size
+post_max_size=100M
+
+; Maximum allowed size for uploaded files.
+; http://php.net/upload-max-filesize
+upload_max_filesize=100M
+
+```
+
+    UNE FOIS LES MODIFS EFFECTUEES
+    ENREGISTRER LE FICHIER php.ini
+    ET REDEMARRER LE SERVEUR WEB
+
+## ACTIVITES
+
+    AUTONOMIE POUR INTEGRER UPLOAD DANS PROJET BLOG
+    => 12H45
+
+    PAUSE DEJEUNER A 12H45 ET REPRISE A 13H45
+
+    CREATION DE MINIATURES APRES UPLOAD IMAGE...
+
+    * N'HESITEZ PAS A POSER DES QUESTIONS
+
+
+
+
+
+
 
 
