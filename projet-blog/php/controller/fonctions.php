@@ -77,7 +77,11 @@ class Form
                     if ($size <= Form::$tailleMax)
                     {
                         $filename = strtolower(preg_replace("/[^a-zA-Z0-9-]/", "", $filename)); // A COMPLETER
+
+                        // ON POURRAIT CHANGER LE NOM DU FICHIER (NE PAS GARDER LE NOM D'ORIGINE...)
                         $cheminFinal = "assets/upload/$filename.$extension"; 
+                        // $cheminFinal = "assets/mini/logement_" . time() . ".$extension";
+                        
                         move_uploaded_file(
                             $tmp_name, 
                             $cheminFinal
@@ -90,6 +94,8 @@ class Form
                         {
                             // ALORS JE CREE UNE MINIATURE AVEC LE MEME NOM MAIS DANS UN DOSSIER mini
                             $cheminMini = str_replace("/upload/", "/mini/", $cheminFinal);
+                            // SI ON VEUT CHANGER LE NOM
+                            // $cheminMini = "assets/mini/logement_" . time() . ".$extension";
                             Form::creerMini($cheminFinal, $cheminMini, 640);
                         }
                     }

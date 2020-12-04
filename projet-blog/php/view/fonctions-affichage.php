@@ -108,13 +108,16 @@ function afficherArticles()
         // (ASTUCE: DONNER DES NOMS DE COLONNES SQL EN camelCase...)
         extract($ligneAsso);
 
+        // ON CHANGE LE DOSSIER /upload/ EN /mini/ DANS LE CHEMIN
+        $imageMini = str_replace("/upload/", "/mini/", $image);
+
         // ON AFFICHE LE CODE HTML
         echo
         <<<codehtml
         
         <article>
             <h3><a href="article.php?id=$id">$titre</a></h3>
-            <img src="$image" alt="article1">
+            <img src="$imageMini" alt="article1">
             <p>$contenu</p>
             <p>publié le $datePublication</p>
         </article>
