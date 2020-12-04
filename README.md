@@ -244,8 +244,27 @@ creerMini("assets/upload/photo3.jpg", "assets/mini/photo3.jpg", 160);
 
     AUTONOMIE JUSQU'A 15H00
     ENSUITE AJOUT DES AUTRES FORMATS D'IMAGES (png, gif, webp)
+
+
+## SQL DECIMAL
+
+    ATTENTION
+    DECIMAL(10,2)       
+        => ATTENTION 10 CHIFFRES EN TOUT, DONT 2 DECIMALES
+        => 12345678,99
+
+    https://sql.sh/ressources/document/mysql-aide-memoire-sql.pdf
+
+
+    https://websitesetup.org/wp-content/uploads/2020/08/SQL-Cheat-Sheet-websitesetup.pdf
+
+
+
+    AUTONOMIE POUR LE RESTE DE LA JOURNEE...
+    NE PAS HESITER A POSER DES QUESTIONS...
+
+    PAUSE ET REPRISE A 16H...
+
     
-
-
 
 
