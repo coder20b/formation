@@ -8,6 +8,7 @@ class Form
     // PARAMETRES POUR UPLOAD
     static $listeExtensionOk    = [ "jpg", "jpeg", "png", "gif", "webp", "svg" ];
     static $tailleMax           = 1024 * 1024 * 10;  // 10 Mo
+    static $listeExtensionMini  = [ "jpg", "jpeg" ]; // , "png", "gif", "webp"
 
     // METHODE DE CLASSE
     static function estOK ()
@@ -83,6 +84,14 @@ class Form
                         );
                         // OK LE FICHIER EST DISPONIBLE
                         $resultat = $cheminFinal;
+
+                        // SI LE FICHIER EST UNE IMAGE
+                        if (in_array($extension, Form::$listeExtensionMini))
+                        {
+                            // ALORS JE CREE UNE MINIATURE AVEC LE MEME NOM MAIS DANS UN DOSSIER mini
+                            $cheminMini = str_replace("/upload/", "/mini/", $cheminFinal);
+                            Form::creerMini($cheminFinal, $cheminMini, 640);
+                        }
                     }
                     else
                     {
@@ -111,6 +120,42 @@ class Form
 
         return $resultat;
     }
+
+    static function creerMini ($fichierSource, $fichierCible, $largeurCible)
+    {
+        $imageSource = imagecreatefromjpeg($fichierSource);
+    
+        if ($imageSource !== false)
+        {
+            // OK ON A UNE IMAGE CHARGEE
+            // ON VA EXTRAIRE LA LARGEUR ET LA HAUTEUR DE L'IMAGE SOURCE
+            // https://www.php.net/manual/fr/function.imagesx.php
+            // https://www.php.net/manual/fr/function.imagesy.php
+            $largeurSource = imagesx($imageSource);     // exemple: 1000
+            $hauteurSource = imagesy($imageSource);     // exemple: 2000
+        
+            $hauteurCible = $hauteurSource * $largeurCible / $largeurSource ; // exemple: 2000 * 300 / 1000 = 600
+        
+            // https://www.php.net/manual/fr/function.imagecreatetruecolor.php
+            $imageCible = imagecreatetruecolor($largeurCible, $hauteurCible);   // image vide
+        
+            // https://www.php.net/manual/en/function.imagecopyresampled
+            imagecopyresampled(
+                $imageCible, $imageSource,
+                0, 0,
+                0, 0,
+                $largeurCible, $hauteurCible,
+                $largeurSource, $hauteurSource
+            );
+            // https://www.php.net/manual/en/function.imagejpeg.php
+            imagejpeg($imageCible, $fichierCible);
+        }
+        else
+        {
+            // KO LE FICHIER N'EST PAS UNE IMAGE JPEG
+        }
+    }
+    
 }
 
 function filtrer ($name)
