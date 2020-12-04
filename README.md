@@ -265,6 +265,7 @@ creerMini("assets/upload/photo3.jpg", "assets/mini/photo3.jpg", 160);
 
     PAUSE ET REPRISE A 16H...
 
-    
 
+    FIN DE SEMAINE... BON WEEK END ;-p
+    
 
