@@ -198,7 +198,7 @@ upload_max_filesize=100M
 ## CREATION DE MINIATURE EN PHP
 
     PHP PROPOSE PLEIN DE FONCTIONS POUR MANIPULER DES IMAGES
-    
+
 ```php
 <?php
 
@@ -242,7 +242,9 @@ creerMini("assets/upload/photo3.jpg", "assets/mini/photo3.jpg", 160);
 ?>
 ```
 
-
+    AUTONOMIE JUSQU'A 15H00
+    ENSUITE AJOUT DES AUTRES FORMATS D'IMAGES (png, gif, webp)
+    
 
 
 

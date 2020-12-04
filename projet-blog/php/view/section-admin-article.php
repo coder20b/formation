@@ -201,7 +201,7 @@ for(bouton of boutons)
 // AUTRE POSSIBILITE...
 // EN PHP, ON VA CREER DU JS
 /*
-let articles = <?php echo json_encode(lireTable("article", "datePublication DESC"),JSON_PRETTY_PRINT)?>;
+let articles = <?php // echo json_encode(lireTable("article", "datePublication DESC"),JSON_PRETTY_PRINT) ?>;
 */
     </script>
 </section>
