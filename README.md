@@ -19,3 +19,147 @@ https://github.com/coder20b/formation
     vendredi 04/12
 
 https://prod.liveshare.vsengsaas.visualstudio.com/join?D25DF801076A6F9E9DD209CB21C5A2481741
+
+## Questions ?
+
+## UPLOAD DE FICHIERS AVEC PHP
+
+    https://www.w3schools.com/php/php_file_upload.asp
+
+    RESTREINDRE LE TYPE DE FICHIERS...
+    https://www.w3schools.com/tags/att_input_accept.asp
+
+    https://fr.wikipedia.org/wiki/Type_de_m%C3%A9dias#:~:text=Un%20type%20de%20m%C3%A9dias%20(media,sur%20internet%20en%20deux%20parties.
+
+```html
+        <!-- https://www.w3schools.com/php/php_file_upload.asp -->
+        <form action="" enctype="multipart/form-data" method="POST">
+            <label>
+                <span>upload image</span>
+                <input type="file" name="image">
+            </label>
+            <button type="submit">envoyer le formulaire</button>
+        </form>
+
+```
+## UPLOAD NON SECURISE
+
+```php
+<?php
+
+if ($_FILES["image"] ?? false)
+{
+    /*
+    Array
+    (
+        [image] => Array
+            (
+                [name] => pexels-photo-316465.jpeg
+                [type] => image/jpeg
+                [tmp_name] => C:\xampp\tmp\php3DE9.tmp
+                [error] => 0
+                [size] => 99060
+            )
+
+    )
+    */
+    // https://www.php.net/manual/fr/function.move-uploaded-file.php
+    move_uploaded_file(
+        $_FILES["image"]["tmp_name"], 
+        "assets/upload/".$_FILES["image"]["name"]
+    );
+}
+
+?>
+```
+
+### UPLOAD PLUS SECURISE
+
+```php
+if ($_FILES["image"] ?? false)
+{
+    /*
+    Array
+    (
+        [image] => Array
+            (
+                [name] => pexels-photo-316465.jpeg
+                [type] => image/jpeg
+                [tmp_name] => C:\xampp\tmp\php3DE9.tmp
+                [error] => 0
+                [size] => 99060
+            )
+
+    )
+    */
+    // AVANT D'ACCEPTER LE FICHIER
+    // IL FAUT FAIRE PLEIN DE VERIF
+    // [error] => 0 SINON FICHIER CORROMPU
+    // extension du fichier autorisées jpg, jpeg, png, gif, svg, webp, etc...
+    //      (DANGER AVEC .php)
+    // taille max
+    // filtrer le nom du fichier pour enlever les caractères spéciaux
+
+    $tabUpload = $_FILES["image"];
+    extract($tabUpload);
+    // => ASTUCE QUI CREE LES VARIABLES $name, $type, $tmp_name, $error, $size
+    if ($error == 0)
+    {
+        // UPLOAD OK
+        // extraire l'extension de $name
+        // https://www.php.net/manual/fr/function.pathinfo.php
+        $tabInfoFichier = pathinfo($name);
+        extract($tabInfoFichier);
+        // => ASTUCE QUI VA CREER LES VARIABLES $extension ET $filename, ... 
+        // https://www.php.net/manual/fr/function.strtolower.php
+        $extension = strtolower($extension);    // CONVERTIT EN minuscules
+        $listeExtensionOk = [ "jpg", "jpeg", "png", "gif", "webp", "svg" ];
+        // https://www.php.net/manual/fr/function.in-array
+        if (in_array($extension, $listeExtensionOk)) 
+        {
+            // EXTENSION OK
+            $tailleMax = 1024 * 1024 * 10;  // 10 Mo
+            // => CONFIG php.ini A EFFECTUER POUR PARAMETRER LA TAILLE MAX UPLOAD
+            if ($size <= $tailleMax)
+            {
+                // TAILLE OK
+                $filename = strtolower(preg_replace("/[^a-zA-Z0-9-]/", "", $filename)); // A COMPLETER
+                $cheminFinal = "assets/upload/$filename.$extension"; 
+                // https://www.php.net/manual/fr/function.move-uploaded-file.php
+                move_uploaded_file(
+                    $tmp_name, 
+                    $cheminFinal
+                );
+
+            }
+            else
+            {
+                // TAILLE KO
+                echo "ERREUR: FICHIER TROP VOLUMINEUX";
+            }
+        }
+        else
+        {
+            // EXTENSION KO
+            echo "ERREUR: EXTENSION INTERDITE";
+        }
+    }
+    else
+    {
+        // UPLOAD KO
+        // DIFFICILE A TESTER...
+        echo "ERREUR: UPLOAD CORROMPU";
+    }
+
+
+    // POUR LES IMAGES
+    // OPTIMISATION: PEUT ETRE CREER DES MINIATURES ???
+    // PHP PEUT CREER DES IMAGES...
+}
+
+```
+
+
+
+
+
