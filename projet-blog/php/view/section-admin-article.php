@@ -6,14 +6,15 @@
 <section>
     <h3>CREATE article</h3>
     <!-- POUR UPLOAD IL FAUDRA AJOUTER UN ATTRIBUT SUPPLEMENTAIRE... -->
-    <form method="POST" action="#form-create" id="form-create">
+    <!-- https://www.w3schools.com/php/php_file_upload.asp -->
+    <form method="POST" action="#form-create" id="form-create" enctype="multipart/form-data">
         <label>
             <span>titre</span>
             <input type="text" name="titre" required placeholder="titre" maxlength="160">
         </label>
         <label>
             <span>image</span>
-            <input type="text" name="image" required placeholder="url de l'image" maxlength="160">
+            <input type="file" accept="image/*" name="image" required placeholder="url de l'image" maxlength="160" value="$image">
         </label>
         <label>
             <span>contenu</span>
@@ -121,14 +122,15 @@ function afficherTable ($table, $tri)
         <td>
             <button class="action-update" data-id="$id">formulaire modification $id</button>
             <!-- ON CREE UN FORMULAIRE PREREMPLI POUR CHAQUE LIGNE A MODIFIER -->
-            <form method="POST" action="#form-update" class="cache form-update-$id">
+            <!-- https://www.w3schools.com/php/php_file_upload.asp -->
+            <form method="POST" action="#form-update" class="cache form-update-$id" enctype="multipart/form-data">
                 <label>
                     <span>titre</span>
                     <input type="text" name="titre" required placeholder="titre" maxlength="160" value="$titre">
                 </label>
                 <label>
                     <span>image</span>
-                    <input type="text" name="image" required placeholder="url de l'image" maxlength="160" value="$image">
+                    <input type="file" accept="image/*" name="image" required placeholder="url de l'image" maxlength="160" value="$image">
                 </label>
                 <label>
                     <span>contenu</span>

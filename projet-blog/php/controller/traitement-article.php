@@ -19,9 +19,9 @@ if ($formIdentifiant == "article")
     // filtrer => SECURITE POUR ENLEVER LE CODE DANGEREUX
     // ...on peut creer une fonction de confort creerDatetime()
     $tabAsso = [
-        "titre"             => filtrer("titre"),
-        "image"             => filtrer("image"),
-        "contenu"           => filtrer("contenu"),
+        "titre"             => Form::filtrerTexte("titre"),
+        "image"             => Form::filtrerUpload("image"),    // ON OBTIENT LE CHEMIN DU FICHIER
+        "contenu"           => Form::filtrerTexte("contenu"),
         "datePublication"   => date("Y-m-d H:i:s"),
     ];
     // ASTUCE: ON VA CREER LES VARIABLES A PARTIR DES CLES 
@@ -30,7 +30,7 @@ if ($formIdentifiant == "article")
     // https://www.php.net/manual/fr/function.extract.php
 
     // VALIDATION MINIMALISTE... A COMPLETER
-    if ( ($titre != "") && ($image != "") && ($contenu != "") )
+    if ( Form::estOK() )
     {
         insererLigne("article", $tabAsso);  // SQL VA CREER UN NOUVEL id POUR LA LIGNE
 
