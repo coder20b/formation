@@ -30,6 +30,7 @@ $tabRouteur = [
     "galerie"           => [ "header", "section-galerie",   "footer" ],     // ROUTE galerie
     "blog"              => [ "header", "section-blog",      "footer" ],     // ROUTE blog
     "contact"           => [ "header", "section-contact",   "footer" ],     // ROUTE contact
+    "admin"             => [ "header", "section-admin",     "footer" ],     // ROUTE admin
     "page-speciale"     => [ "template-page" ]
 ];
 
