@@ -190,8 +190,9 @@ function lireUri ()
     * SI VOUS AVEZ DES QUESTIONS, N'HESITEZ PAS...
 
     ET ENSUITE PAUSE DEJEUNER A 12H45...
-        
-
+    ET REPRISE A 13H50        
+    BON APP ;-p
+    
 
 
 
