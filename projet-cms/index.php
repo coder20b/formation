@@ -84,6 +84,35 @@ if (empty($tabTemplate))
     // => ON A NOTRE FONCTION lireLigne
     // $tabLigne = lireLigne("page", "url", $urlDemandee);
     // => EXTRAIRE $template DE LA COLONNE SQL template
+
+    require_once "php/model/fonctions-sql.php";
+    $tabLigne = lireLigne("page", "url", $urlDemandee);
+    foreach($tabLigne as $ligneAsso)    // NOTE: UN PEU INUTILE CAR UN SEUL ELEMENT DANS LE TABLEAU
+    {
+        extract($ligneAsso);            // ASTUCE: CREER LES VARIABLES A PARTIR DES NOMS DE COLONNES
+        // => CREE $id, $url, $template, $titre, $contenu, $image
+        $tabTemplate = [ $template ];
+    }
+
+    // DEBUG
+    // echo "<pre>";
+    // print_r($tabLigne);
+    // echo "</pre>";
+    /*
+    Array
+    (
+        [0] => Array
+            (
+                [id] => 1
+                [url] => produits
+                [template] => template-page
+                [titre] => produits
+                [contenu] => la description de mes produits
+                [image] => assets/img/produits.jpg
+            )
+
+    )
+    */
 }
 
 

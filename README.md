@@ -192,7 +192,14 @@ function lireUri ()
     ET ENSUITE PAUSE DEJEUNER A 12H45...
     ET REPRISE A 13H50        
     BON APP ;-p
-    
+
+## CODINGAME & ISOGRAD
+
+    * CODING GAME
+    https://www.codingame.com/start
+
+    * BATTLEDEV, CONCOURS MEILLEUR DEV, etc...
+    https://www.isograd.com/FR/solutionconcours.php
 
 
 
