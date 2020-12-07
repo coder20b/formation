@@ -264,24 +264,24 @@ if (empty($tabTemplate))
     AJOUTER UNE PAGE admin.php
     POUR PROPOSER UN CRUD SUR LA TABLE SQL page
 
-//  ON VA CREER UNE DATABASE cms AVEC CHARSET utf8mb4_general_ci
-//  ET DEDANS ON VA CREER UNE TABLE SQL page
-//  AVEC COMME COLONNES
-//  id                  INT             INDEX=PRIMARY   A_I(AUTO_INCREMENT)
-//  url                 VARCHAR(160)
-//  template            VARCHAR(160)
-//  titre               VARCHAR(160)
-//  contenu             TEXT
-//  categorie           VARCHAR(160)
-//  image               VARCHAR(160)
-//  datePublication     DATETIME
-//  ...
+    //  ON VA CREER UNE DATABASE cms AVEC CHARSET utf8mb4_general_ci
+    //  ET DEDANS ON VA CREER UNE TABLE SQL page
+    //  AVEC COMME COLONNES
+    //  id                  INT             INDEX=PRIMARY   A_I(AUTO_INCREMENT)
+    //  url                 VARCHAR(160)
+    //  template            VARCHAR(160)
+    //  titre               VARCHAR(160)
+    //  contenu             TEXT
+    //  categorie           VARCHAR(160)
+    //  image               VARCHAR(160)
+    //  datePublication     DATETIME
+    //  ...
 
     * NE PAS HESITER A POSER DES QUESTIONS
     AUTONOMIE JUSQU'A 15H45
     ET ENSUITE PAUSE DE 15H45 A 16H
     ET POUR LE RESTE AUTONOMIE JUSQU'A LA FIN DE LA JOURNEE
-    
+
 
 
 
