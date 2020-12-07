@@ -283,6 +283,17 @@ if (empty($tabTemplate))
     ET POUR LE RESTE AUTONOMIE JUSQU'A LA FIN DE LA JOURNEE
 
 
+    ET SI PLUS DE TEMPS, AVANCER SUR LA TABLE user
+    => CREER LA TABLE SQL user
+    => ET CODER UNE PAGE CRUD SUR LA TABLE SQL user
+    
+    TABLE SQL user
+    id                  INT             INDEX=PRIMARY   A_I
+    pseudo              VARCHAR(160)
+    email               VARCHAR(160)
+    motDePasse          VARCHAR(160)
+    dateCreation        DATETIME
+
 
 
 
