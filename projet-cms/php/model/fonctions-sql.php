@@ -12,6 +12,12 @@ class Model
     static $dbh = null;
     static $tabRequete = [];
 
+    static $user       = 'root';
+    static $password   = '';           // SUR XAMPP
+    static $hostSQL    = 'localhost';  // 127.0.0.1
+    static $portSQL    = '3306';
+    static $database   = '';       // LE SEUL A CHANGER EN LOCAL A CHAQUE PROJET
+
     // METHODES DE CLASSE (static)
     // UNE METHODE EST UNE FONCTION RANGEE DANS UNE CLASSE
     static function stockerRequete ($sth)
@@ -83,11 +89,11 @@ class Model
 function envoyerRequeteSql ($requeteSQL, $tabAsso)
 {
     // CONNEXION AVEC LA DATABASE MySQL
-    $user       = 'root';
-    $password   = '';           // SUR XAMPP
-    $hostSQL    = 'localhost';  // 127.0.0.1
-    $portSQL    = '3306';
-    $database   = 'cms';       // LE SEUL A CHANGER EN LOCAL A CHAQUE PROJET
+    $user       = Model::$user;
+    $password   = Model::$password;             // SUR XAMPP
+    $hostSQL    = Model::$hostSQL;              // 127.0.0.1
+    $portSQL    = Model::$portSQL;
+    $database   = Model::$database;             // LE SEUL A CHANGER EN LOCAL A CHAQUE PROJET
     
     $mysql        = "mysql:host=$hostSQL;port=$portSQL;dbname=$database;charset=utf8";
     

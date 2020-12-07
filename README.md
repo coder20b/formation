@@ -179,6 +179,7 @@ function lireUri ()
     PAUSE ET REPRISE A 11H15...
 
 ## EXERCICE EN AUTONOMIE: READ SUR LA TABLE SQL page
+
     COMPLETER LE CODE DE MANIERE A POUVOIR CREER DES PAGES
     EN AJOUTANT DES LIGNES DANS LA TABLE SQL page (AVEC PHPMYADMIN EN ATTENDANT)
     ET ENSUITE AFFICHER AVEC LE NAVIGATEUR LA PAGE
@@ -192,7 +193,7 @@ function lireUri ()
     BON APP ;-p
 
     * VERSION READ SUR TABLE SQL page
-    
+
 ```php
 <?php
 
@@ -258,6 +259,29 @@ if (empty($tabTemplate))
     AUTONOMIE JUSQU'A 15H45
     * N'HESITEZ PAS A POSER DES QUESTIONS
 
+## CREER UNE PAGE CRUD POUR LA TABLE SQL page
+
+    AJOUTER UNE PAGE admin.php
+    POUR PROPOSER UN CRUD SUR LA TABLE SQL page
+
+//  ON VA CREER UNE DATABASE cms AVEC CHARSET utf8mb4_general_ci
+//  ET DEDANS ON VA CREER UNE TABLE SQL page
+//  AVEC COMME COLONNES
+//  id                  INT             INDEX=PRIMARY   A_I(AUTO_INCREMENT)
+//  url                 VARCHAR(160)
+//  template            VARCHAR(160)
+//  titre               VARCHAR(160)
+//  contenu             TEXT
+//  categorie           VARCHAR(160)
+//  image               VARCHAR(160)
+//  datePublication     DATETIME
+//  ...
+
+    * NE PAS HESITER A POSER DES QUESTIONS
+    AUTONOMIE JUSQU'A 15H45
+    ET ENSUITE PAUSE DE 15H45 A 16H
+    ET POUR LE RESTE AUTONOMIE JUSQU'A LA FIN DE LA JOURNEE
+    
 
 
 
