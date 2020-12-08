@@ -111,7 +111,7 @@
 
 <section>
     <h3>READ SUR LA TABLE SQL page (en 2e)</h3>
-    <h3>(ON LE GARDE EN BAS DE PAGE POUR AVOIR AFFICHAGE A JOUR</h3>
+    <p>(ON LE GARDE EN BAS DE PAGE POUR AVOIR AFFICHAGE A JOUR)</p>
     <h3>Il y a <?php echo Model::compterLigne("page") ?> lignes dans la table</h3>
     <table>
         <tbody>
@@ -202,7 +202,7 @@ foreach($tabLigne as $ligneAsso)
     </div>
 
 
-<div id="boxUpdate">
+    <div id="boxUpdate">
         <button onclick="fermerBox(event)">CLIQUER ICI POUR FERMER LA LIGHTBOX</button>
         <!-- container dans lequel on va insérer le formulaire d'update -->
         <div id="boxFormUpdate"></div>
