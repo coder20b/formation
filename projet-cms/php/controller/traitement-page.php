@@ -16,10 +16,8 @@ if ($formIdentifiant == "page")
     if ( Form::estOK() )
     {
         insererLigne("page", $tabAsso);  // SQL VA CREER UN NOUVEL id POUR LA LIGNE
-
         $id = Model::lireNouvelId();    // ICI INUTILE
 
-        // message de confirmation
         echo
         <<<x
         votre page est publiée. 
@@ -31,3 +29,6 @@ if ($formIdentifiant == "page")
         echo "merci de ne pas hacker mon site";
     }
 }
+
+// DELETE GENERAL
+require_once "php/controller/traitement-delete.php";

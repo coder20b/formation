@@ -41,8 +41,27 @@
     </form>
 </section>
 
-<section>
-    <h3>DELETE GENERAL SUR LA TABLE SQL page (en 3e)</h3>
+<section class="">
+    <h3>DELETE GENERAL (etape 3)</h3>
+    <!-- ATTENTION IL FAUT PROTEGER CETTE PARTIE -->
+    <!-- ON PEUT SUPPRIMER N'IMPORTE QUELLE LIGNE DANS N'IMPORTE QUELLE TABLE -->
+    <h3>DELETE GENERAL</h3>
+    <form method="POST" action="#form-delete" id="form-delete">
+        <label>
+            <span>table</span>
+            <!-- NE PAS OUBLIER DE CHANGER LA VALEUR DU NOM DE LA TABLE -->
+            <input type="text" name="table" required placeholder="table" maxlength="160" value="page">
+        </label>
+        <label>
+            <span>id</span>
+            <input type="number" name="id" required placeholder="id" maxlength="160">
+        </label>
+        <button type="submit">SUPPRIMER VOTRE LIGNE</button>
+        <!-- PARTIE TECHNIQUE -->
+        <input type="hidden" name="formIdentifiant" value="delete">
+        <div>
+        </div>
+    </form>
 </section>
 
 <section>
@@ -52,4 +71,36 @@
 <section>
     <h3>READ SUR LA TABLE SQL page (en 2e)</h3>
     <h3>(ON LE GARDE EN BAS DE PAGE POUR AVOIR AFFICHAGE A JOUR</h3>
+    <h3>Il y a <?php echo Model::compterLigne("page") ?> lignes dans la table</h3>
+    <table>
+        <tbody>
+<?php
+$tabLigne = lireTable("page", "datePublication DESC");  // TABLEAU ORDONNE DE TABLEAUX ASSOCIATIFS
+
+// $tabLigne EST UN TABLEAU ORDONNE
+// QUI CONTIENT DES TABLEAUX ASSOCIATIFS
+foreach($tabLigne as $ligneAsso)
+{
+    echo "<tr>";
+    foreach($ligneAsso as $colonne => $valeur)
+    {
+        echo
+        <<<x
+            <td class="$colonne">$valeur</td>
+        x;
+    }
+    // ON RAJOUTE UNE COLONNE POUR LE BOUTON DELETE
+    $id = $ligneAsso["id"];
+    echo 
+    <<<x
+        <td><button data-id="$id" onclick="modifierLigne(event)">modifier $id</button></td>
+        <td><button data-id="$id" onclick="supprimerLigne(event)">supprimer $id</button></td>
+    </tr>
+    x;
+
+}
+
+?>
+        </tbody>
+    </table>
 </section>
