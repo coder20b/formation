@@ -10,10 +10,22 @@
     <header>
         <div>PROJET CMS</div>
         <nav>
-            <a href="index.php">Accueil</a>
-            <a href="galerie.php">Galerie</a>
-            <a href="blog.php">Blog</a>
-            <a href="contact.php">Contact</a>
+        <?php
+// ON VA SELECTIONNER DANS LA TABLE page
+// LES LIGNES QUI ONT LA categorie = 'blog'
+// ET ON VA LES AFFICHER DANS UNE LISTE D'ARTICLE
+$tabLigne = lireLigne("page", "categorie", "menu-principal", "datePublication ASC");
+foreach($tabLigne as $ligneAsso)
+{
+    extract($ligneAsso);
+    $imageMini = str_replace("/upload/", "/mini/", $image);
+    echo 
+    <<<x
+    <a href="$url">$titre</a>
+
+    x;
+}
+?>
         </nav>
     </header>
     <main>

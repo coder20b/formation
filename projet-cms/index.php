@@ -26,11 +26,12 @@ $urlDemandee = lireUri();
 // => ON A BESOIN D'UN ROUTEUR
 $tabRouteur = [
     // CLE = URL            VALEUR = LES FICHIERS php/view
-    "index"             => [ "header", "section-index",     "footer" ],     // ROUTE index
-    "galerie"           => [ "header", "section-galerie",   "footer" ],     // ROUTE galerie
-    "blog"              => [ "header", "section-blog",      "footer" ],     // ROUTE blog
-    "contact"           => [ "header", "section-contact",   "footer" ],     // ROUTE contact
-    "admin"             => [ "header", "section-admin",     "footer" ],     // ROUTE admin
+    "index"             => [ "header", "section-index",      "footer" ],     // ROUTE index
+    "galerie"           => [ "header", "section-galerie",    "footer" ],     // ROUTE galerie
+    "blog"              => [ "header", "section-blog",       "footer" ],     // ROUTE blog
+    "contact"           => [ "header", "section-contact",    "footer" ],     // ROUTE contact
+    "admin"             => [ "header", "section-admin",      "footer" ],     // ROUTE admin
+    "admin-user"        => [ "header", "section-admin-user", "footer" ],     // ROUTE admin-user
     "page-speciale"     => [ "template-page" ]
 ];
 

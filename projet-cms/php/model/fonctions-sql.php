@@ -163,14 +163,17 @@ function insererLigne ($table, $tabAsso)
 }
 
 // SELECT * FROM `article` WHERE id = 4
-function lireLigne ($table, $colonne, $valeurFiltre)
+function lireLigne ($table, $colonne, $valeurFiltre, $tri="id DESC")
 {
+    $ligneTri = "";
+    if ($tri != "") $ligneTri = "ORDER BY $tri";
+    
     $requeteSQL =
     <<<x
     
     SELECT * FROM $table
     WHERE $colonne = '$valeurFiltre'
-
+    $ligneTri
     x;
 
     $resultat = envoyerRequeteSql($requeteSQL, []);

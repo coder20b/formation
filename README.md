@@ -97,6 +97,8 @@ https://kinsta.com/fr/blog/frameworks-php/
     dateCreation        DATETIME
 
 
+    PAUSE DEJEUNER ET REPRISE A 13H45
+    
 
 
 
