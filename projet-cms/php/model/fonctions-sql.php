@@ -41,6 +41,7 @@ class Model
         $nbInfo = count($_REQUEST);
         echo "$nbInfo INFOS RECUES PAR LES FORMULAIRES\n";
         print_r($_REQUEST);
+        print_r($_FILES);
         echo "\n";
 
         // ON PEUT RECUPERER LES TEXTES STOCKES DANS LE TABLEAU
