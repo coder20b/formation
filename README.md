@@ -103,7 +103,7 @@ https://kinsta.com/fr/blog/frameworks-php/
 ## BOUCLES SUR LA TABLE page EN FILTRANT SUR LA COLONNE categorie
 
     ON PEUT COMPOSER LE CONTENU DES NOS PAGES EN CREANT DES BOUCLES
-    
+
 ```php
 
 <section class="blog">
@@ -131,6 +131,11 @@ foreach($tabLigne as $ligneAsso)
 </section>
 
 ```
+
+    PAUSE ET REPRISE A 16H...
+    ET ENSUITE JE VOUS LAISSE LA MAIN...
+
+    
 
 
 
