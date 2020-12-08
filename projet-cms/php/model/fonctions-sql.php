@@ -40,8 +40,8 @@ class Model
         // DEBUG DES INFOS RECUES PAR LES FORMULAIRES
         $nbInfo = count($_REQUEST);
         echo "$nbInfo INFOS RECUES PAR LES FORMULAIRES\n";
-        print_r($_REQUEST);
-        print_r($_FILES);
+        print_r($_REQUEST); // GET ET POST
+        print_r($_FILES);   // FICHIERS UPLOADES
         echo "\n";
 
         // ON PEUT RECUPERER LES TEXTES STOCKES DANS LE TABLEAU

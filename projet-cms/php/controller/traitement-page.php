@@ -30,5 +30,30 @@ if ($formIdentifiant == "page")
     }
 }
 
+$formIdentifiant = filtrer("formIdentifiant");
+if ($formIdentifiant == "page-update")
+{
+    $tabAsso = [
+        "url"               => Form::filtrerTexte("url"),
+        "template"          => Form::filtrerTexte("template"),
+        "titre"             => Form::filtrerTexte("titre"),
+        "contenu"           => Form::filtrerTexte("contenu"),
+        "categorie"         => Form::filtrerTexte("categorie"),
+        "image"             => Form::filtrerUpload("image"),    // ON OBTIENT LE CHEMIN DU FICHIER
+        "datePublication"   => date("Y-m-d H:i:s"),
+    ];
+    $id = filtrer("id");        // ON GERE $id A PART CAR IL NE CHANGE PAS
+    extract($tabAsso);
+    if ( Form::estOK() )
+    {
+        modifierLigne("page", $id, $tabAsso);
+        echo "votre page est modifiée";
+    }
+    else
+    {
+        echo "merci de ne pas hacker mon site";
+    }
+}
+
 // DELETE GENERAL
 require_once "php/controller/traitement-delete.php";
