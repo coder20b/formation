@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <div>PROJET CMS</div>
+        <img class="header__img" src="./assets/img/logo.svg" alt="logo">
         <nav>
         <?php
 // ON VA SELECTIONNER DANS LA TABLE page

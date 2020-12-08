@@ -157,7 +157,11 @@ td {
     border:1px solid #aaaaaa;
     padding:0.5rem;
 }
-
+td img {
+    width:160px;
+    height:160px;
+    object-fit: cover;
+}
 .cache {
     display:none;
 }
