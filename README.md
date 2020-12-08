@@ -135,9 +135,20 @@ foreach($tabLigne as $ligneAsso)
     PAUSE ET REPRISE A 16H...
     ET ENSUITE JE VOUS LAISSE LA MAIN...
 
-    
+## ACTIVITE EN AUTONOMIE
 
+    * AJOUTER LA TABLE SQL contact
+        ET AJOUTER LA PAGE CRUD SUR LA TABLE SQL contact
 
+    * AJOUTER LA TABLE SQL newsletter
+        ET AJOUTER LA PAGE CRUD SUR LA TABLE SQL newsletter
+
+    * AJOUTER UNE PAGE inscription.php
+        ET AJOUTER UN FORMULAIRE DE CREATION DE COMPTE
+
+    * AJOUTER UNE PAGE login.php
+        ET AJOUTER UN FORMULAIRE DE LOGIN
+        
 
 
 
