@@ -311,7 +311,8 @@ get_footer();
 ## AJOUTER UN TEMPLATE 404
 
     ON PEUT AJOUTER UNE PAGE 404...
-
+    => CREER UN FICHIER 404.php
+    
 ```php
 <?php
 
@@ -331,40 +332,51 @@ get_footer();
 
     ET ENSUITE PAUSE A 15H45 ET REPRISE A 16H...
 
-* EQUIPE A
-Kevin
-Christel
-Elphège
-Céline
+    * EQUIPE A
+    Kevin
+    Christel
+    Elphège
+    Céline
 
-* EQUIPE B
-    IDEE DE PROJET:
-    MARKETPLACE DES COMMERCES DE QUARTIER
-Benjamin
-Olivier
-Tony
-Maeva
+    * EQUIPE B
+        IDEE DE PROJET:
+        MARKETPLACE DES COMMERCES DE QUARTIER
+    Benjamin
+    Olivier
+    Tony
+    Maeva
 
-* EQUIPE C
-    IDEE DE PROJET:
-    REFONTE DE SITE AVEC BDD
-    https://byrsa.tech/
+    * EQUIPE C
+        IDEE DE PROJET:
+        REFONTE DE SITE AVEC BDD
+        https://byrsa.tech/
 
-Alexandre
-Mehdi
-Bilel
-Arsenio
+    Alexandre
+    Mehdi
+    Bilel
+    Arsenio
 
-* EQUIPE D
-Joseph
-Maxime
-Moussa
-Marc
+    * EQUIPE D
+    Joseph
+    Maxime
+    Moussa
+    Marc
 
-* EQUIPE E
-Flora
-Steph
-Quentin
+    * EQUIPE E
+    Flora
+    Steph
+    Quentin
+
+
+
+## AUTO COMPLETION HTML AVEC EMMET
+
+    SI L'AUTO COMPLETION NE FONCTIONNE PLUS...
+    VERIFIER SI EMMET EST TOUJOURS ACTIF POUR L'EXTENSION DE FICHIER...
+
+    https://code.visualstudio.com/docs/editor/emmet
+
+    https://code.visualstudio.com/docs/editor/emmet#_emmet-abbreviations-in-other-file-types
 
 
 
