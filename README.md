@@ -312,7 +312,7 @@ get_footer();
 
     ON PEUT AJOUTER UNE PAGE 404...
     => CREER UN FICHIER 404.php
-    
+
 ```php
 <?php
 
@@ -357,6 +357,8 @@ get_footer();
     Arsenio
 
     * EQUIPE D
+        IDEE DE PROJET:
+        APPLICATION MOBILE
     Joseph
     Maxime
     Moussa
@@ -369,9 +371,9 @@ get_footer();
 
 
 
-## AUTO COMPLETION HTML AVEC EMMET
+## AUTO COMPLETION HTML AVEC EMMET ET VSCODE
 
-    SI L'AUTO COMPLETION NE FONCTIONNE PLUS...
+    SI L'AUTO COMPLETION NE FONCTIONNE PLUS AVEC VSCODE...
     VERIFIER SI EMMET EST TOUJOURS ACTIF POUR L'EXTENSION DE FICHIER...
 
     https://code.visualstudio.com/docs/editor/emmet
