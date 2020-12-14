@@ -160,12 +160,13 @@ https://fr.wordpress.org/latest-fr_FR.zip
     CREE L'URL JUSQU'AU DOSSIER montheme
     * PRATIQUE POUR AJOUTER DU CSS, JS ET IMAGES, etc...
 
+```php
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/style.css">
 
     <img src="<?php echo get_template_directory_uri() ?>/assets/img/article1.jpg" alt="">
 
     <script src="<?php echo get_template_directory_uri() ?>/assets/js/script.js"></script>
-
+```
 
 ## AJOUTER UN MENU
 
@@ -216,7 +217,7 @@ register_nav_menus($tabAssoMenu);
 
 ## AFFICHER LE CONTENU DE CHAQUE PAGE
 
-    POUR PÖUVOIR ASSOCIER UNE IMAGE A LA UNE EN PLUS DU TITRE ET DU CONTENU
+    POUR POUVOIR ASSOCIER UNE IMAGE A LA UNE EN PLUS DU TITRE ET DU CONTENU
     => AJOUTER CETTE LIGNE DANS functions.php
     https://developer.wordpress.org/reference/functions/add_theme_support/
 
@@ -257,3 +258,130 @@ add_theme_support( 'post-thumbnails' );
 
 
     PAUSE DEJEUNER ET REPRISE A 13H50...
+
+
+## CREER PLUSIEURS TEMPLATES DE PAGE
+
+    https://developer.wordpress.org/themes/template-files-section/page-template-files/
+
+    CREER UN SOUS-DOSSIER page-templates
+    wp-content/themes/montheme/page-templates/
+
+```php
+<?php
+/*
+    Template Name: MON TEMPLATE POUR LA PAGE CONTACT
+
+    => ANNOTATION: COMMENTAIRE POUR PHP, MAIS CODE ACTIF POUR WORDPRESS
+*/
+?>
+```
+
+## EXTENSION PRATIQUE: WHAT THE FILE
+
+    https://wordpress.org/plugins/what-the-file/
+
+    AJOUTE UN MENU DANS LE BANDEAU NOIR
+    => AFFICHE LE FICHIER TEMPLATE POUR LA PAGE EN COURS 
+
+## DECOUPER SON HTML EN DIFFERENTS FICHIERS
+
+
+    https://developer.wordpress.org/reference/functions/get_header/
+    https://developer.wordpress.org/reference/functions/get_footer/
+
+    https://developer.wordpress.org/reference/functions/get_template_part/
+
+```php
+<?php
+
+// EN PHP SIMPLE
+// require_once "header.php";
+// require_once "template-parts/section-index.php";
+// require_once "footer.php";
+
+// AVEC WORDPRESS
+// ON A DES FONCTIONS EN PLUS...
+get_header();
+get_template_part("template-parts/section-index");  // ATTENTION PAS .php A LA FIN...
+get_footer();
+
+```
+
+## AJOUTER UN TEMPLATE 404
+
+    ON PEUT AJOUTER UNE PAGE 404...
+
+```php
+<?php
+
+// AVEC WORDPRESS
+// ON A DES FONCTIONS EN PLUS...
+get_header();
+get_template_part("template-parts/section-404");  // ATTENTION PAS .php A LA FIN...
+get_footer();
+
+```
+
+## ACTIVITE POUR LE RESTE DE LA JOURNEE
+
+    ACTIVITE INDIVIDUEL: REVOIR LA CREATION D'UN THEME WORDPRESS
+    ACTIVITE EN GROUPE: BRAINSTORMING POUR LES PROJETS EN EQUIPE
+    ...
+
+    ET ENSUITE PAUSE A 15H45 ET REPRISE A 16H...
+
+* EQUIPE A
+Kevin
+Christel
+Elphège
+Céline
+
+* EQUIPE B
+    IDEE DE PROJET:
+    MARKETPLACE DES COMMERCES DE QUARTIER
+Benjamin
+Olivier
+Tony
+Maeva
+
+* EQUIPE C
+    IDEE DE PROJET:
+    REFONTE DE SITE AVEC BDD
+    https://byrsa.tech/
+
+Alexandre
+Mehdi
+Bilel
+Arsenio
+
+* EQUIPE D
+Joseph
+Maxime
+Moussa
+Marc
+
+* EQUIPE E
+Flora
+Steph
+Quentin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
