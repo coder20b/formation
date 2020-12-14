@@ -381,7 +381,13 @@ get_footer();
     https://code.visualstudio.com/docs/editor/emmet#_emmet-abbreviations-in-other-file-types
 
 
+    ET ENSUITE PAUSE A 15H45 ET REPRISE A 16H...
 
+    ACTIVITE DE FIN DE JOURNEE: AUTONOMIE 
+    ET N'HESITEZ PAS A POSER DES QUESTIONS...
+
+    FIN DE JOURNEE ;-p
+    
 
 
 
