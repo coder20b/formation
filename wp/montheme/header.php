@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/style.css">
 </head>
 <body>
-    <header>
-        <div>mon site WordPress</div>
-        <nav>
-            <?php wp_nav_menu([ "theme_location" => "primary"]) ?>
-        </nav>
-    </header>
-    <main>
+    <div class="page">
+        <header>
+            <div>mon site WordPress</div>
+            <nav>
+                <?php wp_nav_menu([ "theme_location" => "primary"]) ?>
+            </nav>
+        </header>
+        <main>

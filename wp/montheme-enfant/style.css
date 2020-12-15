@@ -1,0 +1,14 @@
+/*
+    Template:     montheme
+
+    ANNOTATION
+    => COMMENTAIRE POUR CSS
+    => MAIS CODE ACTIF POUR WORDPRESS
+    => IL FAIT DONNER LE NOM DU DOSSIER DU THEME PARENT
+    https://developer.wordpress.org/themes/advanced-topics/child-themes/
+
+*/
+
+h3 {
+    background-color: palegreen;
+}

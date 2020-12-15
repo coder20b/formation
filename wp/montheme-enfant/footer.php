@@ -5,10 +5,8 @@
             <nav>
                 <?php wp_nav_menu([ "theme_location" => "footer"]) ?>
             </nav>
-            <?php afficherCoucou() ?>
+            <p>MON COPYRIGHT POUR LE THEME ENFANT</p>
         </footer>
-
-
         <!-- AJOUT DU JS -->
         <?php wp_footer() ?>
     </div>

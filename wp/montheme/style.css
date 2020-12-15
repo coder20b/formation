@@ -13,8 +13,12 @@ h1 {
     color:orange;
 }
 
-header, footer, h1, h2, h3, h4 {
+header, footer, h1, h2, h3, h4, strong {
     text-align: center;
+    width:100%;
+}
+strong {
+    display: inline-block;
 }
 img {
     width:100%;
@@ -39,4 +43,12 @@ a {
 
 p {
     padding:0.5rem;
+}
+
+.colx3 {
+    display: flex;
+    flex-wrap: wrap;
+}
+.colx3 article {
+    width:calc(100% / 3);
 }
