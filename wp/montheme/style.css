@@ -52,3 +52,29 @@ p {
 .colx3 article {
     width:calc(100% / 3);
 }
+
+.blog section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blog section > article {
+    width:calc(100% / 3);
+}
+
+.pagebox {
+    max-width:960px;
+    margin:0 auto;
+    background-color: #cccccc;
+}
+
+body {
+    background-color: #000000;
+}
+
+.header__img {
+    width:160px;
+    height:160px;
+    object-fit: cover;
+    padding:1rem;
+}

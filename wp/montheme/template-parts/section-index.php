@@ -2,11 +2,13 @@
     <section>
 
 <?php while (have_posts()) : the_post(); ?>
-    
-    <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
-    <p><?php the_category() ?></p>
-    <p><?php the_content() ?></p>
-    <?php the_post_thumbnail() ?>
+
+    <article>
+        <?php the_post_thumbnail() ?>
+        <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
+        <div><?php the_content() ?></div>
+        <p><?php the_category() ?></p>
+    </article>
 
 <?php endwhile; ?>
 

@@ -9,10 +9,10 @@
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/style.css">
 </head>
-<body>
-    <div class="page">
+<body <?php body_class() ?>>
+    <div class="pagebox">
         <header>
-            <div>mon site WordPress</div>
+            <img class="header__img" src="<?php echo get_template_directory_uri() ?>/assets/img/logo.svg" alt="logo">
             <nav>
                 <?php wp_nav_menu([ "theme_location" => "primary"]) ?>
             </nav>
