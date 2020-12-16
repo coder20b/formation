@@ -569,7 +569,7 @@ $julie   = new Eleve("Depardieu", "Toulon");
     * PAGE login.php AVEC LE FORMULAIRE DE LOGIN
 
     ASTUCE: UTILISER LA FONCTION password_hash FOURNIE PAR PHP
-    
+
 ```php
 
 $formIdentifiant = filtrer("formIdentifiant");
@@ -624,7 +624,13 @@ if ($formIdentifiant == "user-login")
 ```
 
 
+    AUTONOMIE JUSQU'A 15H45
+    ET ENSUITE PAUSE JUSQU'A 16H
 
+    CREER LA PAGE inscription.php
+    ET AJOUTER LE FORMULAIRE DE CREATION DE COMPTE...
+
+    
 
 
 
