@@ -147,10 +147,6 @@ foreach($tabLigne as $ligneAsso)
                 <input type="email" name="email" required placeholder="email" maxlength="160" value="$email">
             </label>
             <label>
-                <span>motDePasse</span>
-                <input type="password" name="motDePasse" required placeholder="motDePasse" maxlength="160" value="$motDePasse">
-            </label>
-            <label>
                 <span>id</span>
                 <input type="number" name="id" required placeholder="id" maxlength="160" value="$id">
             </label>
