@@ -561,6 +561,14 @@ $julie   = new Eleve("Depardieu", "Toulon");
     => CREER UN AUTRE FORMULAIRE SPECIAL POUR SEULEMENT CHANGER LE MOT DE PASSE ?
 
 
+## SITE PUBLIC
+
+    * PAGE inscription.php AVEC LE FORMULAIRE DE CREATION DE COMPTE
+        (EQUIVALENT DU CREATE DANS LA PARTIE admin_user)
+        
+    * PAGE login.php AVEC LE FORMULAIRE DE LOGIN
+
+
 
 
 

@@ -3,6 +3,7 @@
     <footer>
         <p>tous droits réservés</p>
         <nav>
+            <a href="login.php">login</a>
             <a href="admin.php">admin</a>
             <a href="admin-user.php">admin user</a>
             <a href="mentions-legales.php">mentions légales</a>
