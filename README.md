@@ -269,7 +269,8 @@ $georges->coder();
 
     EN POO AVEC PHP
     => IL Y A UN MECANISME DE CHARGEMENT AUTOMATIQUE DE CODE
-
+    => VRAIMENT COOL POUR LE DEV (ON A PLUS BESOIN DE GERER LES require_once)
+    => VRAIMENT COOL POUR LES PERFORMANCES (PHP NE CHARGE QUE LE CODE NECESSAIRE)
 
 ```php
 <?php
@@ -308,6 +309,176 @@ $objetView->afficherTitre();
     PAUSE ET REPRISE 11H20
 
 
+## PROPRIETES D'OBJET
+
+    SI static ON PASSE Classe::methode
+    https://www.php.net/manual/fr/language.oop5.paamayim-nekudotayim.php
+
+
+    ON A new POUR CREER UN OBJET A PARTIR DE LA CLASSE (INSTANCIATION)
+    $objet = new MaClasse;
+
+    SI PAS static ON UTILISE L'OPERATEUR D'ACCES ->
+
+    ET DANS UNE METHODE D'OBJET ON PEUT $this QUI DONNE PAR QUEL OBJET ON A APPELE LA METHODE
+
+```php
+// ON PREND COMME EXEMPLE VOTRE FORMATION
+// COMMUN A LA FORMATION : PAREIL POUR TOUS LES ELEVES ?
+// * programme
+// * profs
+// * horaires
+// * ... 
+// CHAQUE ELEVE A DES PROPRIETES INDIVIDUELLES
+// * nom
+// * prenom
+// * adresse
+// ... 
+
+class Eleve
+{
+    // PROPRIETES COLLECTIVES
+    static public $programme = "POO";
+    static public $profs     = [ "amar", "achref" ];
+    static public $horaires  = [ "09H30", "17H30" ];
+
+    // METHODE DE CLASSE static
+    static function afficherHoraires ()
+    {
+        echo "<h3>la classe commence à " . Eleve::$horaires[0] . "</h3>";
+    }
+
+    // PROPRIETES D'OBJET 
+    // => INDIVIDUELLES 
+    // => CREES POUR CHAQUE OBJET
+    public $nom     = "";
+    public $prenom  = "";
+    public $adresse = "";
+
+    // METHODES D'OBJET
+    function afficherInfos ()
+    {
+        // $this EST COMME UNE VARIABLE QUI CONTIENT L'OBJET PAR LEQUEL ON A APPELE LA METHODE
+        echo "<hr>";
+        echo "<h3>MON NOM EST " . $this->nom . "</h3>";
+        echo "<h3>MON ADRESSE EST " . $this->adresse . "</h3>";
+        echo "<h3>ON COMMENCE A " . Eleve::$horaires[0] ."</h3>";
+
+    }
+}
+
+Eleve::afficherHoraires();
+
+// SYMFONY VA PREFERER UTILISER UN OBJET POUR STOCKER LES INFOS...
+$georges            = new Eleve;
+$georges->nom       = "Clooney";
+$georges->adresse   = "Aix";
+
+// EQUIVALENT EN TABLEAU ASSOCIATIF
+$tabGeorges = [
+    "nom"       => "Clooney",
+    "adresse"   => "Aix",
+];
+
+$julie              = new Eleve;
+$julie->nom         = "Depardieu";
+$julie->adresse     = "Toulon";
+
+$tabJulie = [
+    "nom"       => "Depardieu",
+    "adresse"   => "Toulon",  
+];
+
+Eleve::$horaires = [ "10H00", "18H00" ];    // POUR L'ENSEMBLE DES ELEVES
+
+$georges->afficherInfos();  // PHP FAIT $this = $georges
+$julie->afficherInfos();    // PHP FAIT $this = $julie
+
+Eleve::$horaires = [ "09H00", "18H00" ];    // POUR L'ENSEMBLE DES ELEVES
+
+$georges->afficherInfos();
+$julie->afficherInfos();
+
+
+```
+
+## METHODES MAGIQUES : CONSTRUCTEUR
+
+    ATTENTION EN PHP8: SIMPLIFICATION PRATIQUE
+    https://www.php.net/releases/8.0/en.php#constructor-property-promotion
+
+```php
+
+    // LA CLASSE PDO EST FOURNIE PAR PHP
+    Model::$dbh = new PDO($mysql, $user, $password);   // CONNEXION ENTRE PHP ET MySQL
+    // ON CREE UN OBJET A PARTIR DE LA CLASSE PDO
+    // ET ON PASSE DES PARAMETRES AU CONSTRUCTEUR
+
+    // LA CLASSE WP_Query EST FOURNIE PAR WORDPRESS
+    $my_query = new WP_Query('category_name=jeux-video');
+    // ON CREE UN OBJET A PARTIR DE LA CLASSE WP_QUery
+    // ET ON PASSE UN PARAMETRE AU CONSTRUCTEUR
+
+```
+
+```php
+<?php
+
+class Eleve
+{
+    // PROPRIETES COLLECTIVES
+    static public $programme = "POO";
+    static public $profs     = [ "amar", "achref" ];
+    static public $horaires  = [ "09H30", "17H30" ];
+
+    // METHODE DE CLASSE static
+    static function afficherHoraires ()
+    {
+        echo "<h3>la classe commence à " . Eleve::$horaires[0] . "</h3>";
+    }
+
+
+    // METHODES D'OBJET
+    function afficherInfos ()
+    {
+        // $this EST COMME UNE VARIABLE QUI CONTIENT L'OBJET PAR LEQUEL ON A APPELE LA METHODE
+        echo "<hr>";
+        echo "<h3>MON NOM EST " . $this->nom . "</h3>";
+        echo "<h3>MON ADRESSE EST " . $this->adresse . "</h3>";
+        echo "<h3>ON COMMENCE A " . Eleve::$horaires[0] ."</h3>";
+
+    }
+
+    // PROPRIETES D'OBJET 
+    // => INDIVIDUELLES 
+    // => CREES POUR CHAQUE OBJET
+    public $nom     = "";
+    public $prenom  = "";
+    public $adresse = "";
+
+    // METHODE MAGIQUE: CONSTRUCTEUR __construct
+    // CALLBACK => PHP QUI VA APPELER CETTE METHODE AUTOMATIQUEMENT
+    function __construct ($nom, $adresse)
+    {
+        $this->nom = $nom;              // ON RANGE LES VALEURS DANS LES PROPRIETES       
+        $this->adresse = $adresse;
+    }
+}
+/*
+$georges            = new Eleve;
+$georges->nom       = "Clooney";
+$georges->adresse   = "Aix";
+
+$julie              = new Eleve;
+$julie->nom         = "Depardieu";
+$julie->adresse     = "Toulon";
+*/
+
+$georges = new Eleve("Clooney", "Aix");         // PHP VA APPELER __construct("Clooney", "Aix")
+$julie   = new Eleve("Depardieu", "Toulon");
+
+?>
+```
 
 
 
