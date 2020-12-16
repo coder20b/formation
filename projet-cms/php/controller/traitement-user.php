@@ -60,6 +60,11 @@ if ($formIdentifiant == "user")
         "dateCreation"      => date("Y-m-d H:i:s"),
     ];
     extract($tabAsso);  // CREE LA VARIABLE $motDePasse
+
+    // AJOUTER DES VERIFICATIONS SUPPLEMENTAIRES
+    // BLOQUER LES DOUBLONS (pseudo ET email)
+    // AMELIORER LE FILTRE DES EMAILS POUR TOUT PASSER EN minuscules
+
     if ( Form::estOK() )
     {
         // AVANT DE STOCKER LES INFOS DU USER
@@ -94,6 +99,11 @@ if ($formIdentifiant == "user-update")
     ];
     $id = filtrer("id");        // ON GERE $id A PART CAR IL NE CHANGE PAS
     extract($tabAsso);
+
+    // AJOUTER DES VERIFICATIONS SUPPLEMENTAIRES
+    // BLOQUER LES DOUBLONS (pseudo ET email) PLUS COMPLIQUE...
+    // AMELIORER LE FILTRE DES EMAILS POUR TOUT PASSER EN minuscules
+
     if ( Form::estOK() )
     {
         // SI LE MOT DE PASSE EST FOURNI 
