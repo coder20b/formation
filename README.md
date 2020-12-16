@@ -565,10 +565,63 @@ $julie   = new Eleve("Depardieu", "Toulon");
 
     * PAGE inscription.php AVEC LE FORMULAIRE DE CREATION DE COMPTE
         (EQUIVALENT DU CREATE DANS LA PARTIE admin_user)
-        
+
     * PAGE login.php AVEC LE FORMULAIRE DE LOGIN
 
+    ASTUCE: UTILISER LA FONCTION password_hash FOURNIE PAR PHP
+    
+```php
 
+$formIdentifiant = filtrer("formIdentifiant");
+if ($formIdentifiant == "user-login")
+{
+    $tabAsso = [
+        "email"             => Form::filtrerEmail("email"),
+        "motDePasse"        => Form::filtrerTexte("motDePasse"),    // MOT DE PASSE ORIGINAL
+    ];
+    extract($tabAsso);  // CREE LA VARIABLE $email ET $motDePasse
+    if ( Form::estOK() )
+    {
+        // IL FAUT VERIFIER SI LES INFOS FOURNIES PAR LE FORMULAIRE
+        // CORRESPONDENT A UNE LIGNE DANS LA TABLE SQL user
+        // CRITERE DE RECHERCHE => $email   => READ
+        $tabLigne = lireLigne("user", "email", $email);
+        foreach($tabLigne as $ligneAsso)        // INUTILE CAR ON A UN SEUL ELEMENT
+        {
+            // DEBUG
+            // print_r($ligneAsso);
+
+            // BRICOLAGE POUR NE PAS PERDRE LE MOT DE PASSE ORIGINAL
+            $motDePasseOriginal = $motDePasse;
+            extract($ligneAsso);    // => CREE LES VARIABLES $motDePasse => MOT DE PASSE HASHE
+
+            // MAINTENANT IL FAUT CONFIRMER QUE LE MOT DE PASSE EST CORRECT
+            // https://www.php.net/manual/fr/function.password-verify.php
+            $motDePasseOK = password_verify($motDePasseOriginal, $motDePasse);  // true OU false
+            if ($motDePasseOK)
+            {
+                // SCENARIO OK: LE VISITEUR A FOURNI UN EMAIL QUI EXISTE ET LE BON MOT DE PASSE
+                echo
+                <<<x
+                    bienvenue sur le site $pseudo. 
+                x;
+    
+            }
+            else
+            {
+                // SCENARIO KO: LE VISITEUR A FOURNI UN EMAIL QUI EXISTE MAIS UN MAUVAIS MOT DE PASSE
+                echo "DESOLE MOT DE PASSE INCORRECT";
+            }
+        }
+
+    }
+    else
+    {
+        echo "merci de ne pas hacker mon site";
+    }
+}
+
+```
 
 
 
