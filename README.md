@@ -24,6 +24,8 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?23A905B5C21C1E11B815124F6
 
 ## PROGRAMMATION ORIENTE OBJET (POO)
 
+    https://www.php.net/manual/fr/language.oop5.php
+
 ### EN PRATIQUE
 
 ON A BESOIN DE BOITES POUR RANGER NOTRE CODE
@@ -80,8 +82,10 @@ Model::envoyerRequeteSql("SELECT * FROM user");
 
 ```
 
-    PROMESSES ET ESPOIR DE LA POO
+### PROMESSES ET ESPOIR DE LA POO
+
     * ECRIRE DU CODE LISIBLE (SUJET VERBE COMPLEMENT)
+
     * SUR UN PROJET ON COMMENCE PAR LA REDACTION DU CAHIER DES CHARGES AVEC LE CLIENT
         LE CLIENT DECRIT SES BESOINS POUR SON PROJET
         => CE DOCUMENT EST FRANCAIS (EN LANGAGE NATUREL COMPREHENSIBLE PAR UN ETRE HUMAIN)
@@ -249,7 +253,7 @@ $georges->coder();
 
     ENTREPRISE          APPLICATION
     SERVICE             CLASSE          => A DES RESPONSABILITES
-    EMPLOYE             OBJET           => FONT LE TRAVAIL
+    EMPLOYES            OBJETS          => FONT LE TRAVAIL
 
 
 ## PREMIER CONSTAT
@@ -313,12 +317,14 @@ $objetView->afficherTitre();
 
     SI static ON PASSE Classe::methode
     https://www.php.net/manual/fr/language.oop5.paamayim-nekudotayim.php
-
+    => :: EST L'OPERATEUR DE RESOLUTION DE PORTEE
 
     ON A new POUR CREER UN OBJET A PARTIR DE LA CLASSE (INSTANCIATION)
     $objet = new MaClasse;
 
-    SI PAS static ON UTILISE L'OPERATEUR D'ACCES ->
+    SI PAS static ON UTILISE L'OPERATEUR D'ACCES -> POUR LES OBJETS
+    $objet->propriete;
+    $objet->methode();
 
     ET DANS UNE METHODE D'OBJET ON PEUT $this QUI DONNE PAR QUEL OBJET ON A APPELE LA METHODE
 
@@ -527,9 +533,9 @@ $julie   = new Eleve("Depardieu", "Toulon");
                             => dAAHJG77657pHGJH56FGHGHr6786HGGJHdJHFGHH564565                            
                             => .AAHJG77657.HGJH56FGHGH.6786HGGJH.JHFGHH564565
                             => dprd
-                            => depardon
-                            => depardieu
-                            => deprod
+                            => depardou ?
+                            => depardieu ?
+                            => deprod ?
 
     ON VA HASHER LE MOT DE PASSE
     => EMPECHER DE DEVINER LE MOT DE PASSE ORIGINAL
@@ -646,7 +652,7 @@ if ($formIdentifiant == "user-login")
     => PASSER LES EMAILS EN MINUSCULES
     => BLOQUER LES DOUBLONS (email ET pseudo)
 
-    
+
 
 
 
