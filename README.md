@@ -630,7 +630,17 @@ if ($formIdentifiant == "user-login")
     CREER LA PAGE inscription.php
     ET AJOUTER LE FORMULAIRE DE CREATION DE COMPTE...
 
-    
+    OPTION: AJOUTER UNE COLONNE DANS LA TABLE SQL user
+        niveau      INT
+
+    inscrit gratuit     => niveau 1
+    inscrit payant      => niveau 10
+    admin               => niveau 100
+
+    inscrit banni       => niveau -1
+    inscrit non activé  => niveau 0
+
+    * NE PAS HESITER A POSER DES QUESTIONS...
 
 
 
