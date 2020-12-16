@@ -512,6 +512,7 @@ $julie   = new Eleve("Depardieu", "Toulon");
     * GESTION DES UTILISATEURS
     => HASHAGE DU MOT DE PASSE DANS TABLE SQL
     => LOI RGPD OBLIGATOIRE DE PROTEGER LES MOTS DE PASSE
+        https://www.cnil.fr/fr/sous-traitant
     => RISQUE DE PENALITE PAR LA CNIL...
 
     CRYPTAGE vs HASHAGE
