@@ -480,6 +480,8 @@ $julie   = new Eleve("Depardieu", "Toulon");
 ?>
 ```
 
+    PAUSE DEJEUNER ET REPRISE A 13H45
+
 
 
 

@@ -2,8 +2,23 @@
 
 // CHARGE MES FONCTIONS
 require_once "php/model/fonctions-sql.php";
-require_once "php/view/fonctions-affichage.php";
 require_once "php/controller/fonctions.php";
+
+// FONCTION DE CALLBACK => PHP QUI VA APPELER CETTE FONCTION AUTOMATIQUEMENT
+function chargerFichier ($nomClasse)
+{
+    $tabFichier = glob("php/*/$nomClasse.php");
+    foreach($tabFichier as $fichier)    // INUTILE CAR UN SEUL FICHIER
+    {
+        // DEBUG
+        // echo "<h3>JE CHARGE LE CODE DANS $fichier</h3>";
+        require_once $fichier;
+    }
+}
+
+// PHP VA AUTOMATIQUEMENT APPELER LA FONCTION chargerFichier QUAND IL A BESOIN D'UNE CLASSE
+// https://www.php.net/manual/fr/function.spl-autoload-register.php
+spl_autoload_register("chargerFichier");
 
 // FICHIER DE CONFIGURATION A PART
 // AMELIORATION POUR MISE EN LIGNE 
