@@ -515,7 +515,8 @@ $admin = new User;
     https://www.php.net/manual/fr/reserved.variables.cookies.php
 
 
-
+    FIN DE JOURNEE...
+    
 
 
 
