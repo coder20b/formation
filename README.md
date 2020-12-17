@@ -506,8 +506,13 @@ $admin = new User;
     => ON PEUT GERER DES COOKIES AUTANT COTE FRONT (JS) QUE COTE BACK (PHP)
 
     => LES COOKIES VONT ETRE ECHANGES AUTOMATIQUEMENT POUR TOUTES LES REQUETES
-    
 
+    EN PHP:
+    * ECRITURE
+    https://www.php.net/manual/fr/function.setcookie
+
+    * LECTURE
+    https://www.php.net/manual/fr/reserved.variables.cookies.php
 
 
 
