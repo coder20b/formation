@@ -57,16 +57,27 @@ class Model
         }        
     }
 
-    static function compterLigne($table)
+    static function compterLigne ($table, $colonne="", $valeurReherche="")
     {
+        $clauseWhere = "";
+        $tabAsso     = [];
+        if ($colonne != "")
+        {
+            // ON VA AJOUTER UN FILTRAGE SUR LA SELECTION DES LIGNES
+            $clauseWhere = "WHERE $colonne = :$colonne ";
+            $tabAsso = [ $colonne => $valeurReherche ];
+        }
         // https://sql.sh/fonctions/agregation/count
         // PRATIQUE SI ON VEUT JUSTE COMPTER LE NOMBRE DE LIGNE
         $requeteSQL = 
         <<<x
-        SELECT count(*) FROM $table;
+        SELECT count(*) FROM $table
+        $clauseWhere
+        ;
         x;
 
-        $resultat = envoyerRequeteSql($requeteSQL, []);
+        $resultat = envoyerRequeteSql($requeteSQL, $tabAsso);
+        
         // RACCOURCI: POUR OBTENIR LE RESULTAT DIRECTEMENT
         // https://www.php.net/manual/fr/pdostatement.fetchcolumn.php
         $nbLigne = $resultat->fetchColumn();

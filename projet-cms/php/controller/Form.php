@@ -26,6 +26,10 @@ class Form
     static function filtrerEmail ($name)
     {
         $resultat = filtrer($name);
+        // PASSER LES CARACTERES EN MINUSCULES
+        // https://www.php.net/manual/fr/function.strtolower.php
+        $resultat = strtolower($resultat);
+        
         if ($resultat == "")
         {
             Form::$tabErreur[] = "$name EST OBLIGATOIRE";
@@ -162,4 +166,13 @@ class Form
         }
     }
     
+
+    static function verifierDispo ($nomTable, $colonne, $valeurCherche)
+    {
+        $nbLigne = Model::compterLigne($nomTable, $colonne, $valeurCherche);
+        if ($nbLigne > 0) // DEJA PRIS
+        {
+            Form::$tabErreur[] = "ERREUR: $colonne DEJA PRIS AVEC $valeurCherche";
+        }
+    }
 }

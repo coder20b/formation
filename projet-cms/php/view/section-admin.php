@@ -1,3 +1,18 @@
+<?php
+// $_COOKIE (ET AUSSI SOUVENT DANS $_REQUEST)
+// print_r($_COOKIE);
+
+$pseudo = $_COOKIE["pseudo"] ?? "";
+$niveau = $_COOKIE["niveau"] ?? 0;
+
+// BLOCAGE SI LE NIVEAU EST INSUFFISANT
+if ($niveau < 100)
+{
+    header("Location: login.php");
+}
+?>    
+
+
 
 <section>
     <h3>CRUD SUR LA TABLE SQL page</h3>

@@ -21,7 +21,9 @@ if ($formIdentifiant == "user-login")
 
             // BRICOLAGE POUR NE PAS PERDRE LE MOT DE PASSE ORIGINAL
             $motDePasseOriginal = $motDePasse;
-            extract($ligneAsso);    // => CREE LES VARIABLES $motDePasse => MOT DE PASSE HASHE
+            extract($ligneAsso);    
+            // => CREE LES VARIABLES $motDePasse => MOT DE PASSE HASHE
+            //                      $niveau
 
             // MAINTENANT IL FAUT CONFIRMER QUE LE MOT DE PASSE EST CORRECT
             // https://www.php.net/manual/fr/function.password-verify.php
@@ -29,6 +31,22 @@ if ($formIdentifiant == "user-login")
             if ($motDePasseOK)
             {
                 // SCENARIO OK: LE VISITEUR A FOURNI UN EMAIL QUI EXISTE ET LE BON MOT DE PASSE
+
+                // ON VA STOCKER LES INFOS DU VISITEUR DANS DES COOKIES
+                setcookie("pseudo", $pseudo, 0, "/");
+                setcookie("niveau", $niveau, 0, "/");
+
+                // REDIRECTION AUTOMATIQUE
+                // https://www.php.net/manual/fr/function.header.php
+                // niveau = 1       REDIRECTION VERS PAGE espace-membre.php 
+                // niveau = 100     REDIRECTION VERS PAGE admin.php
+                if ($niveau == 1) {
+                    header("Location: espace-membre.php");
+                }
+                if ($niveau == 100) {
+                    header("Location: admin.php");
+                }
+
                 echo
                 <<<x
                     bienvenue sur le site $pseudo. 
@@ -58,12 +76,15 @@ if ($formIdentifiant == "user")
         "email"             => Form::filtrerEmail("email"),
         "motDePasse"        => Form::filtrerTexte("motDePasse"),    // MOT DE PASSE ORIGINAL
         "dateCreation"      => date("Y-m-d H:i:s"),
+        "niveau"            => 1,                                   // UTILISATEUR ACTIF DIRECTEMENT
     ];
     extract($tabAsso);  // CREE LA VARIABLE $motDePasse
 
     // AJOUTER DES VERIFICATIONS SUPPLEMENTAIRES
-    // BLOQUER LES DOUBLONS (pseudo ET email)
-    // AMELIORER LE FILTRE DES EMAILS POUR TOUT PASSER EN minuscules
+    // OK => AMELIORER LE FILTRE DES EMAILS POUR TOUT PASSER EN minuscules
+    // OK => BLOQUER LES DOUBLONS (pseudo ET email)
+    Form::verifierDispo("user", "email", $email);
+    Form::verifierDispo("user", "pseudo", $pseudo);
 
     if ( Form::estOK() )
     {
