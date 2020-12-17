@@ -489,7 +489,11 @@ $admin = new User;
 
     * REVOIR LA PARTIE COURS
     * REVOIR LA PARTIE PROJET POO
+
+    PAUSE ET REPRISE A 16H...
+
     
+
 
 
 
