@@ -268,7 +268,7 @@ $objetMaClasseA->afficherCoucou();
 
 ## VISIBILITE DES PROPRIETES ET DES METHODES
 
-
+### public LE PLUS SIMPLE ET OUVERT
 
 ```php
 
@@ -281,7 +281,16 @@ class MaClasseA
 $objetMaClasseA = new MaClasseA;
 $objetMaClasseA->nom =  "coucou";   // POSSIBLE CAR public
 
+```
 
+### public OU protected OU private
+
+    public      LECTURE+ECRITURE PAR TOUT LE MONDE
+    protected   LECTURE+ECRITURE POUR LES CLASSES ENFANTS
+    private     LECTURE+ECRITURE SEULEMENT DANS LES METHODES DE LA CLASSE
+    
+
+```php
 <?php
 
 class MaClasseA
@@ -421,6 +430,10 @@ $admin = new User;
 // $admin->email = "hello@mail.me";   // ERREUR CAR protected
 
 ```
+
+### AUTONOMIE ET ENSUITE PAUSE DEJEUNER A 12H45
+
+    N'HESITEZ PAS A POSER DES QUESTIONS...
 
 
 
