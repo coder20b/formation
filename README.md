@@ -484,8 +484,12 @@ $admin = new User;
         Classe                  SUJET
             Methode             VERBE
                 Paramètres      COMPLEMENT
-                
 
+## AUTONOMIE JUSQU'A LA PAUSE DE 15H45
+
+    * REVOIR LA PARTIE COURS
+    * REVOIR LA PARTIE PROJET POO
+    
 
 
 
