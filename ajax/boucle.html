@@ -54,12 +54,22 @@ for (let element of tableau) {
     `
 }
 
+function calculerSomme (a, b)
+{
+    return a + b;
+}
+
+let somme = calculerSomme(10, 20); // SYNCHRONE ON OBTIENT LE RESULTAT TOUT DE SUITE
 
 async function chargerArticles ()
 {
     console.log('tu as cliqué');
     // ON VA ENVOYER UNE REQUETE AJAX
     // ON VA RECUPERER LA LISTE DES ARTICLES
+
+    // await ATTEND LA REPONSE DU SERVEUR 
+    // ET "BLOQUE" LE CODE JS JUSQU'A AVOIR LA REPONSE
+    // LE RESTE DU CODE ATTEND LA REPONSE POUR ETRE EXECUTE => async CAR LA FONCTION DEVIENT ASYNCHRONE
     let reponseServeur = await fetch('api-article.php');    // await CAR fetch EST ASYNCHRONE
     let objetJSON = await reponseServeur.json();        
     console.log(objetJSON);

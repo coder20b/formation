@@ -200,8 +200,54 @@ echo $codeJSON;
                 on ne charge pas tout le contenu mais seulement quand le visiteur scrolle dans la page
 
     ...
-    
 
+## FRONT ET BACK AVEC AJAX
+
+    ON STOCKE LES INFOS DANS SQL
+    ON A UNE API EN PHP QUI PRODUIT DU CODE JSON
+    ON UTILISE AJAX AVEC fetch POUR RECUPERER LE CODE JSON
+    ET ON CONSTRUIT LE HTML EN JS
+
+    => SINGLE PAGE APPLICATION
+    => PROGRESSIVE APPS
+    => ...ANGULAR, REACT, VUE
+
+```js
+
+async function chargerArticles ()
+{
+    console.log('tu as cliqué');
+    // ON VA ENVOYER UNE REQUETE AJAX
+    // ON VA RECUPERER LA LISTE DES ARTICLES
+
+    // await ATTEND LA REPONSE DU SERVEUR 
+    // ET "BLOQUE" LE CODE JS JUSQU'A AVOIR LA REPONSE
+    // LE RESTE DU CODE ATTEND LA REPONSE POUR ETRE EXECUTE => async CAR LA FONCTION DEVIENT ASYNCHRONE
+    let reponseServeur = await fetch('api-article.php');    // await CAR fetch EST ASYNCHRONE
+    let objetJSON = await reponseServeur.json();        
+    console.log(objetJSON);
+
+    // EFFACER LA LISTE DES ARTICLES
+    container.innerHTML = '';
+    // JE RECONSTRUIS UN ARTICLE PAR OBJET
+    for (let element of objetJSON.articles) {
+    container.innerHTML += 
+    `
+        <article>
+            <h3>${element.titre}</h3>
+            <p>${element.contenu}</p>
+        </article>
+    `
+    }
+
+};
+
+boutonAjax.addEventListener('click', chargerArticles);
+
+
+```
+
+    PAUSE ET REPRISE A 13H50
 
 
 
