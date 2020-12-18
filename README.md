@@ -458,7 +458,9 @@ Vue.createApp(config).mount('#app');    // COMPILATION SE FAIT COTE FRONT EN JS
     GROUPE      => PROJET EN EQUIPE
 
 
-
+    FIN DE SEMAINE
+    BON WEEK END ;-p
+    
 
 
 
