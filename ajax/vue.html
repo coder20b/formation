@@ -45,10 +45,12 @@ form {
 
         <!-- CSS -->
         <h1>CSS</h1>
-        <p>fond: <input type="color" v-model="fond"></p>
-        <p>hauteur: <input type="range" v-model="hauteur" min="0" max="1000"> {{ hauteur}}px</p>
-        <p>largeur: <input type="range" v-model="largeur"> {{ largeur }}%</p>
-        <h1 :style="{ 'background-color' : fond, height: hauteur + 'px', width: largeur + '%' }">texte avec couleur de fond</h1>
+        <p>fond <input type="color" v-model="fond"></p>
+        <p>hauteur <input type="range" v-model="hauteur" min="0" max="1000"> {{ hauteur}}px</p>
+        <p>largeur <input type="range" v-model="largeur"> {{ largeur }}%</p>
+        <h1 :style="{ 'background-color' : fond, 'height' : hauteur + 'px', 'width' : largeur + '%' }">
+            texte avec couleur de fond
+        </h1>
 
 
         <!-- CONDITION -->
