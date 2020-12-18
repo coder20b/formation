@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue</title>
     <style>
+* {
+    box-sizing: border-box;
+}
 nav a {
     display: inline-block;
     padding:8px;
@@ -12,7 +15,17 @@ nav a {
 form {
     display:flex;
     flex-direction: column;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
 }        
+.container article {
+    margin: 8px;
+    width: calc(100% / 3 - 16px);
+    background-color: #cccccc;
+    padding:8px;
+}
     </style>
 </head>
 <body>
@@ -71,7 +84,11 @@ form {
         </form>
     </div>
 
-    <script src="https://unpkg.com/vue@next"></script>
+    <!-- CDN -->
+    <!-- <script src="https://unpkg.com/vue@next"></script> -->
+    <!-- local -->
+    <script src="vue.global.prod.js"></script>
+
     <script>
 let config = {
     methods: {
