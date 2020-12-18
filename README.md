@@ -250,6 +250,77 @@ boutonAjax.addEventListener('click', chargerArticles);
     PAUSE ET REPRISE A 13H50
 
 
+## ACTIVITES APRES-MIDI
+
+    * VueJS
+    * correction exam
+    * projet cms
+    * git
+    * projets en équipe
+    * autres idées ???
+    * ...
+
+## VueJS
+
+    https://vuejs.org/
+    Première version: début 2014
+    Evan You
+
+    Dernière version: 3.0 (Récente Septembre 2020...)
+
+    Framework Front
+    => DANS LE TOP 3 DES FRAMEWORKS FRONT
+    => React, Angular, Vue
+
+
+    https://2019.stateofjs.com/overview/
+
+    Google          Angular         TYPESCRIPT  => (Microsoft)
+    Independant     Vue             JS MAISON ET DEPUIS VUE3 RE-ECRIT EN TYPESCRIPT (Microsoft)
+    Facebook        React           JSX
+
+    Dans le navigateur, le langage officiel est JS
+    TypeScript (Microsoft) évolution de JS.
+    => PLUS DE FONCTIONNALITES (TYPAGE...)
+
+    LES 3 FRAMEWORKS PASSENT PAR UNE ETAPE DE COMPILATION POUR PRODUIRE DU JS
+    * Angular LE PLUS LOURD     (TypeScript)
+    * React EST PLUS LEGER      (JSX)
+    * Vue EST LE PLUS LEGER     (JS maison)
+
+    NORMALEMENT, ON COMPILE SUR LE SERVEUR... 
+    (NodeJS et npm... ENVIRONNEMENT A INSTALLER COTE SERVEUR...)
+
+    React PEUT AUSSI SE COMPILER COTE FRONT (AVEC BABELJS... ASSEZ LOURD...)
+    Vue PEUT AUSSI SE COMPILER COTE FRONT (INTEGRE DANS UNE VERSION "global"... ASSEZ LEGER...)
+
+## Vue
+
+    V2
+    https://vuejs.org/v2/guide/
+
+    V3
+    https://v3.vuejs.org/guide/introduction.html
+
+    DOC PRATIQUE POUR DEMARRER RAPIDEMENT...
+
+    LE PLUS RAPIDE AVEC LE CDN (Comme Jquery...)
+    https://v3.vuejs.org/guide/installation.html#vue-devtools
+
+
+    VUEJS SANS COMPILATEUR      69Ko
+    VUE AVEC COMPILATEUR        106Ko
+    jQuery                      88Ko
+
+
+
+
+
+
+
+
+
+
 
 
 
