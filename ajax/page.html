@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONE PAGE</title>
+    <style>
+section, footer {
+    height:60vh;
+}        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#section1" data-template="template1">section1</a>
+            <a href="#section2" data-template="template2">section2</a>
+            <a href="#section3" data-template="template3">section3</a>
+            <input type="text" placeholder="recherche">
+        </nav>
+    </header>
+    <main id="containerMain">
+    </main>
+    <footer>
+        <p>tous droits réservés</p>
+    </footer>
+    <script>
+// QUAND ON CLIQUE SUR LE LIEN DE NAVIGATION
+// ALORS ON VA REMPLACER LE CONTENU DE LA BALISE main
+// PAR LE CONTENU DU TEMPLATE
+
+// async CAR ON UTILISE fetch AVEC await
+async function chargerSection (event)
+{
+        // BLOQUER LE LIEN
+        event.preventDefault();
+        let template = event.target.getAttribute('data-template');
+        console.log(template);
+
+        console.log('on veut charger le contenu de ' + template);
+
+        // ON VA LANCER UNE REQUETE AJAX VERS api.php POUR CHARGER LE CONTENU DU TEMPLATE
+        // AVANTAGE: SANS RECHARGER LA PAGE
+        let reponseServeur = await fetch('api.php?template=' + template);    // await CAR fetch EST ASYNCHRONE
+        // console.log(reponseServeur);
+        let contenuBrut = await reponseServeur.text();  // await CAR asynchrone
+
+        containerMain.innerHTML = contenuBrut;
+
+        // let codeSection = document.querySelector(template).innerHTML;
+        // console.log(codeSection);
+        // containerMain.innerHTML = codeSection;
+}
+
+let listLien = document.querySelectorAll("nav a");
+for (let lien of listLien)
+{
+    console.log(lien);
+    lien.addEventListener('click', chargerSection);
+}   
+
+// ON VA CHARGER AUTOMATIQUEMENT LA PREMIERE SECTION
+// ON SIMULE UN CLICK DU VISITEUR
+document.querySelector('nav a').click();
+
+    </script>
+</body>
+</html>
