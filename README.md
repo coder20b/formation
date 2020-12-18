@@ -91,7 +91,7 @@ let user =
     => SPA: Single Page Application
     => MAIS SI ON A BEAUCOUP DE CONTENUS, 
         CA DEVIENT TROP LOURD CAR ON CHARGE DU CODE QUI NE SERA SUREMENT UTILISE PAR LE VISITEUR
-
+    => PWA: Progressive Web App
 
     AVANTAGE DE AJAX
     => ON PEUT CHARGER DU CONTENU SUPPLEMENTAIRE SANS DETRUIRE ET RECHARGER TOUTE LA PAGE
@@ -99,6 +99,14 @@ let user =
     * LE PREMIER CHARGEMENT DE LA PAGE EST PLUS RAPIDE (CAR MOINS DE CONTENU)
     * ET ON NE CHARGE ENSUITE QUE LE CONTENU NECESSAIRE AU VISITEUR (STREAMING DE CONTENU)
 
+    ATTENTION POUR LE SEO:
+    GOOGLE N'EST PAS BON AVEC AJAX
+    => GOOGLE COMPREND BIEN LE CONTENU HTML CHARGE AU DEBUT DANS LE CODE DE LA PAGE
+    => MAIS IL NE COMPREND MAL LE CONTENU AVEC AJAX
+    SI ON A DES PAGES OU LE REFERENCEMENT EST IMPORTANT
+    => RESTER SUR LA CREATION CLASSIQUE: 
+        CREER LA PAGE AVEC LE CONTENU A REFERENCER AU DEPART
+    => PRINCIPAL FREIN A LA GENERALISATION DES SITES AVEC TOUT EN AJAX
 
 ```js
 
@@ -145,10 +153,54 @@ document.querySelector('nav a').click();
 
     PAUSE ET REPRISE A 11H15...
 
+
+
+## AJAX ET JSON
+
+        let contenuBrut = await reponseServeur.text();  // await CAR asynchrone
+
+    .text()     => BIEN POUR RECUPERER UN BLOC DE TEXTE
+                => MAIS TROP LIMITE POUR RECUPERER PLUSIEURS INFOS
+
+    AVEC JSON ON VA TRANSMETTRE PLUSIEURS INFOS EN MEME TEMPS
+
+```php
+
+// JSON => TEXTE AU FORMAT D'UN CODE JS POUR UN OBJET
+// AVEC PHP
+// UN TABLEAU ASSOCIATIF EST TRES PROCHE D'UN OBJET JS
+$tabAsso = [
+    "cle"       => "valeur",
+    "date"      => $date,
+    "template"  => $codeTemplate,
+];
+
+// CONVERSION D'UN TABLEAU ASSOCIATIF EN CODE JSON
+// https://www.php.net/manual/fr/function.json-encode.php
+$codeJSON = json_encode($tabAsso, JSON_PRETTY_PRINT);
+
+echo $codeJSON;
+
+```
+
+## EXEMPLES D'UTILISATION D'AJAX DANS LES SITES...
+
+    FORMULAIRE DE RECHERCHE AVEC AUTO-COMPLETION
+    exemple: site oui.sncf qui propose les gares de départ et d'arrivée
+
+    GOOGLE MAPS
+    exemple: on ne charge que le contenu recherché par le visiteur
+
+    CHAT
+    exemple: on ne charge que les discussions récentes 
+                et si le visiteur demande alors on charge plus d'historique
+
+    SCROLLING INFINI
+    exemple: google images, twitter, facebook, instagram, etc...
+                on ne charge pas tout le contenu mais seulement quand le visiteur scrolle dans la page
+
+    ...
     
-
-
-
 
 
 

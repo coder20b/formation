@@ -20,9 +20,16 @@ section, footer {
         </nav>
     </header>
     <main id="containerMain">
+        <section>
+            <h3>CONTENU A REFERENCER PAR GOOGLE</h3>
+            <p>LE CONTENU SERA REMPLACE EN JS AVEC AJAX POUR LES VISITEURS</p>
+        </section>
     </main>
     <footer>
+        <div id="derniereRequete"></div>
+        <a href="page.html">recharger la page</a>
         <p>tous droits réservés</p>
+
     </footer>
     <script>
 // QUAND ON CLIQUE SUR LE LIEN DE NAVIGATION
@@ -34,22 +41,20 @@ async function chargerSection (event)
 {
         // BLOQUER LE LIEN
         event.preventDefault();
-        let template = event.target.getAttribute('data-template');
-        console.log(template);
 
-        console.log('on veut charger le contenu de ' + template);
+        let template = event.target.getAttribute('data-template');
 
         // ON VA LANCER UNE REQUETE AJAX VERS api.php POUR CHARGER LE CONTENU DU TEMPLATE
         // AVANTAGE: SANS RECHARGER LA PAGE
         let reponseServeur = await fetch('api.php?template=' + template);    // await CAR fetch EST ASYNCHRONE
-        // console.log(reponseServeur);
-        let contenuBrut = await reponseServeur.text();  // await CAR asynchrone
 
-        containerMain.innerHTML = contenuBrut;
-
-        // let codeSection = document.querySelector(template).innerHTML;
-        // console.log(codeSection);
-        // containerMain.innerHTML = codeSection;
+        let objetJSON = await reponseServeur.json();        
+        // IMPORT: RECUPERE LE CODE AU FORMAT JS ET LE CONVERTIT EN VALEUR JS
+        containerMain.innerHTML = objetJSON.template;
+        derniereRequete.innerHTML = objetJSON.date;
+        
+        // let contenuBrut = await reponseServeur.text();  // await CAR asynchrone
+        // containerMain.innerHTML = contenuBrut;
 }
 
 let listLien = document.querySelectorAll("nav a");

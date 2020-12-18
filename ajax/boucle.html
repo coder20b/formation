@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="boutonAjax">CHARGER LA LISTE DES ARTICLES AVEC AJAX</button>
+    <div id="container"></div>
+    <script>
+
+/*
+
+[
+    {
+        "id": "38",
+        "titre": "test1214",
+        "image": "assets\/img\/article1.jpg",
+        "contenu": "contenu1214",
+        "datePublication": "2020-12-18 12:14:19"
+    },
+    {
+        "id": "37",
+        "titre": "titre1511",
+        "image": "assets\/upload\/pexels-photo-1591060.jpeg",
+        "contenu": "contenu1511",
+        "datePublication": "2020-12-04 15:11:43"
+    },
+    {
+        "id": "35",
+        "titre": "titre1505",
+        "image": "assets\/upload\/pexels-photo-373543.jpeg",
+        "contenu": "contenu 1505",
+        "datePublication": "2020-12-04 15:06:08"
+    }
+]
+
+*/
+
+tableau = [
+        { titre : 'titre1', contenu: 'contenu1'},
+        { titre : 'titre2', contenu: 'contenu2'},
+        { titre : 'titre3', contenu: 'contenu3'},
+        { titre : 'titre4', contenu: 'contenu4'},
+];        
+for (let element of tableau) {
+    container.innerHTML += 
+    `
+        <article>
+            <h3>${element.titre}</h3>
+            <p>${element.contenu}</p>
+        </article>
+    `
+}
+
+
+async function chargerArticles ()
+{
+    console.log('tu as cliqué');
+    // ON VA ENVOYER UNE REQUETE AJAX
+    // ON VA RECUPERER LA LISTE DES ARTICLES
+    let reponseServeur = await fetch('api-article.php');    // await CAR fetch EST ASYNCHRONE
+    let objetJSON = await reponseServeur.json();        
+    console.log(objetJSON);
+
+    // EFFACER LA LISTE DES ARTICLES
+    container.innerHTML = '';
+    // JE RECONSTRUIS UN ARTICLE PAR OBJET
+    for (let element of objetJSON.articles) {
+    container.innerHTML += 
+    `
+        <article>
+            <h3>${element.titre}</h3>
+            <p>${element.contenu}</p>
+        </article>
+    `
+}
+
+};
+
+boutonAjax.addEventListener('click', chargerArticles);
+
+
+
+
+    </script>
+</body>
+</html>
