@@ -35,7 +35,8 @@
         </div>
 
         <button @click.prevent="chargerArticles">charger Articles de SQL</button>
-        
+
+        <!-- FORMULAIRES -->
         <form @submit.prevent="ajouterArticle">
             <input type="text" v-model="nouveauTitre">
             <textarea cols="30" rows="10" v-model="nouveauContenu"></textarea>

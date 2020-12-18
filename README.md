@@ -312,6 +312,142 @@ boutonAjax.addEventListener('click', chargerArticles);
     VUE AVEC COMPILATEUR        106Ko
     jQuery                      88Ko
 
+    * HTML:     IL FAUT UNE BALISE QUI SERT DE CONTAINER POUR VUE
+    * JS:       CHARGER LA LIBRAIRIE VUE
+                ET ENSUITE AJOUTER SON CODE POUR CONNECTER LE HTML, NOTRE CODE JS ET VUE
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+</head>
+<body>
+    <!-- container Vue -->
+    <div id="app">
+        <p>Counter: {{ counter }}</p>
+    </div>
+
+    <!-- charger la librairie Vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <!-- connecter son code js avec le html et Vue -->
+    <script>
+let config = {
+    data() {
+        return {
+            counter: 0,
+        }
+    }
+}
+
+// CODE QUI CONNECTE NOTRE PAGE A VUE
+Vue.createApp(config).mount('#app');    // COMPILATION SE FAIT COTE FRONT EN JS
+
+    </script>
+</body>
+</html>
+```
+
+## EXEMPLES VUE AVEC HTML, CSS ET FORMULAIRES
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+</head>
+<body>
+    <div id="app">
+
+        <!-- HTML -->
+        <h1>{{ titre1 }}</h1>
+        <button @click="counter--">enlever 1</button>
+        <button @click="counter++">ajouter 1</button>
+        <p>Counter: {{ counter }}</p>
+        <p>Counter x2: {{ 2 * counter }}</p>
+        <p>Counter x10: {{ 10 * counter }}</p>
+        <p>quantité: <input type="text" v-model="counter"></p>
+        <p>quantité: <input type="range" v-model="counter"></p>
+        <p>prixUnitaire: <input type="text" v-model="prixUnitaire"></p>
+        <h4>Prix Total= {{ counter * prixUnitaire }}</h4>
+
+        <!-- CSS -->
+        <input type="color" v-model="fond">
+        <p>hauteur: <input type="range" v-model="hauteur"></p>
+        <p>largeur %: <input type="range" v-model="largeur"></p>
+        <h1 :style="{ 'background-color' : fond, height: hauteur + 'px', width: largeur + '%' }">texte avec couleur de fond</h1>
+
+        <!-- BOUCLES -->
+        <div class="container">
+            <article v-for="article in articles">
+                <h3>{{ article.titre }}</h3>
+                <p>{{ article.contenu }}</p>
+            </article>
+        </div>
+
+        <button @click.prevent="chargerArticles">charger Articles de SQL</button>
+
+        <!-- FORMULAIRES -->
+        <form @submit.prevent="ajouterArticle">
+            <input type="text" v-model="nouveauTitre">
+            <textarea cols="30" rows="10" v-model="nouveauContenu"></textarea>
+            <button>ajouter article</button>
+        </form>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+let config = {
+    methods: {
+        async chargerArticles ()
+        {
+            let reponseServeur = await fetch('api-article.php');    // await CAR fetch EST ASYNCHRONE
+            let objetJSON = await reponseServeur.json();        
+            this.articles = objetJSON.articles;
+        },
+
+        ajouterArticle () {
+            // JE RECUPERE LES INFOS DU FORMULAIRE
+            let nouvelArticle = {
+                titre: this.nouveauTitre,
+                contenu: this.nouveauContenu
+            }
+            // JE RAJOUTE UN NOUVEL ARTICLE
+            this.articles.push(nouvelArticle);
+        }
+    },
+    data() {
+        return {
+            counter: 0,
+            titre1: "MA PREMIERE APP AVEC VUE",
+            prixUnitaire: 20,
+            fond: '#ff0000',
+            hauteur: '200',
+            largeur: '50',
+            nouveauTitre: '',
+            nouveauContenu: '',
+            articles: [
+                { titre : 'titre1', contenu: 'contenu1'},
+                { titre : 'titre2', contenu: 'contenu2'},
+                { titre : 'titre3', contenu: 'contenu3'},
+                { titre : 'titre4', contenu: 'contenu4'},
+            ]
+        }
+    }
+}
+
+// CODE QUI CONNECTE NOTRE PAGE A VUE
+Vue.createApp(config).mount('#app');    // COMPILATION SE FAIT COTE FRONT EN JS
+
+    </script>
+</body>
+</html>
+```
 
 
 
