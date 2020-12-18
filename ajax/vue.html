@@ -94,13 +94,14 @@ form {
     <script>
 let config = {
     methods: {
+        // AJAX
         async chargerArticles ()
         {
             let reponseServeur = await fetch('api-article.php');    // await CAR fetch EST ASYNCHRONE
             let objetJSON = await reponseServeur.json();        
             this.articles = objetJSON.articles;
         },
-
+        // formulaire
         ajouterArticle () {
             // JE RECUPERE LES INFOS DU FORMULAIRE
             let nouvelArticle = {
@@ -126,10 +127,10 @@ let config = {
             nouveauContenu: '',
             // tableau et boucle
             articles: [
-                { titre : 'titre1', contenu: 'contenu1'},
-                { titre : 'titre2', contenu: 'contenu2'},
-                { titre : 'titre3', contenu: 'contenu3'},
-                { titre : 'titre4', contenu: 'contenu4'},
+                { titre: 'titre1', contenu: 'contenu1' },
+                { titre: 'titre2', contenu: 'contenu2' },
+                { titre: 'titre3', contenu: 'contenu3' },
+                { titre: 'titre4', contenu: 'contenu4' },
             ],
             tab: 1
         }
