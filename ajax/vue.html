@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue</title>
+    <style>
+nav a {
+    display: inline-block;
+    padding:8px;
+}
+form {
+    display:flex;
+    flex-direction: column;
+}        
+    </style>
 </head>
 <body>
     <div id="app">
@@ -21,19 +31,36 @@
         <h4>Prix Total= {{ counter * prixUnitaire }}</h4>
 
         <!-- CSS -->
-        <input type="color" v-model="fond">
-        <p>hauteur: <input type="range" v-model="hauteur"></p>
-        <p>largeur %: <input type="range" v-model="largeur"></p>
+        <h1>CSS</h1>
+        <p>fond: <input type="color" v-model="fond"></p>
+        <p>hauteur: <input type="range" v-model="hauteur" min="0" max="1000"> {{ hauteur}}px</p>
+        <p>largeur: <input type="range" v-model="largeur"> {{ largeur }}%</p>
         <h1 :style="{ 'background-color' : fond, height: hauteur + 'px', width: largeur + '%' }">texte avec couleur de fond</h1>
 
+
+        <!-- CONDITION -->
+        <h1>CONDITION</h1>
+        <nav>
+            <a href="#" @click.prevent="tab=1">tab1</a>
+            <a href="#" @click.prevent="tab=2">tab2</a>
+        </nav>
+        <div v-if="tab == 1">
+            <h3>CONTENU TAB 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nihil nulla expedita, rerum ex dolor vero dignissimos illo accusantium non magnam rem impedit eius autem quibusdam totam voluptate, inventore et.</p>
+        </div>
+        <div v-if="tab == 2">
+            <h3>CONTENU TAB 2</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nihil nulla expedita, rerum ex dolor vero dignissimos illo accusantium non magnam rem impedit eius autem quibusdam totam voluptate, inventore et.</p>
+        </div>
+
         <!-- BOUCLES -->
+        <h1>BOUCLE</h1>
         <div class="container">
             <article v-for="article in articles">
                 <h3>{{ article.titre }}</h3>
                 <p>{{ article.contenu }}</p>
             </article>
         </div>
-
         <button @click.prevent="chargerArticles">charger Articles de SQL</button>
 
         <!-- FORMULAIRES -->
@@ -84,7 +111,8 @@ let config = {
                 { titre : 'titre2', contenu: 'contenu2'},
                 { titre : 'titre3', contenu: 'contenu3'},
                 { titre : 'titre4', contenu: 'contenu4'},
-            ]
+            ],
+            tab: 1
         }
     }
 }

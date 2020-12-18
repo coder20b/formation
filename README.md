@@ -451,7 +451,9 @@ Vue.createApp(config).mount('#app');    // COMPILATION SE FAIT COTE FRONT EN JS
 
 
     AUTONOMIE JUSQU'A 15H45 ET ENSUITE PAUSE... 
+    PAUSE ET REPRISE A 16H...
 
+    
 
 
 
