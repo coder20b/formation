@@ -495,7 +495,7 @@ Please review, edit and commit them: these files are yours.
 
     composer create-project symfony/website-skeleton symfony
 
-    * COMPLETER L'INSTALL POUR AVOIR .htaccess
+    * COMPLETER L'INSTALL POUR AVOIR symfony/public/.htaccess
         ALLER DANS LE DOSSIER symfony
         cd symfony
 
@@ -504,11 +504,129 @@ Please review, edit and commit them: these files are yours.
    
         PIEGE: REPONDRE y A LA QUESTION DE LA RECETTE (recipe...)
 
+    ET VERIFIER QUE LA PAGE S'AFFICHE CORRECTEMENT
+    http://localhost:8888/symfony/public/
+
     PAUSE MAINTENANT ET REPRISE 16H05...
 
+
+## MA PREMIERE PAGE AVEC SYMFONY
+
+    https://symfony.com/doc/current/page_creation.html
+
+    https://symfony.com/doc/current/page_creation.html#creating-a-page-route-and-controller
+
+    CREER UN FICHIER DANS src/Controller/
+
+```php
+<?php
+// src/Controller/LuckyController.php
+namespace App\Controller;
+
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class LuckyController
+{
+    /**
+     * @Route("/lucky/number")
+    */    
+    public function number(): Response
+    {
+        $number = random_int(0, 100);
+
+        return new Response(
+            '<html><body>Lucky number: '.$number.'</body></html>'
+        );
+    }
+}
+
+```
+
+    SI LA RACINE DU SITE EST:
+
+    http://localhost:8888/symfony/public/
+
+    /**
+     * @Route("/lucky/number")
+     */    
+
+    => DANS LE NAVIGATEUR ON POURRA VOIR LA PAGE AVEC L'URL
+    http://localhost:8888/symfony/public/lucky/number
+
+
+
+## EXEMPLE DE SITE VITRINE
+
+    ON VEUT CREER 3 PAGES
+    Accueil     /
+    Galerie     /galerie
+    Contact     /contact
+
+    SI ON VEUT CREER LA PAGE Contact AVEC L'URL /contact
+    => COMMENT ON FAIT ?
+
+
+## TEMPLATE AVEC SYMFONY ET TWIG
+
+    https://twig.symfony.com/
+
+    https://symfony.com/doc/current/page_creation.html#rendering-a-template
+
+    MODIFIER LE CODE PHP
+    ET AJOUTER LES FICHIERS TWIG DANS templates/
+
+```php
+<?php
+namespace App\Controller;
+
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+// POUR UTILISER TWIG ON CREE UN HERITAGE DE CLASSE 
+// AVEC LA CLASSE PARENTE AbstractController
+class VitrineController extends AbstractController
+{
+    /**
+     * @Route("/")
+     */    
+    function accueil ()
+    {
+        return $this->render("vitrine/index.html.twig");
+    }
+
+    /**
+     * @Route("/galerie")
+     */    
+    function galerie ()
+    {
+        return $this->render("vitrine/galerie.html.twig");
+    }
+
+    /**
+     * @Route("/contact")
+     */    
+    function contact ()
+    {
+        // LA METHODE render VIENT DE LA CLASSE PARENTE AbstractController
+        // ON VA CHARGER LE CODE DU TEMPLATE 
+        // templates/vitrine/contact/html.twig
+        // (DANS VSCODE AJOUTER UNE EXTENSION POUR LES FICHIERS .twig)
+        return $this->render("vitrine/contact.html.twig");
+    }
+
+}
+
+```
+
+
+## EXERCICE: AJOUTER UNE PAGE services OU produits OU blog
+
+
+    POUR VERIFIER QUE VOUS AVEZ COMPRIS LES BASES AVEC SYMFONY ET TWIG...
+
+    FIN DE JOURNEE...
     
-
-
 
 
 
