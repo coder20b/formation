@@ -239,7 +239,298 @@ EXEMPLE:
 
     ET REPRISE A 13H45...
 
+## SYMFONY
+
+    FRAMEWORK PHP+SQL
+        MVC
+
+    FRAMEWORK
+    =>  BIBLIOTHEQUE DE CODE
+    =>  + ORGANISATION EN DOSSIERS ET FICHIERS SPECIFIQUES
+
+    CREE EN 2005 PAR FABIEN POTENCIER (FRANCE)
+
+    https://openclassrooms.com/fr/courses/5489656-construisez-un-site-web-a-l-aide-du-framework-symfony-4
+
+    ENTREPRISE (FONDE PAR FABIEN POTENCIER)
+    https://sensiolabs.com/fr/
+
+    REVENDU A SMILE EN 2019 (SOCIETE DE SERVICES SPECIALISE DANS OPEN SOURCE...)
+
+    EN 2005, CONCURRENCE DE JAVA ET JSP (Java Server Pages)
+    => FRAMEWORK PHP+SQL
+    => AUSSI ROBUSTE ET MOINS CHER
+    => SYMFONY
+
+    JAVA EST "LA" REFERENCE DANS LES LANGAGES ORIENTE-OBJET
+    => SYMFONY VA AUSSI FAIRE DE LA POO
+
+## LES RELEASES DE SYMFONY
+
+
+    https://symfony.com/releases
+
+    SYMFONY 2 (2011)
+    => VERSION QUI REND SYMFONY POPULAIRE
+    => MAIS TROP COMPLIQUE (AU SECOURS IL Y A DES BUNDLES PARTOUT...)
+
+    SYMFONY 3 (2015)
+    => VERSION PLUS SIMPLE
+    => ON CREE UN SEUL BUNDLE POUR LE PROJET
+    => MAIS IL FAUT ADAPTER LE CODE D'UN PROJET SYMFONY 2
+
+    SYMFONY 4 (2017)
+    => VERSION PLUS SIMPLE ET PLUS LEGERE (INSTALLATION MINIMUM DEVIENT 1/3 D'UN SYMFONY 3)
+    => (IL Y A TOUJOURS DES BUNDLES... MAIS ON N'EN PARLE PLUS...)
+    => INSTALLATION ET CONFIGURATION SIMPLE (RECETTES/RECIPES)
+    => MAIS IL FAUT ADAPTER LE CODE D'UN PROJET SYMFONY 3 POUR MIGRER VERS SYMFONY 4
+
+    SYMFONY 5 (2019)
+    => ENCORE PLUS SIMPLE MAIS SANS TROP DE NOUVEAUTES PAR RAPPORT SYMFONY 4
+    => MIGRATION PLUS LIGHT SI ON EST SUR SYMFONY 4
+
+    VERSION STABLE ACTUELLE => SYMFONY 5.2 (NOVEMBRE 2020)
+
+    POUR LES ENTREPRISES QUI VEULENT MINIMISER LE NOMBRE DE MIGRATIONS
+    => VERSIONS LTS (Long Term Support)
+    => VERSION LTS ACTUELLE => 4.4  => 2023
+
+    CONCURRENCE
+    * LARAVEL   (PLUS POPULAIRE AU NIVEAU INTERNATIONAL)
+    * SYMFONY   (PLUS POPULAIRE EN FRANCE...)
+                    => SUPPORT, CONSEIL, CERTIFICATIONS
+                    => CERTIFICATIONS (CHERES ET DIFFICILES...)
+                            RECONNU POUR LES COMPETENCES POO
+
+    SYMFONY
+    => CIBLE PRINCIPALE: PROJET EN ENTREPRISE ET EN EQUIPE                                                
+
+    LARAVEL
+    => https://laravel.com/
+    => CIBLE PRINCIPALE: PETIT ET MOYEN PROJET (FREELANCE ET PME)
+
+    MAIS ILS ESSAIENT D'ETENDRE LEUR TERRITOIRES ET PART DE MARCHES...
+
+    EXEMPLE DE PROJET: DAILYMOTION...
+    https://www.yumpu.com/fr/document/read/35951612/symfony-et-dailymotion-une-migration-racussie
+
+
+
+## DOCUMENTATION OFFICIELLE
+
+    https://symfony.com/doc/current/index.html
+
+    2019: FABIEN ECRIT UN BOUQUIN SUR SYMFONY 5
+    TRADUIT EN PLUSIEURS LANGUES (DONT FRANCAIS...)
+    https://symfony.com/doc/current/the-fast-track/fr/index.html
+
+
+## SETUP
+
+    https://symfony.com/doc/current/setup.html
+
+    INSTALLATION DE COMPOSER
+
+    TESTER
+    OUVRIR UN TERMINAL DANS VSCODE (POWERSHELL...)
+    ECRIRE LA LIGNE DE COMMANDE (ET ENSUITE FAIRE ENTREE)
+    composer -v
+
+    => SI VOUS VOYEZ LE LOGO ET LE RESTE 
+    => OK COMPOSER EST INSTALLE...
+
+    SUR WINDOWS
+    https://getcomposer.org/download/
+    IL Y A UN LIEN POUR LE .EXE
+    https://getcomposer.org/Composer-Setup.exe
+    => TELECHARGER ET LANCER LE PROGRAMME D'INSTALLATION
+
+    => UNE FOIS L'INSTALLATION FINIE
+    => REDEMARRER VSCODE ET REESSAYER composer -v
+    => NORMALEMENT C'EST OK
+
+## AUTRE INSTALLATION 
+
+    SI MAC OU AUTRE
+    OUVRIR UN TERMINAL 
+    ET LANCER LA COMMANDE
+
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+
+    => TELECHARGE LE FICHIER composer-setup.php
+
+    php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+
+    => Installer Verified
+
+    php composer-setup.php
+
+    => TELECHARGE UN FICHIER composer.phar
+
+    php -r "unlink('composer-setup.php');"
+
+    => EFFACE LE FICHIER composer-setup.php
+
+    ET FINALEMENT TESTER
+
+    php composer.phar -v
+
+    => SI TOUT VA BIEN ON VOIT LE LOGO ;-p
+
+    COMPOSER EST UN OUTIL DE GESTION DE PACKAGES DE CODE
+    => POUR GERER DES BIBLIOTHEQUES DE CODE PLUS FACILEMENT DANS SES PROJETS PHP...
+
+    SI composer DISPO (AVEC SETUP.EXE...)
+
+    composer create-project symfony/website-skeleton symfony
+
+    SI composer.phar
+
+    php composer.phar create-project symfony/website-skeleton symfony
+
+
+    SI TOUT VA BIEN
+    => CA TELECHARGE PLEIN DE FICHIERS... ATTENDRE...
+     ET A LA FIN ON DEVRAIT VOIR 
+
+```
+     Some files may have been created or updated to configure your new packages.
+Please review, edit and commit them: these files are yours.
+
+Some files may have been created or updated to configure your new packages.
+Please review, edit and commit them: these files are yours.
+
+
+ What's next? 
+
+
+  * Run your application:
+    1. Go to the project directory
+    2. Create your code repository with the git init command
+    3. Download the Symfony CLI at https://symfony.com/download to install a development web server
+
+  * Read the documentation at https://symfony.com/doc
+
+
+ What's next? 
+
+
+  * You're ready to send emails.
+
+  * If you want to send emails via a supported email provider, install
+    the corresponding bridge.
+    For instance, composer require mailgun-mailer for Mailgun.
+
+  * If you want to send emails asynchronously:
+
+    1. Install the messenger component by running composer require messenger;
+    2. Add 'Symfony\Component\Mailer\Messenger\SendEmailMessage': amqp to the
+       config/packages/messenger.yaml file under framework.messenger.routing
+       and replace amqp with your transport name of choice.
+
+  * Read the documentation at https://symfony.com/doc/master/mailer.html
+
+
+ Database Configuration
+
+
+  * Modify your DATABASE_URL config in .env
+
+  * Configure the driver (mysql) and
+    server_version (5.7) in config/packages/doctrine.yaml
+
+
+ How to test?
+
+
+  * Write test cases in the tests/ folder
+  * Run php bin/phpunit
+
+```
+
+    ET DONC ON DOIT OBTENIR UN DOSSIER symfony 
+    AVEC PLEIN DE CHOSES DEDANS...
+
+
+## 1ERE VERIFS APRES L'INSTALLATION
+
+    DANS LE NAVIGATEUR, ALLER SUR L'URL DU DOSSIER symfony/public/
+
+    http://localhost:8888/symfony/public/
+
+    => ON DOIT VOIR UNE PAGE AVEC SYMFONY ET LA VERSION 5.2.1...
+
+    IL FAUT COMPLETER L'INSTALL AVEC .htaccess
+
+    https://symfony.com/doc/current/setup/web_server_configuration.html#adding-rewrite-rules
+
+    ALLER DANS LE DOSSIER symfony
+    cd symfony
+
+    ENTRER LA LIGNE DE COMMANDE
+
+    composer require symfony/apache-pack
+
+    OU 
+
+    php ../composer.phar require symfony/apache-pack
+
+    => ATTENTION: A LA QUESTION SUR LA RECETTE (recipe)
+    => REPONDRE YES (y) ET ENSUITE APPUYER SUR ENTREE
+
+    => SI TOUT SE PASSE BIEN ON LE FICHIER .htaccess
+        DANS LE DOSSIER public/
+
+    ET RE-ESSAYER DANS LE NAVIGATEUR
+
+    http://localhost:8888/symfony/public/
+
+    ET ON DOIT AVOIR UN BANDEAU NOIR EN BAS (PROFILER POUR LE DEBUG...)
+
+
+## EN RESUME
+
+    * INSTALLER composer
+    * CREER UN PROJET
+
+    composer create-project symfony/website-skeleton symfony
+
+    * COMPLETER L'INSTALL POUR AVOIR .htaccess
+        ALLER DANS LE DOSSIER symfony
+        cd symfony
+
+        ENTRER LA LIGNE DE COMMANDE
+        composer require symfony/apache-pack
+   
+        PIEGE: REPONDRE y A LA QUESTION DE LA RECETTE (recipe...)
+
+    PAUSE MAINTENANT ET REPRISE 16H05...
+
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
