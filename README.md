@@ -17,8 +17,9 @@ https://github.com/coder20b/formation
 ## liveshare
 
     lundi 21/12
+    nouveau lien liveshare
 
-https://prod.liveshare.vsengsaas.visualstudio.com/join?0BBE4A203EA5FD91D7CEB94B90EFD6B34D23
+https://prod.liveshare.vsengsaas.visualstudio.com/join?A316A52279C954090ECFF7529AFD98FBE36B
 
 ## Questions ??
 
