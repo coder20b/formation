@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }} ">
+
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <header>
+            <h1>MON TITRE 1</h1>
+            <nav>
+                <a href="{{ path('accueil') }}">accueil</a>
+                <a href="{{ path('galerie') }}">galerie</a>
+                <a href="{{ path('contact') }}">contact</a>
+            </nav>
+        </header>
+        <main>
+        {% block body %}
+            CONTENU PAR DEFAUT
+        {% endblock %}
+        </main>
+        <footer>
+            <p>tous droits réservés</p>
+        </footer>
+
+        <script src="{{ asset('assets/js/script.js') }}"></script>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
