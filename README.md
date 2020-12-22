@@ -253,13 +253,13 @@ h1 {
     * autonomie
     * ???
 
+    PAUSE ET REPRISE A 16H ?!
+
     => AUTONOMIE POUR L'APRES MIDI
         ET NE PAS HESITER A POSER DES QUESTIONS...
 
-    PAUSE ET REPRISE A 16H ?!
 
 
-    
 
 
 
