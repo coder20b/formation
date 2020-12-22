@@ -242,8 +242,46 @@ h1 {
 
     PAUSE DEJEUNER ET REPRISE A 13H50
 
+## QUESTIONS ??
 
-    
+## ACTIVITES POUR CET APREM...
+
+    * correction exam
+    * travail équipe
+    * projet cms (login, cookie, ...)
+    * git
+    * autonomie
+    * ???
+
+    => AUTONOMIE POUR L'APRES MIDI
+        ET NE PAS HESITER A POSER DE QUESTIONS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
