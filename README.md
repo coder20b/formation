@@ -174,7 +174,74 @@ h1 {
 
     PAUSE ET REPRISE A 11H...
 
-    
+    * DOCUMENTATION SUR TWIG
+    https://twig.symfony.com/doc/3.x/
+
+    (MODULE INDEPENDANT => ON POURRAIT UTILISER TWIG SANS SYMFONY...)
+
+## ASSETS (CSS, JS, IMAGES, etc...) AVEC TWIG ET SYMFONY
+
+    https://symfony.com/doc/current/templates.html#linking-to-css-javascript-and-image-assets
+
+    * asset
+    https://symfony.com/doc/current/reference/twig_reference.html#asset
+
+
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }} ">
+
+    <script src="{{ asset('assets/js/script.js') }}"></script>
+
+    <img src="{{ asset('assets/img/article1.jpg') }}" alt="article1">
+
+
+## MENU DE NAVIGATION ENTRE LES PAGES
+
+    https://symfony.com/doc/current/templates.html#linking-to-pages
+
+    DANS LA CLASSE CONTROLLER, ON DOIT DONNER A CHAQUE ROUTE UN NOM DIFFERENT POUR LES DISTINGUER
+    ET ENSUITE DANS TWIG ON VA UTILISER LE NOM DE ROUTE POUR CREER LA BONNE URL
+
+    ON VA UTILISER LA FONCTION path
+    => POUR CREER DU CODE HTML AVEC DES URLS ABSOLUES
+
+```html
+            <nav>
+                <a href="{{ path('accueil') }}">accueil</a>
+                <a href="{{ path('galerie') }}">galerie</a>
+                <a href="{{ path('contact') }}">contact</a>
+            </nav>
+
+```
+
+    SI ON VEUT DES URLS COMPLETES (AVEC LE NOM DE DOMAINE...)
+    ON PEUT UTILISER LA FONCTION url
+
+    https://symfony.com/doc/current/reference/twig_reference.html#url
+
+
+## AUTONOMIE JUSQU'A LA PAUSE DEJEUNER
+
+    NE PAS HESITER A POSER DES QUESTIONS...
+
+    * INDIVIDUEL: COMPRENDRE TOUTE LA MECANIQUE DE SYMFONY
+        ROUTE ET CONTROLLER
+        TWIG ET TEMPLATES PARENT ET ENFANT
+
+        OBJECTIF: 
+            CONSTRUIRE UN SITE VITRINE DE QUELQUES PAGES
+            AVEC UN MENU POUR NAVIGUER ENTRE LES PAGES
+            ET AVEC DU CSS ET DU JS EN PLUS DU HTML
+
+    * PROJET EQUIPE:
+        DETERMINER LES PAGES (URLS DES PAGES...)
+        DETERMINER LES TEMPLATES
+            => SEPARER LE CODE COMMUN DANS base.html.twig
+        CONSTRUIRE LA MAQUETTE "VITRINE" DU SITE
+            LES PAGES ET LA NAVIGATION ENTRE LES PAGES...
+
+
+
+
 
 
 
