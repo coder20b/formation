@@ -882,16 +882,18 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
 ## ACTIVITES FIN DE JOURNEE...
 
     N'HESITEZ PAS A POSER DES QUESTIONS...
-    
+
     AUTONOMIE
     * INDIVIDUELLE
         JOINTURES SQL
         SYMFONY ENTITE ET CRUD
             EXERCICE:
+                AVEC LA COMMANDE 
+                    make:entity
                 CREER UNE ENTITE Contact
                     AVEC COMME PROPRIETES
                         nom             string
-                        email           email (ou sinon string)
+                        email           string
                         message         text
                         dateMessage     datetime
                 ENSUITE CREER LA TABLE SQL AVEC LES COMMANDES
@@ -899,7 +901,7 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
                     doctrine:migrations:migrate
                 ENSUITE CREER LE CRUD AVEC LA COMMANDE
                     make:crud
-
+                VERIFIER QUE LES PAGES ADMIN/CRUD FONCTIONNENT CORRECTEMENT...
 
     * EQUIPE PROJETS
         TEMPLATES
