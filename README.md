@@ -873,4 +873,41 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
 ```
 
     PAUSE ET REPRISE A 16H05...
+
+
+## PAGE 404 ET SYMFONY
+
+    https://symfony.com/doc/current/controller/error_pages.html
+
+## ACTIVITES FIN DE JOURNEE...
+
+    N'HESITEZ PAS A POSER DES QUESTIONS...
     
+    AUTONOMIE
+    * INDIVIDUELLE
+        JOINTURES SQL
+        SYMFONY ENTITE ET CRUD
+            EXERCICE:
+                CREER UNE ENTITE Contact
+                    AVEC COMME PROPRIETES
+                        nom             string
+                        email           email (ou sinon string)
+                        message         text
+                        dateMessage     datetime
+                ENSUITE CREER LA TABLE SQL AVEC LES COMMANDES
+                    make:migration
+                    doctrine:migrations:migrate
+                ENSUITE CREER LE CRUD AVEC LA COMMANDE
+                    make:crud
+
+
+    * EQUIPE PROJETS
+        TEMPLATES
+        TABLES SQL ET RELATIONS
+        SYMFONY OK ET KO ?
+
+
+    * AUTRES IDEES ??
+
+
+
