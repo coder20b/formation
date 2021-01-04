@@ -481,16 +481,396 @@ PS C:\xampp\htdocs\symfony> php bin/console doctrine:migrations:migrate
     PAUSE DEJEUNER ET REPRISE A 13H45
 
 
+    AVANCEE SUR LA PARTIE MODEL
+    * SOIT ON REGARDE CHAQUE PARTIE DU CRUD SEPAREMENT
+    * SOIT ON REGARDE L'ENSEMBLE DU CRUD AVEC LE make:crud
+
+## PERSISTENCE: STOCKAGE D'INFOS DE MANIERE DURABLE
+
+    EN PRATIQUE: PERSISTENCE => ENREGISTRER LES INFOS DANS LA TABLE SQL...
+
+    https://symfony.com/doc/current/doctrine.html#persisting-objects-to-the-database
+
+    CREER UN CONTROLLER POUR RANGER NOTRE CODE...
+
+    php bin/console make:controller ProductController
+
+    => CREATION DES FICHIERS
+    created: src/Controller/ProductController.php
+    created: templates/product/index.html.twig
+
+    ET DANS LE NAVIGATEUR, ON PEUT VOIR LA NOUVELLE PAGE /product
+    http://localhost:8888/symfony/public/product
+
+    ET ENSUITE AJOUTER LE CODE POUR LE SCENARIO CREATE...
+
+```php
+
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+use App\Entity\Product;
+use Doctrine\ORM\EntityManagerInterface;
+
+class ProductController extends AbstractController
+{
+    /**
+     * @Route("/product", name="create_product")
+     */
+    public function createProduct(): Response
+    {
+        // SCENARIO: CREATE
+
+        // ETAPE 1: JE RANGE MES INFOS DANS UN OBJET
+        $product = new Product();           // JE CREE UN OBJET A PARTIR DE LA CLASSE Product
+        $product->setName('Keyboard');      // JE PASSE PAR LES SETTERS POUR STOCKER LES INFOS DANS LES PROPRIETES DE L'OBJET
+        $product->setPrice(1999);
+        $product->setDescription('Ergonomic and stylish!');
+
+        // ETAPE 2: PERSISTENCE ENTRE PHP ET SQL
+        // => SYNCHRONISER LA DATABASE AVEC LES INFOS PHP
+
+        // you can fetch the EntityManager via $this->getDoctrine()
+        // or you can add an argument to the action: createProduct(EntityManagerInterface $entityManager)
+        $entityManager = $this->getDoctrine()->getManager();
+        // tell Doctrine you want to (eventually) save the Product (no queries yet)
+        $entityManager->persist($product);
+        // actually executes the queries (i.e. the INSERT query)
+        $entityManager->flush();    // LE INSERT SQL VA CREER UN NOUVEL id 
+                                    // ET SYMFONY SYNCHRONISE NOTRE OBJET $product AVEC CET id
+        // ENSUITE, JE PEUX UTILISER LA METHODE GETTER getId POUR OBTENIR L'id DE LA LIGNE AJOUTE
+
+        return new Response('Saved new product with id '.$product->getId());
+    }
+}
+
+```
+
+## READ
+
+    https://symfony.com/doc/current/doctrine.html#fetching-objects-from-the-database
+
+```php
+
+
+    /**
+     * @Route("/product/{id}", name="product_show")
+     */
+    public function show(int $id): Response
+    {
+        // DANS LE NAVIGATEUR, ON DEMANDE CETTE URL
+        // http://localhost:8888/symfony/public/product/2
+        // DANS SYMFONY, ON A UNE ROUTE PARAMETREE
+        // @Route("/product/{id}", name="product_show")
+        // => SYMFONY VA APPELER LA METHODE show(2)
+        // => EN PHP, ON AURA COMME PARAMETRE $id = 2 
+
+        // ENSUITE, ON PEUT UTILISER $id POUR FAIRE UNE REQUETE SELECT
+        // => find($id)
+        // SYMFONY VA CREER LA REQUETE SQL
+        // SELECT * FROM product WHERE id = 2
+        // => ET ENSUITE, SYMFONY RECUPERE LES INFOS SQL DANS L'OBJET $product
+        $product = $this->getDoctrine()
+            ->getRepository(Product::class)
+            ->find($id);
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+        // ET ENSUITE ON PEUT UTILISER LES METHODES GETTERS POUR RECUPERER LES INFOS SQL
+        return new Response('Check out this great product: '.$product->getName());
+
+        // or render a template
+        // in the template, print things with {{ product.name }}
+        // return $this->render('product/show.html.twig', ['product' => $product]);
+    }
+
+```
+
+
+## UPDATE
+
+    https://symfony.com/doc/current/doctrine.html#updating-an-object
 
 
 
+## DELETE
+
+    https://symfony.com/doc/current/doctrine.html#deleting-an-object
+
+
+## EXEMPLE CRUD DANS UNE SEULE CLASSE...
+
+```php
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+use App\Entity\Product;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+use App\Repository\ProductRepository;
+
+class ProductController extends AbstractController
+{
+    /**
+     * @Route("/product", name="create_product")
+     */
+    public function createProduct(ValidatorInterface $validator): Response
+    {
+        // INJECTION DE DEPENDANCE
+        // => SYMFONY CREE L'OBJET $validator POUR NOUS
+        // ET FOURNIT L'OBJET EN PARAMETRE DE LA METHODE
+        // (ON NE FAIT LE new POUR CREER L'OBJET...)
+
+        // SCENARIO: CREATE
+
+        // ETAPE 1: JE RANGE MES INFOS DANS UN OBJET
+        $product = new Product();           // JE CREE UN OBJET A PARTIR DE LA CLASSE Product
+        $product->setName('Keyboard');      // JE PASSE PAR LES SETTERS POUR STOCKER LES INFOS DANS LES PROPRIETES DE L'OBJET
+        $product->setPrice(1999);
+        $product->setDescription('Ergonomic and stylish!');
+
+        // ETAPE 2: PERSISTENCE ENTRE PHP ET SQL
+        // => SYNCHRONISER LA DATABASE AVEC LES INFOS PHP
+
+        // VERIF DES ERREURS DANS L'OBJET $product
+        $errors = $validator->validate($product);
+        if (count($errors) == 0) 
+        {
+            // you can fetch the EntityManager via $this->getDoctrine()
+            // or you can add an argument to the action: createProduct(EntityManagerInterface $entityManager)
+            $entityManager = $this->getDoctrine()->getManager();
+            // tell Doctrine you want to (eventually) save the Product (no queries yet)
+            $entityManager->persist($product);
+            // actually executes the queries (i.e. the INSERT query)
+            $entityManager->flush();    // LE INSERT SQL VA CREER UN NOUVEL id 
+                                        // ET SYMFONY SYNCHRONISE NOTRE OBJET $product AVEC CET id
+            // ENSUITE, JE PEUX UTILISER LA METHODE GETTER getId POUR OBTENIR L'id DE LA LIGNE AJOUTE
+
+            return new Response('Saved new product with id '.$product->getId());
+        }
+        else
+        {
+            // ERREUR DE VALIDATION
+            return new Response((string) $errors, 400);
+        }
+    }
+
+
+    /**
+     * @Route("/productV2/{id}", name="product_showV2")
+     */
+    public function showV2(Product $product): Response
+    {
+        // use the Product!
+        // ...
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+        // ET ENSUITE ON PEUT UTILISER LES METHODES GETTERS POUR RECUPERER LES INFOS SQL
+        return new Response('Check out this great product: '.$product->getName());
+    }
+
+    /**
+     * @Route("/product/{id}", name="product_show")
+     */
+    public function show(int $id): Response
+    {
+        // DANS LE NAVIGATEUR, ON DEMANDE CETTE URL
+        // http://localhost:8888/symfony/public/product/2
+        // DANS SYMFONY, ON A UNE ROUTE PARAMETREE
+        // @Route("/product/{id}", name="product_show")
+        // => SYMFONY VA APPELER LA METHODE show(2)
+        // => EN PHP, ON AURA COMME PARAMETRE $id = 2 
+
+        // ENSUITE, ON PEUT UTILISER $id POUR FAIRE UNE REQUETE SELECT
+        // => find($id)
+        // SYMFONY VA CREER LA REQUETE SQL
+        // SELECT * FROM product WHERE id = 2
+        // => ET ENSUITE, SYMFONY RECUPERE LES INFOS SQL DANS L'OBJET $product
+        $product = $this->getDoctrine()
+            ->getRepository(Product::class)
+            ->find($id);
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+        // ET ENSUITE ON PEUT UTILISER LES METHODES GETTERS POUR RECUPERER LES INFOS SQL
+        return new Response('Check out this great product: '.$product->getName());
+
+        // or render a template
+        // in the template, print things with {{ product.name }}
+        // return $this->render('product/show.html.twig', ['product' => $product]);
+    }
+
+
+    /**
+     * @Route("/product/edit/{id}")
+     */
+    public function update(int $id): Response
+    {
+        // DANS LE NAVIGATEUR, ON DEMANDE COMME URL
+        // http://localhost:8888/symfony/public/product/edit/3
+        // DANS SYMFONY, ON A UNE ROUTE AVEC PARAMETRE
+        //      * @Route("/product/edit/{id}")
+        // => SYMFONY APPELLE LA METHODE update(3)
+        // => DANS LA METHODE JE PEUX UTILISER LE PARAMETRE $id=3
+
+        // JE PEUX $id POUR RETROUVER LA BONNE LIGNE SQL AVEC find
+        $entityManager = $this->getDoctrine()->getManager();
+        $product = $entityManager->getRepository(Product::class)->find($id);
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+
+        // ENSUITE JE PEUX UTILISER LES METHODES SETTERS POUR MODIFIER LES INFORMATIONS
+        $product->setName('New product name!');
+
+        // ENFIN ON SYNCHRONISE LA TABLE SQL AVEC flush
+        $entityManager->flush();
+
+        // ON FAIT UNE REDIRECTION VERS LA ROUTE product_show
+        return $this->redirectToRoute('product_show', [
+            'id' => $product->getId()
+        ]);
+    }
+
+
+    /**
+     * @Route("/product/delete/{id}", name="product_delete")
+     */
+    public function delete(int $id): Response
+    {
+        // DANS LE NAVIGATEUR, ON DEMANDE CETTE URL
+        // http://localhost:8888/symfony/public/product/delete/2
+        // DANS SYMFONY, ON A UNE ROUTE PARAMETREE
+        // @Route("/product/delete/{id}", name="product_delete")
+        // => SYMFONY VA APPELER LA METHODE delete(2)
+        // => EN PHP, ON AURA COMME PARAMETRE $id = 2 
+
+        // ENSUITE, ON PEUT UTILISER $id POUR FAIRE UNE REQUETE SELECT
+        // => find($id)
+        // SYMFONY VA CREER LA REQUETE SQL
+        // SELECT * FROM product WHERE id = 2
+        // => ET ENSUITE, SYMFONY RECUPERE LES INFOS SQL DANS L'OBJET $product
+        $product = $this->getDoctrine()
+            ->getRepository(Product::class)
+            ->find($id);
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+        // ET ENSUITE ON PEUT UTILISER LES METHODES GETTERS POUR RECUPERER LES INFOS SQL
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($product);
+        $entityManager->flush();
+
+        return new Response('ligne supprimée: ' . $id);
+
+    }
+
+}
 
 
 
+```
+
+## GENERATEUR DE CRUD SUR UNE ENTITE
+
+    php bin/console make:crud Product
 
 
+    created: src/Controller/ProductController.php
+    created: src/Form/ProductType.php
+    created: templates/product/_delete_form.html.twig
+    created: templates/product/_form.html.twig
+    created: templates/product/edit.html.twig
+    created: templates/product/index.html.twig
+    created: templates/product/new.html.twig
+    created: templates/product/show.html.twig
+
+    => SYMFONY CREE TOUT UN CRUD QUI FONCTIONNE
+    => IL FAUDRA LE COMPLETER...
 
 
+## BOOTSTRAP v4 ET SYMFONY
 
+https://symfony.com/doc/current/form/bootstrap4.html
 
+    CHANGER LA CONFIG DANS LE FICHIER config/packages/twig.yaml
+    (ATTENTION: UNE INDENTATION DOIT SE FAIRE AVEC 4 ESPACES EXACTEMENT...)
 
+```yaml
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    form_themes: ['bootstrap_4_layout.html.twig']
+```
+
+https://getbootstrap.com/docs/4.5/getting-started/introduction/
+
+    ET COMPLETER LE FICHIER templates/base.html.twig
+
+```twig
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }} ">
+
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <header class="container">
+            <h1>MON TITRE 1</h1>
+            <nav>
+                <a href="{{ path('accueil') }}">accueil</a>
+                <a href="{{ path('galerie') }}">galerie</a>
+                <a href="{{ path('contact') }}">contact</a>
+            </nav>
+        </header>
+        <main class="container">
+        {% block body %}
+            CONTENU PAR DEFAUT
+        {% endblock %}
+        </main>
+        <footer class="container">
+            <p>tous droits réservés</p>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+        <script src="{{ asset('assets/js/script.js') }}"></script>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+
+```
+
+    PAUSE ET REPRISE A 16H05...
+    
