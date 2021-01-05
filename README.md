@@ -209,8 +209,150 @@ class ContactController extends AbstractController
         => AIDE POUR LES SUPPORTS DE SOUTENANCE...
 
     PAUSE DEJEUNER ET REPRISE A 13H45...
-    
-        
+
+    QUESTIONS ??
+
+## ACTIVITES POUR CET APRES-MIDI ??
+
+    * AJOUTER LA GESTION DES UTILISATEURS AVEC SYMFONY
+    * AUTONOMIE SUR LE make:crud
+    * ??
+
+    ARTICLE BLOG SUR make:crud
+    https://symfony.com/blog/new-and-improved-generators-for-makerbundle
+
+    DOC POUR LA GESTION DES UTILISATEURS (LOGIN => SECURITY...)
+    https://symfony.com/doc/current/security.html
+
+## ENTITE User
+
+    https://symfony.com/doc/current/security.html#a-create-your-user-class
+
+    php bin/console make:user
+
+    The name of the security user class (e.g. User) [User]:
+    >
+
+    Do you want to store user data in the database (via Doctrine)? (yes/no) [yes]:
+    >
+
+    Enter a property name that will be the unique "display" name for the user (e.g. email, username, uuid) [email]:
+    > 
+
+    Will this app need to hash/check user passwords? Choose No if passwords are not needed or will be checked/hashed by some other system (e.g. a single sign-on server).
+
+    Does this app need to hash/check user passwords? (yes/no) [yes]:
+    >
+
+    created: src/Entity/User.php
+    created: src/Repository/UserRepository.php
+    updated: src/Entity/User.php
+    updated: config/packages/security.yaml
+
+
+    Success!
+
+
+    Next Steps:
+    - Review your new App\Entity\User class.
+    - Use make:entity to add more fields to your User entity and then run make:migration.
+    - Create a way to authenticate! See https://symfony.com/doc/current/security.html
+
+
+    ET ENSUITE, ON FAIT LES MEMES ETAPES QUE POUR UNE ENTITE
+    php bin/console make:migration
+    php bin/console doctrine:migrations:migrate
+
+    ...
+
+## GESTION DU LOGIN
+
+    https://symfony.com/doc/current/security/form_login_setup.html
+
+    php bin/console make:auth
+
+
+    What style of authentication do you want? [Empty authenticator]:
+    [0] Empty authenticator
+    [1] Login form authenticator
+    > 1
+    1
+
+    The class name of the authenticator to create (e.g. AppCustomAuthenticator):
+    > LoginFormAuthenticator
+
+    Choose a name for the controller class (e.g. SecurityController) [SecurityController]:
+    > SecurityController
+
+    Do you want to generate a '/logout' URL? (yes/no) [yes]:
+    > 
+
+    created: src/Security/LoginFormAuthenticator.php
+    updated: config/packages/security.yaml
+    created: src/Controller/SecurityController.php
+    created: templates/security/login.html.twig
+
+            
+    Success! 
+            
+
+    Next:
+    - Customize your new authenticator.
+    - Finish the redirect "TODO" in the App\Security\LoginFormAuthenticator::onAuthenticationSuccess() method.
+    - Review & adapt the login template: templates/security/login.html.twig.
+
+
+## FORMULAIRE DE CREATION DE COMPTE
+
+    https://symfony.com/doc/current/doctrine/registration_form.html
+
+    php bin/console make:registration-form
+
+    Creating a registration form for App\Entity\User
+
+    Do you want to add a @UniqueEntity validation annotation on your User class to make sure duplicate accounts aren't created? (yes/no) [yes]:
+    >
+
+    Do you want to send an email to verify the user's email address after registration? (yes/no) [yes]:
+    >
+
+
+    [WARNING] We're missing some important components. Don't forget to install these after you're finished.
+
+            composer require symfonycasts/verify-email-bundle
+
+
+    What email address will be used to send registration confirmations? e.g. mailer@your-domain.com:
+    > contact@monsite.fr
+
+    What "name" should be associated with that email address? e.g. "Acme Mail Bot":
+    > mon site
+
+    Do you want to automatically authenticate the user after registration? (yes/no) [yes]:
+    >
+
+    updated: src/Entity/User.php
+    updated: src/Entity/User.php
+    created: src/Security/EmailVerifier.php
+    created: templates/registration/confirmation_email.html.twig
+    created: src/Form/RegistrationFormType.php
+    created: src/Controller/RegistrationController.php
+    created: templates/registration/register.html.twig
+
+
+    Success!
+
+
+    Next:
+    1) Install some missing packages:
+        composer require symfonycasts/verify-email-bundle
+    2) In RegistrationController::verifyUserEmail():
+        * Customize the last redirectToRoute() after a successful email verification.
+        * Make sure you're rendering success flash messages or change the $this->addFlash() line.
+    3) Review and customize the form, controller, and templates as needed.
+    4) Run "php bin/console make:migration" to generate a migration for the newly added User::isVerified property.
+
+    Then open your browser, go to "/register" and enjoy your new form!
 
 
 
