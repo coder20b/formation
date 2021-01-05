@@ -197,6 +197,7 @@ class ContactController extends AbstractController
 
     * Article
         titre           string
+        url             string
         image           string
         contenu         text
         categorie       string
