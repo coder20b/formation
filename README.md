@@ -450,9 +450,39 @@ class ContactController extends AbstractController
 
 
     PAUSE ET REPRISE A 16H...
+
+    https://github.com/
+    => RACHETE PAR MICROSOFT
     
+    CREER UN COMPTE ET SE CONNECTER
+    EXEMPLE:
+    https://github.com/coder20b/
+
+    VSCODE
+    => DEVELOPPEMENT GERE PAR MICROSOFT
+    => GIT INTEGRE
 
 
+    CLONER LE REPOSITORY SUR SON ORDINATEUR
+    DANS LE TERMINAL (DANS LE DOSSIER htdocs/)
+
+    git clone https://github.com/coder20b/test1.git
+
+    Cloning into 'test1'...
+    remote: Enumerating objects: 3, done.
+    remote: Counting objects: 100% (3/3), done.
+    remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+    Unpacking objects: 100% (3/3), done.
+
+
+    COMMIT  => SAUVEGARDE SUR SON ORDI
+    PUSH    => ENVOI DE MES SAUVEGARDES SUR GITHUB.COM
+
+## TRAVAIL EN EQUIPE AVEC GIT
+
+
+    FIN DE JOURNEE ET BONNE SOIREE...
+    
     
 
     
