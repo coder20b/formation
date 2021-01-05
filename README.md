@@ -178,6 +178,18 @@ class ContactController extends AbstractController
 
     PAUSE ET REPRISE A 11H05...
 
+    AUTONOMIE POUR LE FORMULAIRE DE CONTACT...
+
+    ET ENSUITE: COMME EXERCICE
+    CREER UNE ENTITE Newsletter
+        nom                 string
+        email               string
+        dateInscription     datetime
+
+    LANCER TOUTES LES COMMANDES POUR CREER LE CRUD
+    ET ENSUITE AJOUTER LE CODE POUR AVOIR LE FORMULAIRE SUR LA PAGE D'ACCUEIL...
+
+    
 
 
 
