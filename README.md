@@ -189,7 +189,25 @@ class ContactController extends AbstractController
     LANCER TOUTES LES COMMANDES POUR CREER LE CRUD
     ET ENSUITE AJOUTER LE CODE POUR AVOIR LE FORMULAIRE SUR LA PAGE D'ACCUEIL...
 
-    
+    GESTION DES UTILISATEURS... ENTITE User
+    => GERE A PART AVEC SYMFONY
+    => ... ON AJOUTERA CETTE PARTIE A PART ...
+
+    AUTRES IDEES D'ENTITE...
+
+    * Article
+        titre           string
+        image           string
+        contenu         text
+        categorie       string
+        datePublication datetime
+
+
+
+
+
+
+
 
 
 
