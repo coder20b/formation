@@ -308,13 +308,18 @@ class ContactController extends AbstractController
 
     php bin/console make:registration-form
 
+    ATTENTION: PLUS SIMPLE DE REPONDRE no
+    POUR L'ENVOI DE MAIL DE CONFIRMATION
+    (POUR EVITER LES PROBLEMES AVEC LE BUNDLE SymfonyCasts...)
+
     Creating a registration form for App\Entity\User
 
     Do you want to add a @UniqueEntity validation annotation on your User class to make sure duplicate accounts aren't created? (yes/no) [yes]:
     >
 
     Do you want to send an email to verify the user's email address after registration? (yes/no) [yes]:
-    >
+    > no 
+    => (C'EST PLUS SIMPLE)
 
 
     [WARNING] We're missing some important components. Don't forget to install these after you're finished.
@@ -355,13 +360,102 @@ class ContactController extends AbstractController
     Then open your browser, go to "/register" and enjoy your new form!
 
 
+    CONFIG DES EMAILS... DESACTIVATION DANS .env
+    https://symfony.com/doc/current/mailer.html#disabling-delivery
+
+    ###> symfony/mailer ###
+    # MAILER_DSN=smtp://localhost
+    MAILER_DSN=null://null
+    ###< symfony/mailer ###
 
 
+## ACTIVATION DE LA PROTECTION DE LA PARTIE ADMIN
+
+    MODIFIER LE FICHIER config/packages/security.yaml
+    => ON DEMANDE LE ROLE_ADMIN POUR ACCEDER AUX PAGES DONT L'URL COMMENCE PAR /admin
 
 
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/membre, roles: ROLE_MEMBRE }
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }
 
 
+    ET MAINTENANT, IL FAUT DONNER LES BONS ROLES AUX Users
+    => COLONNE roles
+    => AJOUTER LE ROLE_ADMIN POUR LES ADMINS
 
+    [ "ROLE_ADMIN" ]
+
+
+## ACTIVITE POUR LE RESTE DE LA JOURNEE
+
+    AUTONOMIE POUR LE RESTE DE LA JOURNEE
+
+    * INDIVIDUEL
+        make:crud
+        make:user
+        make:auth
+        make:registration-form
+        ET CONFIG SECURITE
+
+    * EQUIPE PROJET
+        FAIRE UN ETAT DES LIEUX PAR RAPPORT A LA BASE QUE SYMFONY PROPOSE...
+        ET LES 3 SEMAINES DE DEV EN EQUIPE...
+
+    * git AVEC symfony EN EQUIPE...
+
+    * ???
+
+## GIT LES BASES
+
+    GIT OUTIL DE GESTION DE VERSION...
+    
+    => INDIVIDUEL: 
+            PERMET DE FAIRE DES SAUVEGARDES DE SON CODE REGULIEREMENT
+    => TRAVAIL EN EQUIPE:
+            PERMET DE SYNCHRONISER LE CODE DE PLUSIEURS DEVELOPPEURS
+            CODE DU PROJET 
+            => REUNIFICATION DU CODE DE TOUS LES DEV...
+            => GIT VA AIDER A SYNCHRONISER LES CODES
+
+
+    PROGRAMME A INSTALLER SUR SON ORDI...
+    POUR VERIFIER, OUVRIR UN TERMINAL...
+
+    git --version
+
+## INSTALLATION DE GIT-SCM
+
+
+    https://git-scm.com/
+
+    TELECHARGER LE PROGRAMME D'INSTALLATION (WINDDOWS...)
+    https://git-scm.com/download/win
+
+    INSTALLER GIT-SCM...
+    CHOISIR VSCODE COMME EDITEUR (PAS LA VERSION INSIDERS)
+
+    ET ENSUITE REDEMARRER VSCODE
+
+    ET RETESTER DANS LE TERMINAL
+    git --version
+
+
+    ET ENSUITE SE CREER UN COMPTE SUR LE SITE
+    github.com
+
+
+    PAUSE ET REPRISE A 16H...
+    
+
+
+    
+
+    
 
 
 
