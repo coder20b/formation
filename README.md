@@ -204,6 +204,13 @@ class ContactController extends AbstractController
         datePublication datetime
 
 
+    ASTUCE: POUR LES PROJETS EN EQUIPE
+        COMMENCER A REDIGER UN DOCUMENT SUR LE DEROULE DU PROJET
+        => AIDE POUR LES SUPPORTS DE SOUTENANCE...
+
+    PAUSE DEJEUNER ET REPRISE A 13H45...
+    
+        
 
 
 
