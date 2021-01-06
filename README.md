@@ -383,10 +383,58 @@ git push -u origin main
 
     CHECKPOINT TOUTES LES 30 MINUTES...
     CHECKPOINT A 14H30...
+    CHECKPOINT A 15H00...
+    CHECKPOINT A 15H30...
 
     NE PAS HESITER A POSER DES QUESTIONS...
 
-    
+    SI VOUS AVEZ CREE LE REPOSITORY POUR LE PROJET, 
+    => ME DONNER L'URL DU REPOSITORY SUR GITHUB POUR QUE JE LE NOTE
+
+## EQUIPE A
+
+    Kevin
+    Christel
+    Elphège
+    Céline
+
+## EQUIPE B
+
+        IDEE DE PROJET:
+        MARKETPLACE DES COMMERCES DE QUARTIER
+
+    Benjamin
+    Olivier
+    Tony
+    Maeva
+
+## EQUIPE C
+
+        IDEE DE PROJET:
+        REFONTE DE SITE AVEC BDD
+        https://byrsa.tech/
+
+    Alexandre
+    Mehdi
+    Bilel
+    Arsenio
+
+## EQUIPE D
+
+        IDEE DE PROJET:
+        APPLICATION MOBILE
+
+    Joseph
+    Maxime
+    Moussa
+    Marc
+
+## EQUIPE E
+
+    Flora
+    Steph
+    Quentin
+
 
 
 
