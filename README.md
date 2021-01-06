@@ -400,8 +400,10 @@ git push -u origin main
 
 ## EQUIPE B
 
-        IDEE DE PROJET:
-        MARKETPLACE DES COMMERCES DE QUARTIER
+    https://github.com/Daeriss/MarketPlace
+
+    IDEE DE PROJET:
+    MARKETPLACE DES COMMERCES DE QUARTIER
 
     Benjamin
     Olivier
@@ -436,7 +438,9 @@ git push -u origin main
     Quentin
 
 
+    PAUSE ET REPRISE A 16H...
 
+    
 
 
 
