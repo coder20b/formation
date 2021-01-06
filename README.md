@@ -372,8 +372,21 @@ git push -u origin main
 
     PAUSE DEJEUNER ET REPRISE A 13H45...
 
-    
 
+## ACTIVITES POUR CET APRES MIDI
+
+    LE CODE DE MON PROJET symfony EST DANS LE REPOSITORY GITHUB symfony...
+
+    https://github.com/coder20b/symfony
+
+    AUTONOMIE EN EQUIPE POUR LA MISE EN PLACE DU GIT DU PROJET...
+
+    CHECKPOINT TOUTES LES 30 MINUTES...
+    CHECKPOINT A 14H30...
+
+    NE PAS HESITER A POSER DES QUESTIONS...
+
+    
 
 
 
