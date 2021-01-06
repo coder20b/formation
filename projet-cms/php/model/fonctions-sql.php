@@ -5,47 +5,6 @@
 
 // ON VA CREER UNE CLASSE
 
-// ETAPE 1: DEFINITION
-function envoyerRequeteSql ($requeteSQL, $tabAsso)
-{
-    // CONNEXION AVEC LA DATABASE MySQL
-    $user       = Model::$user;
-    $password   = Model::$password;             // SUR XAMPP
-    $hostSQL    = Model::$hostSQL;              // 127.0.0.1
-    $portSQL    = Model::$portSQL;
-    $database   = Model::$database;             // LE SEUL A CHANGER EN LOCAL A CHAQUE PROJET
-    
-    $mysql        = "mysql:host=$hostSQL;port=$portSQL;dbname=$database;charset=utf8";
-    
-    try {
-        // ON VA SEULEMENT GARDER UNE SEULE CONNEXION AVEC MySQL
-        // POUR LE MOMENT $dbh EST UNE VARIABLE LOCALE
-        // => CREE ET DETRUITE A CHAQUE APPEL DE LA FONCTION
-        // => ON VA UTILISER UNE PROPRIETE DE CLASSE
-        if (Model::$dbh == null) {
-            // ON N'A PAS ENCORE OUVERT DE CONNEXION
-            // ON VA CREER UNE CONNEXION
-            Model::$dbh = new PDO($mysql, $user, $password);   // CONNEXION ENTRE PHP ET MySQL
-            // MAINTENANT QU'ON A UNE CONNEXION Model::$dbh != null
-        }
-
-        $sth = Model::$dbh->prepare($requeteSQL);          // ON FOURNIT NOTRE REQUETE SQL PREPAREE (AVEC LES TOKENS)
-        $sth->execute($tabAsso);                    // ON EXECUTE NOTRE REQUETE SQL (AVEC LE TABLEAU ASSO ET LES VALEURS)
-    
-
-        // DEBUG
-        Model::stockerRequete($sth);
-
-        // POUR LA LECTURE: ON A BESOIN D'ETAPES SUPPLEMENTAIRES
-        // QUI VONT CONTINUER A UTILISER $sth 
-        // => ON FAIT UN return EN SORTIE
-        return $sth;
-
-    } catch (PDOException $e) {
-        echo 'Connexion échouée : ' . $e->getMessage();
-    }
-
-}
 
 // ON FOURNIT 
 // EN PREMIER PARAMETRE LE NOM DE LA TABLE

@@ -412,6 +412,8 @@ git push -u origin main
 
 ## EQUIPE C
 
+    https://github.com/alexandre-leng/Projet
+
         IDEE DE PROJET:
         REFONTE DE SITE AVEC BDD
         https://byrsa.tech/
@@ -440,7 +442,43 @@ git push -u origin main
 
     PAUSE ET REPRISE A 16H...
 
+## ACTIVITE EN FIN DE JOURNEE
+
+    * CORRIGE EVAL INTER
+    * ??
+
+## EVAL PHP
+
+### EXERCICE 2
+
+
+DATABASE : wf3_php_intermediaire_long
+TABLE : advert
+-----
+id                      INT
+title                   VARCHAR(160)
+description             TEXT
+postal_code             VARCHAR(160)
+city                    VARCHAR(160)
+type                    VARCHAR(160)
+price                   INT
+reservation_message     TEXT
+
+### EXERCICE 3
+
+    SCENARIO CREATE
+    => PAGE AVEC FORMULAIRE DE CREATION
+
+## EXERCICE 4
+
+    READ
+    AVEC PAGINATION (LIMITE A 15...)
+
+## EXERCICE 5
+
+    A SUIVRE...
     
+    FIN DE JOURNEE ET BONNE SOIREE
 
 
 

@@ -1,0 +1,31 @@
+# CHANGER LE PARAMETRAGE D'APACHE
+
+# https://wordpress.org/support/article/htaccess/
+# BEGIN WordPress
+
+# MODULE DE RE-ECRITURE D'URL (PAS UNE REDIRECTION...)
+RewriteEngine On
+
+# SUR UN VRAI SITE
+# RewriteBase /
+
+# SI DANS MON NAVIGATEUR
+# http://localhost:8888/formation/corrige-eval/
+# NOUS DANS NOTRE CAS, ON A DES SOUS-DOSSIERS
+# SEULE LIGNE A MODIFIER POUR NOUS ;-p
+RewriteBase /formation/corrige-eval/
+
+# https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html
+# SI LE NAVIGATEUR DEMANDE COMME URL index.php ALORS ON UTILISE index.php
+RewriteRule ^index\.php$ - [L]
+
+# SI LE NAVIGATEUR DEMANDE UNE URL QUI NE CORRESPOND A UN FICHIER (-f)
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# SI LE NAVIGATEUR DEMANDE UNE URL QUI NE CORRESPOND A UN DOSSIER (-d)
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# ALORS APACHE DELEGUE LA REPONSE A index.php
+RewriteRule . ./index.php [L]
+
+# END WordPress
