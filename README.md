@@ -178,7 +178,7 @@ if (is_callable($parametre))
 ### EXEMPLE DE CLASSE CLI
 
     POUR FAIRE SIMPLE, ON PEUT CREER DES METHODES STATIC
-    
+
 ```php
 <?php
 
@@ -232,4 +232,78 @@ class CliCommande
 
 
     PAUSE ET REPRISE A 11H...
+
+## FIN DE MATINEE
+
+    * GIT ET SYMFONY EN EQUIPE
+    * AVANCER PLUS LOIN AVEC SYMFONY
+    * COURS POO (implements...)
+    * ...
+
+## GIT ET SYMFONY
+
+    SYMFONY EST DEJA PARAMETRE POUR ETRE UTILISE AVEC GIT
+    => IL Y A DES FICHIERS .gitignore
+
+    POUR ACTIVER GIT DANS NOTRE DOSSIER symfony
+    => ENTRER LA COMMANDE git init
+    => CREE LE DOSSIER (CACHE) .git
+
+    COMME SYMFONY A DES FICHIERS .gitignore
+    => GIT NE VA PAS SUIVRE TOUS LES DOSSIERS / FICHIERS...
+
+    ASTUCE:
+    AJOUTER LE DOSSIER /migrations/ DANS .gitignore
+
+```
+
+# ON VA LAISSER DE COTE LE DOSSIER migrations
+/migrations/
+
+```
+
+## SYMFONY ET GITHUB
+
+    SUR github.com CREER UN REPO VIDE (SANS FICHIER README.md)
+    ET ENSUITE LE CONNECTER AU DOSSIER symfony SUR NOTRE ORDI
+
+```
+
+git remote add origin https://github.com/coder20b/symfony.git
+git branch -M main
+git push -u origin main
+
+```
+
+    CONNECTE LE DOSSIER AVEC LE REPOSITORY
+
+    (AJOUTE AUTOMATIQUEMENT CE CODE DANS .git/config)
+
+```
+[remote "origin"]
+	url = https://github.com/coder20b/symfony.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+```
+
+## PARAMETRAGE GIT USER ET EMAIL
+
+    https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Param%C3%A9trage-%C3%A0-la-premi%C3%A8re-utilisation-de-Git
+
+
+    git config --global user.name "prénom NOM"
+    git config --global user.email test@tonmail.com
+
+
+
+
+
+
+
+
+
+
+
 
