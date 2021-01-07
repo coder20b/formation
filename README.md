@@ -481,7 +481,16 @@ use Symfony\Component\Validator\Constraints as Assert;
 
     SI VOUS VOIR DES PARTIES ENSEMBLE, IL SUFFIT DE PROPOSER...
 
-    
+## CARTES ET MARQUEURS
+
+    * GOOGLE MAPS API
+        TRES PUISSANT ET COMPLET
+        UN PEU COMPLEXE SUIVANT LES FONCTIONNALITES
+    https://developers.google.com/maps/documentation/javascript/examples/marker-simple
+
+    * LEAFLET JS
+        TRES SIMPLE ET PUISSANT
+    https://leafletjs.com/examples.html
 
 
 
