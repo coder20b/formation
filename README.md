@@ -33,6 +33,8 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?8C7B237E03CE55476ED65AC8B
 
 ### HERITAGE ENTRE 2 CLASSES
 
+    https://www.php.net/manual/fr/language.oop5.inheritance.php
+
     LIMITATION: UNE CLASSE ENFANT NE PEUT HERITER QUE D'UN SEUL PARENT
     UNE CLASSE PARENTE PEUT AVOIR PLEIN DE CLASSES ENFANTS
     ET ON PEUT FAIRE UNE LIGNE AVEC DES PETIT-ENFANTS, etc...
@@ -129,6 +131,8 @@ $objetEnfant->afficherTitre();          // => PRIORITE A LA METHODE DE CLASSE EN
 
 #### CLASSES ABSTRAITES
 
+    https://www.php.net/manual/fr/language.oop5.abstract.php
+
 ```php
 
 // ON PEUT DEFINIR UNE CLASSE ABSTRAITE
@@ -203,8 +207,10 @@ $objet = new MaClasse;  // PHP VA VERIFIER SI VOUS AVEZ AJOUTE LE CODE DE CHAQUE
     ET COMBINER AVEC DES HERITAGES DE CLASSE...
 
     PAUSE ET REPRISE A 11H15
-    
+
 ### TRAITS
+
+    https://www.php.net/manual/fr/language.oop5.traits.php
 
 
 
