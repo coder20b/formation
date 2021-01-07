@@ -451,6 +451,21 @@ use Symfony\Component\Validator\Constraints as Assert;
     EXERCICE:
     FAIRE LA MEME CHOSE AVEC LE FORMULAIRE DE NEWSLETTER...
 
+    PAUSE DEJEUNER ET REPRISE A 13H45... BON APP ;-p
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
