@@ -492,6 +492,10 @@ use Symfony\Component\Validator\Constraints as Assert;
         TRES SIMPLE ET PUISSANT
     https://leafletjs.com/examples.html
 
+## FORMULAIRES DANS SYMFONY
+
+    * FORMULAIRE NON RELIE A UNE ENTITE...
+    https://symfony.com/doc/current/forms.html#unmapped-fields
 
 
 
