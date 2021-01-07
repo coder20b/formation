@@ -33,6 +33,7 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?8C7B237E03CE55476ED65AC8B
 
 ### HERITAGE ENTRE 2 CLASSES
 
+    * DOCUMENTATION
     https://www.php.net/manual/fr/language.oop5.inheritance.php
 
     LIMITATION: UNE CLASSE ENFANT NE PEUT HERITER QUE D'UN SEUL PARENT
@@ -131,6 +132,7 @@ $objetEnfant->afficherTitre();          // => PRIORITE A LA METHODE DE CLASSE EN
 
 #### CLASSES ABSTRAITES
 
+    * DOCUMENTATION
     https://www.php.net/manual/fr/language.oop5.abstract.php
 
 ```php
@@ -143,7 +145,7 @@ abstract class MaClasseAbstrait
     // METHODES
     function afficherTitre ()
     {
-
+        // DEV1 PEUT FOURNIR UNE PARTIE DU CODE...
     }
 
     // METHODE ABSTRAITE
@@ -210,10 +212,234 @@ $objet = new MaClasse;  // PHP VA VERIFIER SI VOUS AVEZ AJOUTE LE CODE DE CHAQUE
 
 ### TRAITS
 
+    * DOCUMENTATION
     https://www.php.net/manual/fr/language.oop5.traits.php
 
 
+    APPROCHE ALTERNATIVE A L'HERITAGE
+    => COMPOSITION
+    => QUAND ON A LE CHOIX, C'EST MIEUX
 
+    ON PEUT FAIRE PLEIN DE COMBINAISONS
+    => PLUS SOUPLE QUE L'HERITAGE
+    => MAIS OUVRE DES SCENARIOS PROBLEMATIQUES 
+        (ATTENTION A NE PAS TOMBER DANS CES PIEGES)
+
+```php
+
+// DANS UN TRAIT, ON PEUT METTRE LE MEME CODE QUE DANS UNE CLASSE
+trait MonTrait
+{
+    // PROPRIETES
+
+    // METHODES
+    function afficherTitre($texte)
+    {
+        echo "<h1>$texte</h1>";
+    }
+
+}
+
+trait MonTrait2
+{
+    // PROPRIETES
+
+    // METHODES
+    function afficherContenu($texte)
+    {
+        echo "<p>$texte</p>";
+    }
+
+}
+
+// $objet = new Montrait;  // ERREUR PHP CAR MonTrait N'EST PAS UNE CLASSE
+// Fatal error: Uncaught Error: Cannot instantiate trait MonTrait
+
+class MaClasse
+{
+    // COMPOSER AVEC DES TRAITS
+    use MonTrait, MonTrait2;    
+}
+
+$objet = new MaClasse;
+$objet->afficherTitre("coucou");    
+// POSSIBLE AVEC LA COMPOSITION AVEC MonTrait
+$objet->afficherContenu("ca marche aussi");    
+// POSSIBLE AVEC LA COMPOSITION AVEC MonTrait2
+
+
+
+```
+
+## LES HORREURS DE LA POO
+
+    TOUT PEUT COMBINER
+
+```php
+
+
+class MaClasse
+    extends MaClasseParent
+    implements MonInterface, MonInterface2
+{
+    use MonTrait;
+
+    // PROPRIETES D'OBJET
+
+    // METHODES D'OBJET
+
+    // PROPRIETES DE CLASSE (AVEC static)
+    // METHODES DE CLASSE (avec static)
+
+}
+
+
+```
+
+## SYMFONY ET LES CONTRAINTES DE VALIDATION SUR LES ENTITES
+
+    ON PEUT AJOUTER DES CONTRAINTES SUR LES ENTITES
+
+    https://symfony.com/doc/current/validation.html#constraints
+
+    * EMAIL
+    https://symfony.com/doc/current/reference/constraints/Email.html
+
+```php
+
+use Symfony\Component\Validator\Constraints as Assert;
+
+// ...
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Email(
+     *     message = "Cet email '{{ value }}' est invalide."
+     * )     
+     */
+    private $email;
+
+
+```
+
+## LES FORMULAIRES
+
+    DANS LE DOSSIER src/Form
+
+    ON CHOISIT LES CHAMPS DE FORMULAIRES
+
+```php
+
+
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        // ICI ON DEFINIT LES CHAMPS DU FORMULAIRE
+        $builder
+            ->add('email')
+            ->add('nom')
+            ->add('message')
+            // ->add('dateMessage')
+        ;
+    }
+
+
+```
+
+    ET IL FAUT COMPLETER LES INFOS MANQUANTES DANS LE TRAITEMENT
+
+    src/Controller/
+
+    EXEMPLE: LA DATE DU MESSAGE
+
+                $contact->setDateMessage(new \DateTime());
+
+
+```php
+    /**
+     * @Route("/contact", name="contact", methods={"GET","POST"})
+     */    
+    function contact (Request $request): Response
+    {
+        // INJECTION DE DEPENDANCE
+        // => SYMFONY NOUS FOURNIT L'OBJET $request
+        // => $request BOITE QUI CONTIENT LES INFOS DE FORMULAIRE ($_GET, $_POST, $_REQUEST)
+
+        // ON CREE UN OBJET POUR STOCKER LES INFOS DU FORMULAIRE
+        $contact = new Contact();
+
+        // ON CREE LE FORMULAIRE
+        $form = $this->createForm(ContactType::class, $contact);
+        // ON RECUPERE LES INFOS ENVOYEES PAR LE FORMULAIRE
+        $form->handleRequest($request);
+
+        // ON VALIDE LES INFOS DU FORMULAIRE
+        $messageConfirmation = "merci de remplir le formulaire";
+        if ($form->isSubmitted() && $form->isValid()) {
+            // IL FAUT COMPLETER LES INFOS MANQUANTES
+            $contact->setDateMessage(new \DateTime());
+
+            // SI LES INFOS SONT VALIDES
+            // => ALORS ON AJOUTE UNE LIGNE DANS LA TABLE SQL
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($contact);
+            $entityManager->flush();
+
+            $messageConfirmation = "message bien reçu. Nous vous répondrons rapidement.";
+            
+            // return $this->redirectToRoute('contact_index');
+        }
+
+        // LA METHODE render VIENT DE LA CLASSE PARENTE AbstractController
+        // ON VA CHARGER LE CODE DU TEMPLATE 
+        // templates/vitrine/contact/html.twig
+        // (DANS VSCODE AJOUTER UNE EXTENSION POUR LES FICHIERS .twig)
+        return $this->render("vitrine/contact.html.twig", [
+            // CLE => VARIABLE TWIG
+            // VALEUR => VALEUR DE LA VARIABLE TWIG
+            'info1'     => "COUCOU",
+            'messageConfirmation'   => $messageConfirmation,
+            'contact'   => $contact,
+            'form'      => $form->createView(),
+        ]);
+    }
+
+```
+
+## TRANSMISSION DE VARIABLE ENTRE PHP ET TWIG
+
+    DANS UN CONTROLLER, ON PEUT TRANSMETTRE DES VARIABLES A TWIG
+
+```php
+
+        return $this->render("vitrine/contact.html.twig", [
+            // CLE => VARIABLE TWIG
+            // VALEUR => VALEUR DE LA VARIABLE TWIG
+            'info1'     => "COUCOU",
+            'messageConfirmation'   => $messageConfirmation,
+            'contact'   => $contact,
+            'form'      => $form->createView(),
+        ]);
+    }
+
+```
+
+    ET DANS TWIG, POUR LES AFFICHER ON UTILISE {{ }}
+
+```twig
+
+{% block body %}
+
+<section>
+    <h2>MA SECTION POUR MA PAGE CONTACT</h2>
+    <h3>affichage de la variable info1: {{ info1 }}</h3>
+    {{ include('contact/_form.html.twig') }}
+    <h4>{{ messageConfirmation }}</h4>
+    <img src="{{ asset('assets/img/article3.jpg') }}" alt="article2">
+</section>
+
+{% endblock %}
+
+```
 
 
 
