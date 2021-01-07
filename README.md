@@ -466,12 +466,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 ## FICHIER LOCAL .env
 
+    * DOCUMENTATION
+    https://symfony.com/doc/current/configuration.html#overriding-environment-values-via-env-local
+
     LE FICHIER .env EST UN FICHIER COMMUN (PARTAGE SUR LE REPO GIT...)
     SI UN DEV A BESOIN DE PARAMETRES DIFFERENTS, ALORS ON PEUT CREER UN FICHIER .env.local
     => SYMFONY PRENDRA ALORS LES PARAMETERS DANS LE FICHIER .env.local EN PRIORITE 
     => UTILE POUR PERSONNALISER LA CONNEXION A LA DATABASE...
 
-    
+
 
 
 
