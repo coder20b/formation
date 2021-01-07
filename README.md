@@ -453,9 +453,16 @@ use Symfony\Component\Validator\Constraints as Assert;
 
     PAUSE DEJEUNER ET REPRISE A 13H45... BON APP ;-p
 
+## QUESTIONS ??
 
+## ACTIVITES POUR CET APRES-MIDI ??
 
+    * AUTONOMIE INDIVIDUELLE
+    * AUTONOMIE EN EQUIPE POUR LES PROJETS
+    * ???
 
+    ET ENSUITE PAUSE A 15H45...
+    ET NE PAS HESITER A POSER DES QUESTIONS...
 
 
 
@@ -467,6 +474,22 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
