@@ -121,6 +121,58 @@ POO
     https://symfony.com/doc/current/reference/forms/types/entity.html
 
 
+    PAUSE DEJEUNER ET REPRISE A 13H45...
+
+## ACTIVITES POUR CET APREM...
+
+    * corrige exam inter php
+    * autonomie individuel pour ajouter les annonces dans votre symfony
+    * autonomie equipe pour avancer vos projets
+    * avancer sur symfony (pour ajouter espace membre)
+    * projet cms
+    * ...
+
+    CHOIX POUR CET APREM...
+    * autonomie individuel pour ajouter les annonces dans votre symfony
+        (et essayer de creer un espace membre...)
+    * autonomie equipe pour avancer vos projets
+
+    N'HESITEZ PAS A POSER DES QUESTIONS...
+
+## REDIRECTION APRES LOGIN SUIVANT ROLE
+
+    https://symfony.com/doc/current/security.html#b-fetching-the-user-from-a-service
+
+```php
+
+    public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $providerKey)
+    {
+        // https://symfony.com/doc/current/security.html#b-fetching-the-user-from-a-service
+        $user = $this->security->getUser();
+
+        $routeRedirect = "accueil";
+        if (in_array('ROLE_ADMIN', $user->getRoles())) {
+            $routeRedirect = "annonce_index";
+        }
+        // ... AJOUTER ROLES EN PLUS
+        
+        if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
+            return new RedirectResponse($targetPath);
+        }
+
+        // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
+        // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        // TEMPORAIRE: A MODIFIER...
+        return new RedirectResponse($this->urlGenerator->generate($routeRedirect));
+    }
+
+
+```
+
+
+
+
+
 
 
 
