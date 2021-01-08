@@ -101,7 +101,25 @@ POO
     php bin/console make:entity
 
     => DANS LA CONSOLE, ON A UNE AIDE POUR CHOISIR LA RELATION ENTRE Annonce ET user
-        
+
+
+    ENSUITE LANCER LA COMMANDE 
+
+    php bin/console make:crud
+
+
+    PAUSE ET REPRISE A 11H05
+
+## SYMFONY ET LES CHAMPS DE FORMULAIRE
+
+    * DOCUMENTATION
+    https://symfony.com/doc/current/reference/forms/types.html
+
+    ON PEUT PARAMETRER COMMENT SYMFONY CREE LES CHAMPS DE FORMULAIRE
+
+    ENTITY TYPE
+    https://symfony.com/doc/current/reference/forms/types/entity.html
+
 
 
 
