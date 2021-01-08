@@ -393,6 +393,9 @@ git push -u origin main
 
 ## EQUIPE A
 
+    projet Amour Livre: site de rencontres basé sur les goûts littéraires. 
+    GitHub:  https://github.com/WebForce3-KevInvicto/amourlivre
+
     Kevin
     Christel
     Elphège
