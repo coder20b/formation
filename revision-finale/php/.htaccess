@@ -1,0 +1,7 @@
+# PARAMETRAGE POUR APACHE
+# FICHIER .htaccess
+# https://httpd.apache.org/docs/2.4/fr/howto/access.html
+
+# IL FAUT BLOQUER L'ACCES A CE DOSSIER
+Require all denied
+

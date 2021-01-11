@@ -1,0 +1,75 @@
+#!/usr/bin/env php
+<?php
+
+// AVEC LE FICHIER .htaccess
+// ON NE PEUT ACTIVER CE CODE AVEC LE NAVIGATEUR
+
+// SI ON NE MET PAS DE SUFFIXE AU NOM DU FICHIER
+// CA MARCHE MAIS VSCODE EST PERDU
+// ET ON PEUT FORCER LE LANGAGE AVEC VSCODE
+
+echo "MA LIGNE DE COMMANDE\n";
+
+// PHP EST CAPABLE DE FAIRE PLEIN DE CHOSES COTE SERVEUR
+// PHP PEUT
+//      LIRE ET CREER DES FICHIERS
+//      ENVOYER DES EMAILS
+//      ENVOYER DES REQUETES SQL
+//      CREER DES IMAGES
+//      ... 
+// => PHP PEUT FAIRE PLEIN DE CHOSES
+//      ET EST INSTALLE SUR UN SERVEUR WEB
+//      => IL PEUT COMMUNIQUER AVEC D'AUTRES SERVEURS WEB
+// => TRES PUISSANT 
+// => PHP NE SAIT PAS TOUT FAIRE MAIS PEUT DEMANDER A D'AUTRES PROGRAMMES DE FAIRE LE TRAVAIL A SA PLACE
+// (AUSSI POSSIBLE AVEC UN CONCURRENT COMME python ou nodejs...)
+
+// https://www.php.net/manual/fr/reserved.variables.argv.php
+print_r($argv);
+
+/*
+php php/console make:controller coucou
+MA LIGNE DE COMMANDE
+Array
+(
+    [0] => php/console
+    [1] => make:controller
+    [2] => coucou
+)
+
+*/
+
+// CHARGEMENT AUTOMATIQUE DE CLASSE
+// FONCTION DE CALLBACK => PHP QUI VA APPELER CETTE FONCTION AUTOMATIQUEMENT
+function chargerFichier ($nomClasse)
+{
+    $tabFichier = glob("php/*/$nomClasse.php");
+    foreach($tabFichier as $fichier)    // INUTILE CAR UN SEUL FICHIER
+    {
+        // DEBUG
+        // echo "<h3>JE CHARGE LE CODE DANS $fichier</h3>";
+        require_once $fichier;
+    }
+}
+
+// PHP VA AUTOMATIQUEMENT APPELER LA FONCTION chargerFichier QUAND IL A BESOIN D'UNE CLASSE
+// https://www.php.net/manual/fr/function.spl-autoload-register.php
+spl_autoload_register("chargerFichier");
+
+
+// ON DOIT POUVOIR APPELER LA METHODE STATIC
+// CliCommande::afficherDate();
+$parametre = $argv[1] ?? "";
+
+echo "ON VEUT LANCER LE CODE $parametre\n";
+
+// ON PEUT LANCER DU CODE PHP DYNAMIQUE
+// https://www.php.net/manual/fr/function.is-callable.php
+if (is_callable($parametre))
+{
+    // LE TEXTE DANS $parametre EST UN CODE PHP EXECUTABLE
+    // ALORS ON PEUT L'EXECUTER DYNAMIQUEMENT
+    $parametre();
+}
+
+

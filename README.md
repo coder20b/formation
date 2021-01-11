@@ -483,29 +483,54 @@ class AnnonceMemberType extends AbstractType
 ## REVISION
 
     TOUT CODER EN POO...
-    
+
     JOINTURES
     * ONE TO MANY   => 2 TABLES
     * MANY TO MANY  => 3 TABLES (DONT TABLE TECHNIQUE DE JOINTURE)
 
-    user
-        id
-        pseudo
-        email
-        dateInscription
+### EXO 1: CREER LA DATABASE
 
-    annonce
-        id
-        user_id             => CLE ETRANGERS VERS TABLE user
-        titre
-        description
-        datePublication
+    DATABASE SQL revision_finale    CHARSET utf8mb4_general_ci
+    * TABLE SQL user
+        id                  INT                 => CLE PRIMAIRE
+        pseudo              VARCHAR(160)
+        email               VARCHAR(160)
+        dateInscription     DATETIME
 
+    * TABLE SQL annonce
+        id                  INT             => CLE PRIMAIRE
+        user_id             INT             => CLE ETRANGERE VERS TABLE user
+        titre               VARCHAR(160)
+        description         TEXT
+        datePublication     DATETIME
+
+    => CREER LA DATABASE ET LES 2 TABLES SQL
+    => IL FAUT AJOUTER UNE PAGE CRUD POUR CHAQUE TABLE
+
+### EXO 2: CREER LES PAGES CRUD 
 
     PARTIE ADMIN
         * 2 PAGES CRUD
-                user
-                annonce
+                admin-user.php      => CRUD SUR user
+                admin-annonce.php   => CRUD SUR annonce
+
+
+    NE PAS OUBLIER DE PARAMETRER LE FICHIER .htaccess
+    => METTRE A JOUR LE NOM DU DOSSIER
+    
+```
+
+# SI DANS MON NAVIGATEUR
+# http://localhost:8888/formation/revision-finale/
+# NOUS DANS NOTRE CAS, ON A DES SOUS-DOSSIERS
+# SEULE LIGNE A MODIFIER POUR NOUS ;-p
+RewriteBase /formation/revision-finale/
+
+
+```
+
+### EXO 3: AFFICHAGE AVEC JOINTURE
+
     PARTIE PUBLIQE
         *   accueil => AFFICHER LES ANNONCES ET AUSSI LE PSEUDO DE L'AUTEUR DE L'ANNONCE
                     => JOINTURE SQL ENTRE annonce ET user
