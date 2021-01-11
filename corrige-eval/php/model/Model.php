@@ -192,12 +192,17 @@ class Model
     static function lireTable ($table, $tri, $offset, $limit)
     {
         // https://sql.sh/cours/limit
-        
+        $limitSQL = "";        // CAS OU $limit = -1
+        if ($limit >= 0)
+        {
+            $limitSQL = "LIMIT $offset, $limit";
+        }
+
         $requeteSQL =
         <<<x
         SELECT * FROM $table
         ORDER BY $tri
-        LIMIT $offset, $limit
+        $limitSQL
 
         x;
         // COOL JE VAIS REUTILISER MA FONCTION envoyerRequeteSql

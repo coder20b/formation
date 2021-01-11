@@ -56,7 +56,7 @@ class Controller
     static function filtrer ($name)
     {
         // Notice: Undefined index: email
-        $resultat = $_POST[$name] ?? ""; // TEXTE VIDE PAR DEFAUT CONTRE HACK
+        $resultat = $_REQUEST[$name] ?? ""; // TEXTE VIDE PAR DEFAUT CONTRE HACK
     
         // strip_tags ENLEVER LES BALISES HTML ET PHP
         // https://www.php.net/manual/fr/function.strip-tags.php

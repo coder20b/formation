@@ -39,8 +39,10 @@ $urlDemandee = Controller::lireUri();
 // => ON A BESOIN D'UN ROUTEUR
 $tabRouteur = [
     // CLE = URL            VALEUR = LES FICHIERS php/view
-    "index"             => [ "header", "section-index",      "footer" ],     // ROUTE index
-    "create"            => [ "header", "section-create",     "footer" ],     // ROUTE index
+    "index"             => [ "header", "section-index",      "footer" ],     // ROUTE 
+    "create"            => [ "header", "section-create",     "footer" ],     // ROUTE 
+    "liste-complete"    => [ "header", "section-liste",      "footer" ],      // ROUTE 
+    "annonce"           => [ "header", "section-annonce",    "footer" ],      // ROUTE 
 ];
 
 // A PARTIR DE L'URL DEMANDEE, JE VAIS CHERCHER LA LISTE DES FICHIERS php/view

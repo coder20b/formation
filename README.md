@@ -470,6 +470,99 @@ class AnnonceMemberType extends AbstractType
     DOCUMENTATION
     https://symfony.com/doc/current/controller/upload_file.html
 
+    PAUSE DEJEUNER ET REPRISE A 13H50...
+
+## ACTIVITES POUR CET APRES-MIDI
+
+    * CORRIGE EXAM INTER
+    * REVISION EXAM FINAL
+    * AVANCER ENSEMBLE SUR LE PROJET SYMFONY
+    * AVANCER EN EQUIPE SUR VOTRE PROJET
+    * ??
+
+## REVISION
+
+    TOUT CODER EN POO...
+    
+    JOINTURES
+    * ONE TO MANY   => 2 TABLES
+    * MANY TO MANY  => 3 TABLES (DONT TABLE TECHNIQUE DE JOINTURE)
+
+    user
+        id
+        pseudo
+        email
+        dateInscription
+
+    annonce
+        id
+        user_id             => CLE ETRANGERS VERS TABLE user
+        titre
+        description
+        datePublication
+
+
+    PARTIE ADMIN
+        * 2 PAGES CRUD
+                user
+                annonce
+    PARTIE PUBLIQE
+        *   accueil => AFFICHER LES ANNONCES ET AUSSI LE PSEUDO DE L'AUTEUR DE L'ANNONCE
+                    => JOINTURE SQL ENTRE annonce ET user
+
+    TABLE SQL 
+        categorie
+            id
+            label
+    
+    RELATION MANY TO MANY ENTRE annonce ET categorie
+    * UNE ANNONCE PEUT ETRE CLASSEE DANS PLUSIEURS CATEGORIES
+    * UNE CATEGORIE PEUT CONTENIR PLUSIEURS ANNONCES
+    => MANY TO MANY
+    => AJOUTER UNE TABLE TECHNIQUE
+
+    TABLE SQL
+        annonce_categorie
+            id                  => CLE PRIMAIRE
+            annonce_id          => CLE ETRANGERE VERS annonce
+            categorie_id        => CLE ETRANGERE VERS categorie
+
+
+    PARTIE ADMIN
+        * 2 PAGES CRUD
+                categorie
+                annonce_categorie
+
+    PARTIE PUBLIQE
+        *   categorie => AFFICHER LES ANNONCES DANS LA CATEGORIE voiture
+                => JOINTURE SQL ENTRE annonce ET categorie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
