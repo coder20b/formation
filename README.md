@@ -464,7 +464,13 @@ class AnnonceMemberType extends AbstractType
 
     NE PAS HESITER A POSER DES QUESTIONS...
 
-    
+
+## UPLOAD DE FICHIER AVEC SYMFONY
+
+    DOCUMENTATION
+    https://symfony.com/doc/current/controller/upload_file.html
+
+
 
 
 
