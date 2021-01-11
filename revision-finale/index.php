@@ -57,7 +57,7 @@ class index
 }
 
 
-// ON APPELLE NOTRE 
+// ON APPELLE NOTRE METHODE POUR LANCER LE PROGRAMME
 index::run();
 
 
