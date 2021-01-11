@@ -517,7 +517,7 @@ class AnnonceMemberType extends AbstractType
 
     NE PAS OUBLIER DE PARAMETRER LE FICHIER .htaccess
     => METTRE A JOUR LE NOM DU DOSSIER
-    
+
 ```
 
 # SI DANS MON NAVIGATEUR
@@ -564,7 +564,8 @@ RewriteBase /formation/revision-finale/
 
 
 
-
+    PAUSE ET REPRISE A 16H05
+    
 
 
 
