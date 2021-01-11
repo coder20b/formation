@@ -3,7 +3,7 @@
 class Template
 {
     // COMPOSITION AVEC TRAITS
-    // AJOUTER LES TRAITES SUPPLEMENTAIRES...
+    // AJOUTER LES TRAITS SUPPLEMENTAIRES...
     use AdminUser;
 
     static function header ()
@@ -53,11 +53,6 @@ class Template
 </html>
 
 <?php
-    }
-
-    static function sectionIndex ()
-    {
-
     }
     
 
