@@ -315,9 +315,149 @@ class AnnonceMemberType extends AbstractType
 
 ```
 
+### ANNONCE DELETE DANS L'ESPACE MEMBRE
+
+    AJOUTER UNE ROUTE POUR LE DELETE 
+    ET ENSUITE CREER LE FORMULAIRE POUR AJOUTER LE BOUTON DELETE SUR CHAQUE LIGNE
+
+```php
 
 
+    /**
+     * @Route("/{id}", name="annonce_delete_member", methods={"DELETE"})
+     */
+    public function delete(Request $request, Annonce $annonce): Response
+    {
 
+        if ($this->isCsrfTokenValid('delete'.$annonce->getId(), $request->request->get('_token'))) {
+
+            // COMPLETER LES VERIFICATIONS
+            // METHODE GETTER DU CONTROLLER POUR RECUPERER LE USER CONNECTE
+            $userConnecte   = $this->getUser();                   
+            $auteurAnnonce  = $annonce->getUser();
+
+            // VERIFIER QUE L'ANNONCE APPARTIENT A L'UTILISATEUR CONNECTE
+            if (($userConnecte != null) && ($auteurAnnonce != null) &&
+                    ($userConnecte->getId() == $auteurAnnonce->getId()) )
+            {
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->remove($annonce);
+                $entityManager->flush();    
+            }
+        }
+
+        // ON REVIENT SUR L'ESPACE MEMBRE
+        return $this->redirectToRoute('member');
+    }
+
+
+```
+
+
+```twig
+
+        <tbody>
+        {% for annonce in annonces %}
+            <tr>
+                <td>{{ annonce.id }}</td>
+                <td>{{ annonce.titre }}</td>
+                <td>{{ annonce.url }}</td>
+                <td>{{ annonce.description }}</td>
+                <td>{{ annonce.photo }}</td>
+                <td>{{ annonce.categorie }}</td>
+                <td>{{ annonce.datePublication ? annonce.datePublication|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <form method="post" action="{{ path('annonce_delete_member', {'id': annonce.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ annonce.id) }}">
+                        <button class="btn">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+```
+
+
+## ANNONCE: UPDATE DANS L'ESPACE MEMBRE
+
+    AJOUTER UNE NOUVELLE ROUTE DANS MemberController POUR UPDATE
+
+```php
+
+    /**
+     * @Route("/{id}/edit", name="annonce_edit_member", methods={"GET","POST"})
+     */
+    public function edit(Request $request, Annonce $annonce): Response
+    {
+        $form = $this->createForm(AnnonceMemberType::class, $annonce);
+        $form->handleRequest($request);
+
+        // COMPLETER LES VERIFICATIONS
+        // METHODE GETTER DU CONTROLLER POUR RECUPERER LE USER CONNECTE
+        $userConnecte   = $this->getUser();                   
+        $auteurAnnonce  = $annonce->getUser();
+        // VERIFIER QUE L'ANNONCE APPARTIENT A L'UTILISATEUR CONNECTE
+        if (($userConnecte != null) && ($auteurAnnonce != null) &&
+                ($userConnecte->getId() == $auteurAnnonce->getId()) )
+        {
+            if ($form->isSubmitted() && $form->isValid()) {
+                // ENREGISTRER LES MODIFS DANS LA DATABASE
+                $this->getDoctrine()->getManager()->flush();
+    
+                return $this->redirectToRoute('member');
+            }
+    
+        }
+
+        return $this->render('annonce/edit.html.twig', [
+            'annonce'   => $annonce,
+            'form'      => $form->createView(),
+        ]);
+    }
+
+```
+
+    ET AJOUTER UN LIEN VERS LA PAGE D'UPDATE POUR CHAQUE LIGNE
+
+
+```twig
+
+        <tbody>
+        {% for annonce in annonces %}
+            <tr>
+                <td>{{ annonce.id }}</td>
+                <td>{{ annonce.titre }}</td>
+                <td>{{ annonce.url }}</td>
+                <td>{{ annonce.description }}</td>
+                <td>{{ annonce.photo }}</td>
+                <td>{{ annonce.categorie }}</td>
+                <td>{{ annonce.datePublication ? annonce.datePublication|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('annonce_edit_member', {'id': annonce.id}) }}">edit</a>
+                </td>
+                <td>
+                    <form method="post" action="{{ path('annonce_delete_member', {'id': annonce.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ annonce.id) }}">
+                        <button class="btn">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+
+```
 
 
 
