@@ -201,6 +201,119 @@ class AnnonceMemberType extends AbstractType
 
     PAUSE ET REPRISE A 11H05
 
+### READ DANS ESPACE MEMBRE
+
+    SUR LA MEME PAGE, ON AJOUTE L'AFFICHAGE DES ANNONCES DE L'UTILISATEUR CONNECTE
+
+```php
+
+    /**
+     * @Route("/", name="member", methods={"GET","POST"})
+     */
+    public function index(Request $request, AnnonceRepository $annonceRepository): Response
+    {
+        $annonce = new Annonce();
+
+        $form = $this->createForm(AnnonceMemberType::class, $annonce);
+        $form->handleRequest($request);
+
+        // METHODE GETTER DU CONTROLLER POUR RECUPERER LE USER CONNECTE
+        $userConnecte = $this->getUser();                   
+        // DEBUG => AFFICHE LE CONTENU DES VARIABLES DANS LE PROFILER (BANDEAU EN BAS DE PAGE...)
+        dump($userConnecte);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            // COMPLETER LES INFOS MANQUANTES
+            $annonce->setDatePublication(new \DateTime());      // DATE D'ENREGISTREMENT DE L'ANNONCE
+            $annonce->setUser($userConnecte);                   // ON ENREGISTRE L'ANNONCE AVEC COMME AUTEUR L'UTILISATEUR CONNECTE
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($annonce);
+            $entityManager->flush();
+
+            // DESACTIVER LA REDIRECTION POUR RESTER SUR LA MEME PAGE
+            // return $this->redirectToRoute('annonce_index');
+        }
+
+
+        // FILTRE POUR CLAUSE WHERE POUR SEULEMENT AFFICHER LES ANNONCES DE L'UTILISATEUR CONNECTE
+        $listeAnnonce = $annonceRepository->findBy(
+            [ "user"  => $userConnecte],            
+            [ "datePublication" => "DESC" ]
+        );
+
+        return $this->render('member/index.html.twig', [
+            'annonce'   => $annonce,
+            'form'      => $form->createView(),
+            'annonces'  => $listeAnnonce,
+        ]);
+    }
+
+```
+
+    ET POUR LE TEMPLATE, ON REPREND LE CODE 
+
+```twig
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace Membre{% endblock %}
+
+{% block body %}
+
+<section>
+    <h2>formulaire de creation d'annonces</h2>
+
+    {{ include('annonce/_form.html.twig') }}
+
+</section>
+
+<section>
+    <h2>affichage de la liste des annonces</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Url</th>
+                <th>Description</th>
+                <th>Photo</th>
+                <th>Categorie</th>
+                <th>DatePublication</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for annonce in annonces %}
+            <tr>
+                <td>{{ annonce.id }}</td>
+                <td>{{ annonce.titre }}</td>
+                <td>{{ annonce.url }}</td>
+                <td>{{ annonce.description }}</td>
+                <td>{{ annonce.photo }}</td>
+                <td>{{ annonce.categorie }}</td>
+                <td>{{ annonce.datePublication ? annonce.datePublication|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('annonce_show', {'id': annonce.id}) }}">show</a>
+                    <a href="{{ path('annonce_edit', {'id': annonce.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</section>
+
+{% endblock %}
+
+
+```
 
 
 
