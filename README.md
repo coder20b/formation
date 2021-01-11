@@ -529,6 +529,13 @@ RewriteBase /formation/revision-finale/
 
 ```
 
+    CREER LES PAGES ADMIN POUR user ET annonce
+    => EN AUTONOMIE
+    => CREER QUELQUES UTILISATEURS
+            ET ENSUITE CREER QUELQUES ANNONCES ATTRIBUEES AUX UTILISATEURS
+
+    => ET ENSUITE CREER LA PAGE D'ACCUEIL AVEC LES JOINTURES
+            
 ### EXO 3: AFFICHAGE AVEC JOINTURE
 
     PARTIE PUBLIQE
@@ -565,7 +572,7 @@ RewriteBase /formation/revision-finale/
 
 
     PAUSE ET REPRISE A 16H05
-    
+
 
 
 
