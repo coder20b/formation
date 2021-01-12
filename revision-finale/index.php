@@ -2,6 +2,28 @@
 
 class index
 {
+    static function config ()
+    {
+        // ETAPE 1: METTRE A JOUR LE FICHIER .htaccess 
+
+        // ETAPE 2: INFOS DE CONNEXION A LA DATABASE
+        // ATTENTION: NE PAS OUBLIER DE CHANGER LA DATABASE
+        Model::$database = "revision_finale";   // ON PEUT CONFIGURER LA DATABASE QU'ON VEUT POUR LE PROJET 
+
+        // ETAPE 3: CREER LES PAGES
+        // => ON A BESOIN D'UN ROUTEUR
+        index::$tabRouteur = [
+            // CLE = URL            VALEUR = LES FICHIERS php/view
+            "index"              => [ "header", "sectionIndex",         "footer" ],     // ROUTE 
+            "admin-user"         => [ "header", "sectionAdminUser",     "footer" ],     // ROUTE 
+            "admin-annonce"      => [ "header", "sectionAdminAnnonce",  "footer" ],     // ROUTE
+            "contact"            => [ "header", "sectionContact", "footer" ], 
+        ];
+
+    }
+
+    static $tabRouteur = [];
+
     // FONCTION DE CALLBACK => PHP QUI VA APPELER CETTE FONCTION AUTOMATIQUEMENT
     static function chargerFichier ($nomClasse)
     {
@@ -16,21 +38,13 @@ class index
     {
         spl_autoload_register("index::chargerFichier");
 
-        // ATTENTION: NE PAS OUBLIER DE CHANGER LA DATABASE
-        Model::$database = "revision_finale";   // ON PEUT CONFIGURER LA DATABASE QU'ON VEUT POUR LE PROJET 
-        // => ON A BESOIN D'UN ROUTEUR
-        $tabRouteur = [
-            // CLE = URL            VALEUR = LES FICHIERS php/view
-            "index"              => [ "header", "sectionIndex",         "footer" ],     // ROUTE 
-            "admin-user"         => [ "header", "sectionAdminUser",     "footer" ],     // ROUTE 
-            "admin-annonce"      => [ "header", "sectionAdminAnnonce",  "footer" ],     // ROUTE 
-        ];
+        index::config();
 
         // A PARTIR D'ICI JE PEUX APPELER TOUTES MES FONCTIONS
         $urlDemandee = Controller::lireUri();
 
         // A PARTIR DE L'URL DEMANDEE, JE VAIS CHERCHER LA LISTE DES FICHIERS php/view
-        $tabTemplate = $tabRouteur[$urlDemandee] ?? [];
+        $tabTemplate = index::$tabRouteur[$urlDemandee] ?? [];
 
         if (empty($tabTemplate))
         {
@@ -50,6 +64,10 @@ class index
             if (is_callable($methodeTemplate))
             {
                 $methodeTemplate();
+            }
+            else 
+            {
+                echo "<h1>code manquant ou erronné: $methodeTemplate</h1>";
             }
         }
 

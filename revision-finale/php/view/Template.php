@@ -4,7 +4,7 @@ class Template
 {
     // COMPOSITION AVEC TRAITS
     // AJOUTER LES TRAITS SUPPLEMENTAIRES...
-    use AdminUser;
+    use AdminUser, SectionContact;
 
     static function header ()
     {

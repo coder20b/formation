@@ -399,6 +399,14 @@ class User implements UserInterface
 
 ```
 
+## ACTIVITE POUR LE RESTE DE LA MATINEE
+
+    AUTONOMIE INDIVIDUELLE
+    OU
+    AUTONOMIE EN EQUIPE
+
+    N'HESITEZ PAS A POSER DES QUESTIONS...
+    
 
 
 
