@@ -15,9 +15,11 @@ class index
         index::$tabRouteur = [
             // CLE = URL            VALEUR = LES FICHIERS php/view
             "index"              => [ "header", "sectionIndex",          "footer" ],     // ROUTE 
+            "many-many"          => [ "header", "sectionManyMany",          "footer" ],     // ROUTE 
             "admin-user"         => [ "header", "sectionAdminUser",      "footer" ],     // ROUTE 
             "admin-annonce"      => [ "header", "sectionAdminAnnonce",   "footer" ],     // ROUTE
             "admin-categorie"    => [ "header", "sectionAdminCategorie", "footer" ],     // ROUTE
+            "admin-annonce-categorie"    => [ "header", "sectionAdminAnnonceCategorie", "footer" ],     // ROUTE
             "contact"            => [ "header", "sectionContact",        "footer" ], 
         ];
 

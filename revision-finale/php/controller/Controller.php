@@ -77,7 +77,7 @@ class Controller
         // https://www.php.net/manual/fr/function.preg-replace.php
         // https://regex101.com/
         // astuce: supprimer c'est comme remplacer par du texte vide
-        $nom = preg_replace("/[^a-zA-Z0-9]/", "", $nom);
+        $nom = preg_replace("/[^a-zA-Z0-9-_]/", "", $nom);
         return $nom;
     }
 
