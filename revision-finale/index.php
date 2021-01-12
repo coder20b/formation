@@ -14,11 +14,15 @@ class index
         // => ON A BESOIN D'UN ROUTEUR
         index::$tabRouteur = [
             // CLE = URL            VALEUR = LES FICHIERS php/view
-            "index"              => [ "header", "sectionIndex",         "footer" ],     // ROUTE 
-            "admin-user"         => [ "header", "sectionAdminUser",     "footer" ],     // ROUTE 
-            "admin-annonce"      => [ "header", "sectionAdminAnnonce",  "footer" ],     // ROUTE
-            "contact"            => [ "header", "sectionContact", "footer" ], 
+            "index"              => [ "header", "sectionIndex",          "footer" ],     // ROUTE 
+            "admin-user"         => [ "header", "sectionAdminUser",      "footer" ],     // ROUTE 
+            "admin-annonce"      => [ "header", "sectionAdminAnnonce",   "footer" ],     // ROUTE
+            "admin-categorie"    => [ "header", "sectionAdminCategorie", "footer" ],     // ROUTE
+            "contact"            => [ "header", "sectionContact",        "footer" ], 
         ];
+
+        // ETAPE 4: CREER LES FICHIERS TEMPLATES
+        // NE PAS OUBLIER: AJOUTER LES TRAITS SUPPLEMENTAIRES DANS Template...
 
     }
 

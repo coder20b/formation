@@ -1,32 +1,36 @@
 <?php
 
-trait AdminUser
+trait AdminAnnonce
 {
-    static function sectionAdminUser ()
+    static function sectionAdminAnnonce ()
     {
 ?>
 
 
 <section>
-    <h3>CRUD SUR LA TABLE SQL user</h3>
+    <h3>CRUD SUR LA TABLE SQL annonce</h3>
 </section>
 
 <section>
-    <h3>CREATE SUR LA TABLE SQL user (en premier)</h3>
+    <h3>CREATE SUR LA TABLE SQL annonce (en premier)</h3>
     <!-- POUR UPLOAD IL FAUDRA AJOUTER UN ATTRIBUT SUPPLEMENTAIRE... -->
     <!-- https://www.w3schools.com/php/php_file_upload.asp -->
     <form method="POST" action="#form-create" id="form-create" enctype="multipart/form-data">
         <label>
-            <span>pseudo</span>
-            <input type="text" name="pseudo" required placeholder="pseudo" maxlength="160">
+            <span>user_id</span>
+            <input type="number" name="user_id" required placeholder="user_id" maxlength="160">
         </label>
         <label>
-            <span>email</span>
-            <input type="email" name="email" required placeholder="email" maxlength="160">
+            <span>titre</span>
+            <input type="text" name="titre" required placeholder="titre" maxlength="160">
         </label>
-        <button type="submit">CREER VOTRE COMPTE</button>
+        <label>
+            <span>description</span>
+            <textarea name="description" required placeholder="description"></textarea>
+        </label>
+        <button type="submit">CREER VOTRE ANNNONCE</button>
         <!-- PARTIE TECHNIQUE -->
-        <input type="hidden" name="formIdentifiant" value="user">
+        <input type="hidden" name="formIdentifiant" value="annonce">
         <div>
         </div>
     </form>
@@ -41,7 +45,7 @@ trait AdminUser
         <label>
             <span>table</span>
             <!-- NE PAS OUBLIER DE CHANGER LA VALEUR DU NOM DE LA TABLE -->
-            <input type="text" name="table" required placeholder="table" maxlength="160" value="user">
+            <input type="text" name="table" required placeholder="table" maxlength="160" value="annonce">
         </label>
         <label>
             <span>id</span>
@@ -61,40 +65,45 @@ trait AdminUser
     <!-- https://www.w3schools.com/php/php_file_upload.asp -->
     <form method="POST" action="#form-create" id="form-create" enctype="multipart/form-data">
         <label>
-            <span>pseudo</span>
-            <input type="text" name="pseudo" required placeholder="pseudo" maxlength="160">
+            <span>user_id</span>
+            <input type="number" name="user_id" required placeholder="user_id" maxlength="160">
         </label>
         <label>
-            <span>email</span>
-            <input type="email" name="email" required placeholder="email" maxlength="160">
+            <span>titre</span>
+            <input type="text" name="titre" required placeholder="titre" maxlength="160">
         </label>
+        <label>
+            <span>description</span>
+            <textarea name="description" required placeholder="description"></textarea>
+        </label>
+        <!-- ATTENTION NE PAS OUBLIER LE CHAMP id -->
         <label>
             <span>id</span>
             <input type="number" name="id" required placeholder="id" maxlength="160">
         </label>
-        <button type="submit">MODIFIER VOTRE USER</button>
+        <button type="submit">MODIFIER VOTRE ANNONCE</button>
         <!-- PARTIE TECHNIQUE -->
-        <input type="hidden" name="formIdentifiant" value="user-update">
+        <input type="hidden" name="formIdentifiant" value="annonce-update">
     </form>
 </section>
 
 <section>
     <h3>TRAITEMENT DES FORMULAIRES CREATE/UPDATE/DELETE</h3>
     <div>
-        <?php TraitementUser::create() ?>
-        <?php TraitementUser::update() ?>
-        <?php TraitementUser::delete() ?>
+        <?php TraitementAnnonce::create() ?>
+        <?php TraitementAnnonce::update() ?>
+        <?php TraitementAnnonce::delete() ?>
     </div>
 </section>
 
 <section>
     <h3>READ SUR LA TABLE SQL page (en 2e)</h3>
     <p>(ON LE GARDE EN BAS DE PAGE POUR AVOIR AFFICHAGE A JOUR)</p>
-    <h3>Il y a <?php echo Model::compterLigne("user") ?> lignes dans la table</h3>
+    <h3>Il y a <?php echo Model::compterLigne("annonce") ?> lignes dans la table</h3>
     <table>
         <tbody>
 <?php
-$tabLigne = Model::lireTable("user", "dateInscription DESC", 0, -1);  // TABLEAU ORDONNE DE TABLEAUX ASSOCIATIFS
+$tabLigne = Model::lireTable("annonce", "datePublication DESC", 0, -1);  // TABLEAU ORDONNE DE TABLEAUX ASSOCIATIFS
 
 // $tabLigne EST UN TABLEAU ORDONNE
 // QUI CONTIENT DES TABLEAUX ASSOCIATIFS
@@ -141,20 +150,25 @@ foreach($tabLigne as $ligneAsso)
         <h3>FORMULAIRE UPDATE POUR LIGNE $id</h3>
         <form method="POST" action="#form-create" id="form-create" enctype="multipart/form-data">
             <label>
-                <span>pseudo</span>
-                <input type="text" name="pseudo" required placeholder="pseudo" maxlength="160" value="$pseudo">
+                <span>user_id</span>
+                <input type="number" name="user_id" required placeholder="user_id" maxlength="160" value="$user_id">
             </label>
             <label>
-                <span>email</span>
-                <input type="email" name="email" required placeholder="email" maxlength="160" value="$email">
+                <span>titre</span>
+                <input type="text" name="titre" required placeholder="titre" maxlength="160" value="$titre">
             </label>
-            <label class="cache">
+            <label>
+                <span>description</span>
+                <textarea name="description" required placeholder="description">$description</textarea>
+            </label>
+            <!-- ATTENTION NE PAS OUBLIER LE CHAMP id -->
+            <label class="">
                 <span>id</span>
                 <input type="number" name="id" required placeholder="id" maxlength="160" value="$id">
             </label>
-            <button type="submit">MODIFIER VOTRE USER</button>
+            <button type="submit">MODIFIER VOTRE ANNONCE</button>
             <!-- PARTIE TECHNIQUE -->
-            <input type="hidden" name="formIdentifiant" value="user-update">
+            <input type="hidden" name="formIdentifiant" value="annonce-update">
         </form>
     </template>
 

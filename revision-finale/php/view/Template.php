@@ -3,8 +3,9 @@
 class Template
 {
     // COMPOSITION AVEC TRAITS
-    // AJOUTER LES TRAITS SUPPLEMENTAIRES...
-    use AdminUser, SectionContact;
+    // NE PAS OUBLIER: AJOUTER LES TRAITS SUPPLEMENTAIRES...
+    use AdminUser, AdminAnnonce,
+            SectionIndex, SectionContact;
 
     static function header ()
     {
@@ -25,6 +26,7 @@ class Template
             <a href="index.php">accueil</a>
             <a href="admin-user.php">admin user</a>
             <a href="admin-annonce.php">admin annonce</a>
+            <a href="admin-categorie.php">admin categorie</a>
         </nav>
     </header>
     <main>

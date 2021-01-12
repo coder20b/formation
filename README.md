@@ -406,7 +406,28 @@ class User implements UserInterface
     AUTONOMIE EN EQUIPE
 
     N'HESITEZ PAS A POSER DES QUESTIONS...
-    
+
+
+    PAUSE DEJEUNER ET REPRISE A 13H50...
+
+## ACTIVITES POUR CET APREM...
+
+    * REVISION EXAM FINAL
+    * ???
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
