@@ -21,7 +21,7 @@ https://github.com/coder20b/formation
 https://prod.liveshare.vsengsaas.visualstudio.com/join?1EAF99BADB4B95F4A6D08EC4935140E90E85
 
 
-## REUNION AVANCEMENT
+## REUNION AVANCEMENT (JEUDI 16/01)
 
     * CHECKPOINT AU MOINS 15 MINUTES (OBLIGATOIRE)
     * CHAQUE MEMBRE DE L'EQUIPE DOIT ETRE PRESENT QUAND ON FAIT LA REUNION (OBLIGATOIRE)
@@ -44,6 +44,58 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?1EAF99BADB4B95F4A6D08EC49
     ...
 
 
+## PROJETS
+
+## EQUIPE CHECK
+
+    Projet Amour Livre: site de rencontres basé sur les goûts littéraires. 
+    https://github.com/WebForce3-KevInvicto/amourlivre
+
+    Kevin
+    Christel
+    Elphège
+    Céline
+
+## EQUIPE TEAM ROCKET SCRIPT
+
+    MARKETPLACE DES COMMERCES DE QUARTIER
+    https://github.com/Daeriss/MarketPlace
+
+    Benjamin
+    Olivier
+    Tony
+    Maeva
+
+## EQUIPE VTS
+
+    SITE E-COMMERCE SERVICES ET VENTE PRODUITS INFORMATIQUES 
+    https://github.com/alexandre-leng/Projet
+
+    Alexandre
+    Mehdi
+    Bilel
+    Arsenio
+
+## EQUIPE MEET IN MARS
+
+    SITE POUR CREER DES MEETUPS
+    https://github.com/maxime7513/MeetInMarseille
+
+    Joseph
+    Maxime
+    Moussa
+    Marc
+
+## EQUIPE RESTO
+
+    SITE RESTAURANT
+    http://capsantalucia.fr/
+
+    https://github.com/QuentinD95/Projet-Soutenance
+
+    Flora
+    Steph
+    Quentin
 
 
 
