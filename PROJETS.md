@@ -38,7 +38,12 @@
     Moussa
     Marc
 
-## EQUIPE E
+## EQUIPE RESTO
+
+    SITE RESTAURANT
+    http://capsantalucia.fr/
+
+    https://github.com/QuentinD95/Projet-Soutenance
 
     Flora
     Steph
