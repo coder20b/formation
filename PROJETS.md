@@ -1,4 +1,4 @@
-## EQUIPE A
+## EQUIPE CHECK
 
     projet Amour Livre: site de rencontres basé sur les goûts littéraires. 
     GitHub:  https://github.com/WebForce3-KevInvicto/amourlivre
@@ -8,7 +8,7 @@
     Elphège
     Céline
 
-## EQUIPE B
+## EQUIPE TEAM ROCKET SCRIPT
 
     https://github.com/Daeriss/MarketPlace
 
@@ -20,20 +20,17 @@
     Tony
     Maeva
 
-## EQUIPE C
+## EQUIPE VTS
 
+    SITE E-COMMERCE SERVICES ET VENTE PRODUITS INFORMATIQUES 
     https://github.com/alexandre-leng/Projet
-
-        IDEE DE PROJET:
-        REFONTE DE SITE AVEC BDD
-        https://byrsa.tech/
 
     Alexandre
     Mehdi
     Bilel
     Arsenio
 
-## EQUIPE D
+## EQUIPE MEET IN MARS
 
         IDEE DE PROJET:
         APPLICATION MOBILE
