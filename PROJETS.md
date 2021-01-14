@@ -1,7 +1,7 @@
 ## EQUIPE CHECK
 
-    projet Amour Livre: site de rencontres basé sur les goûts littéraires. 
-    GitHub:  https://github.com/WebForce3-KevInvicto/amourlivre
+    Projet Amour Livre: site de rencontres basé sur les goûts littéraires. 
+    https://github.com/WebForce3-KevInvicto/amourlivre
 
     Kevin
     Christel
@@ -10,10 +10,8 @@
 
 ## EQUIPE TEAM ROCKET SCRIPT
 
-    https://github.com/Daeriss/MarketPlace
-
-    IDEE DE PROJET:
     MARKETPLACE DES COMMERCES DE QUARTIER
+    https://github.com/Daeriss/MarketPlace
 
     Benjamin
     Olivier
@@ -32,8 +30,8 @@
 
 ## EQUIPE MEET IN MARS
 
-        IDEE DE PROJET:
-        APPLICATION MOBILE
+    SITE POUR CREER DES MEETUPS
+    https://github.com/maxime7513/MeetInMarseille
 
     Joseph
     Maxime
