@@ -41,7 +41,7 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?4693A3B7D87B85BB44507335B
     VENDREDI    NICOLAS
 
     * PLANNING DERNIERE SEMAINE
-    LUNDI       REPOS (BONNE BLAGUE...)
+    LUNDI       REPOS       (BONNE BLAGUE...)
     MARDI       LH
     MERCREDI    LH
     JEUDI       LH          REPETER LA PRESENTATION ET PREPARER LES JEUX DE DONNEES (DEMO CRUD...)
