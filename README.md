@@ -46,7 +46,8 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?4693A3B7D87B85BB44507335B
     14H30-14H50     EQUIPE VTS                      (Alexandre / Mehdi / Bilel / Arsenio)
     16H30-16H50     EQUIPE CHECK                    (Kevin / Christel / Elphège / Céline)
     15H45-16H00     * PAUSE APREM
-
+    ??              EQUIPE MEET IN MARS             (Joseph / Maxime / Moussa / Marc)
+    ??              EQUIPE RESTO                    (Flora / Steph / Quentin)
 
     * PLANNING SEMAINE PROCHAINE
     LUNDI       NICOLAS
