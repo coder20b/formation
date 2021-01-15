@@ -39,15 +39,16 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?4693A3B7D87B85BB44507335B
     => SI VOUS AVEZ DES QUESTIONS...
     => SI VOUS AVEZ BESOIN DE CONSEILS...
 
+    * MEETINGS...
     10H20-10H35     EQUIPE TEAM ROCKET SCRIPT       (Benjamin / Olivier / Tony / Maeva)
     10H45-11H00     * PAUSE
     11H30-11H50     EQUIPE CHECK                    (Kevin / Christel / Elphège / Céline)
     12H45-13H45     * PAUSE DEJEUNER
     14H30-14H50     EQUIPE VTS                      (Alexandre / Mehdi / Bilel / Arsenio)
-    16H30-16H50     EQUIPE CHECK                    (Kevin / Christel / Elphège / Céline)
+    15H00-15H20     EQUIPE RESTO                    (Flora / Steph / Quentin)
+    15H30-15H50     EQUIPE MEET IN MARS             (Joseph / Maxime / Moussa / Marc)
     15H45-16H00     * PAUSE APREM
-    ??              EQUIPE MEET IN MARS             (Joseph / Maxime / Moussa / Marc)
-    ??              EQUIPE RESTO                    (Flora / Steph / Quentin)
+    16H30-16H50     EQUIPE CHECK                    (Kevin / Christel / Elphège / Céline)
 
     * PLANNING SEMAINE PROCHAINE
     LUNDI       NICOLAS
