@@ -22,6 +22,10 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?4693A3B7D87B85BB44507335B
 
 ## REUNION AVANCEMENT (VENDREDI 16/01)
 
+    * Pourquoi faire une réunion d'équipe chaque jour ?
+    Agile Daily Stand-up Meeting (DSM)
+    https://blog-gestion-de-projet.com/organiser-un-daily-scrum-meeting/
+
     * TUTOS VIDEOS SUR SYMFONY5 
     (GRATUIT... ET AUTRES PAYANTS...)
     https://symfonycasts.com/screencast/symfony
@@ -39,6 +43,7 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?4693A3B7D87B85BB44507335B
     10H45-11H00     * PAUSE
     11H30-11H50     EQUIPE CHECK                    (Kevin / Christel / Elphège / Céline)
     12H45-13H45     * PAUSE DEJEUNER
+    14H30-14H50     EQUIPE VTS                      (Alexandre / Mehdi / Bilel / Arsenio)
     16H30-16H50     EQUIPE CHECK                    (Kevin / Christel / Elphège / Céline)
     15H45-16H00     * PAUSE APREM
 
