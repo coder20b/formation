@@ -20,6 +20,23 @@ https://github.com/coder20b/formation
 
 https://prod.liveshare.vsengsaas.visualstudio.com/join?4693A3B7D87B85BB44507335B8FEBD63571A
 
+## REUNION AVANCEMENT (LUNDI 20/01)
+
+    * MEETINGS...
+
+    09H45-10H15     TEAM ROCKET SCRIPT       (Benjamin / Olivier / Tony / Maeva)
+    10H45-11H00     * pause
+    11H00-11H30     MEET IN MARS             (Joseph / Maxime / Moussa / Marc)
+    11H30-12H00     CHECK                    (Kevin / Christel / Elphège / Céline)
+    12H45-13H45     * pause déjeuner
+    14H00-14H30     MEET IN MARS             (Joseph / Maxime / Moussa / Marc)
+    14H30-15H00     VTS                      (Alexandre / Mehdi / Bilel / Arsenio)
+    15H15-15H45     TEAM ROCKET SCRIPT       (Benjamin / Olivier / Tony / Maeva)
+    15H45-16H00     * pause goûter
+    ??              RESTO                    (Flora / Steph / Quentin)
+    16H30-17H00     CHECK                    (Kevin / Christel / Elphège / Céline)
+
+
 ## REUNION AVANCEMENT (VENDREDI 16/01)
 
     * Pourquoi faire une réunion d'équipe chaque jour ?
