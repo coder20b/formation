@@ -21,6 +21,19 @@ https://github.com/coder20b/formation
 https://prod.liveshare.vsengsaas.visualstudio.com/join?4693A3B7D87B85BB44507335B8FEBD63571A
 
 
+## REUNION AVANCEMENT (MERCREDI 27/01)
+
+    * MEETINGS...
+
+    10H45-11H00     * pause
+    11H30-12H00     MEET IN MARS             (Joseph / Maxime / Moussa / Marc)
+    12H45-13H45     * pause déjeuner
+    14H00-14H30     CHECK                    (Kevin / Christel / Elphège / Céline)
+    15H00-15H30     VTS                      (Alexandre / Mehdi / Bilel / Arsenio)
+    15H45-16H00     * pause goûter
+    ??              TEAM ROCKET SCRIPT       (Benjamin / Olivier / Tony / Maeva)
+    ??              RESTO                    (Flora / Steph / Quentin)
+
 ## REUNION AVANCEMENT (MARDI 21/01)
 
     * MEETINGS...
